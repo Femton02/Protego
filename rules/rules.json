@@ -1,0 +1,20 @@
+{
+    "rules": [
+      {
+        "name": "XSS",
+        "pattern": "<script[^>]*>[\\s\\S]*?</script>",
+        "description": "Detects potential Cross-Site Scripting (XSS) vulnerabilities"
+      },
+      {
+        "name": "SQL Injection",
+        "pattern": "'(?:[^'\\\\]|(?:''))*'",
+        "description": "Detects potential SQL Injection vulnerabilities"
+      },
+      {
+        "name": "IDOR",
+        "pattern": "\\b(userId|accountId|itemId|productId)\\b",
+        "description": "Detects potential Insecure Direct Object Reference (IDOR) vulnerabilities"
+      }
+    ]
+  }
+  
