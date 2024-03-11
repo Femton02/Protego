@@ -1,52 +1,29 @@
-// XSS (Cross-Site Scripting) Vulnerabilities
-const userInputXSS_Vulnerable = "<script>alert('XSS');</script>";
-document.getElementById('outputXSS_Vulnerable').innerHTML = userInputXSS_Vulnerable;
+const { format } = require('util');
 
-// Safe content for XSS
-const userInputXSS_Safe = "Safe content";
-document.getElementById('outputXSS_Safe').textContent = userInputXSS_Safe;
+exports.handler = async function (event, context) {
+  // ruleid: tainted-html-string
+  await sendThisHtmlSomewhere(`<h1>message: ${event.name}</h1>`)
+  
+  // ruleid: tainted-html-string
+  const htmlResult = "<h1>" + "message: " + event['message'] + "</h1>";
 
-// SQL Injection Vulnerabilities
-const userInputSQLInjection_Vulnerable = "'; DROP TABLE users; --";
-const querySQLInjection_Vulnerable = "SELECT * FROM users WHERE username = '" + userInputSQLInjection_Vulnerable + "'";
+  let html = "<h1> message"
+  // ruleid: tainted-html-string
+  html = html.concat(event.message)
+  html = html.concat("</h1>")
+  doSmth(html)
 
-// Safe SQL query
-const userInputSQLSafe = "john";
-const querySQLSafe = "SELECT * FROM users WHERE username = '" + userInputSQLSafe + "'";
+  // ruleid: tainted-html-string
+  foobar(format('<div>Message: %s</div>', event.body.name))
 
-// IDOR (Insecure Direct Object Reference) Vulnerabilities
-const userIdIDOR_Vulnerable = 123;
-const urlIDOR_Vulnerable = "https://example.com/api/user/" + userIdIDOR_Vulnerable;
-fetch(urlIDOR_Vulnerable);
+  // ok: tainted-html-string
+  foobar(format('Message: %s', event.body.name))
 
-// Safe IDOR
-const getCurrentUserId = () => 123; // Assuming a secure method to retrieve the user ID
-const userIdIDOR_Safe = getCurrentUserId();
-const urlIDOR_Safe = "https://example.com/api/user/" + userIdIDOR_Safe;
-fetch(urlIDOR_Safe);
+  // ok: tainted-html-string
+  console.log('<div>Message: %s</div>', event.body.name)
+  
+  // ok: tainted-html-string
+  console.error(`<h1>message: ${event.name}</h1>`)
 
-// More XSS (Cross-Site Scripting) Vulnerabilities
-const userInputXSS_Vulnerable2 = "<img src='x' onerror='alert(\"XSS\")'>";
-document.getElementById('outputXSS_Vulnerable2').innerHTML = userInputXSS_Vulnerable2;
-
-// Safe content for XSS
-const userInputXSS_Safe2 = "Safe content";
-document.getElementById('outputXSS_Safe2').textContent = userInputXSS_Safe2;
-
-// More SQL Injection Vulnerabilities
-const userInputSQLInjection_Vulnerable2 = "' OR '1'='1";
-const querySQLInjection_Vulnerable2 = "SELECT * FROM users WHERE username = '" + userInputSQLInjection_Vulnerable2 + "'";
-
-// Safe SQL query
-const userInputSQLSafe2 = "john";
-const querySQLSafe2 = "SELECT * FROM users WHERE username = '" + userInputSQLSafe2 + "'";
-
-// More IDOR (Insecure Direct Object Reference) Vulnerabilities
-const userIdIDOR_Vulnerable2 = 456;
-const urlIDOR_Vulnerable2 = "https://example.com/api/user/" + userIdIDOR_Vulnerable2;
-fetch(urlIDOR_Vulnerable2);
-
-// Safe IDOR
-const userIdIDOR_Safe2 = getCurrentUserId(); // Assuming a secure method to retrieve the user ID
-const urlIDOR_Safe2 = "https://example.com/api/user/" + userIdIDOR_Safe2;
-fetch(urlIDOR_Safe2);
+  return { body: htmlResult }
+}

@@ -1,56 +1,79 @@
+const fs = require('fs');
 const { parseCode } = require('./parser');
-const rules = require('../rules/rules.json');
+const walk = require('acorn-walk');
 
-const sampleRules = rules.rules;
+// Load rules from rules.json
+const rules = JSON.parse(fs.readFileSync('../rules/rules.json', 'utf8')).rules;
 
-function analyzeCode(code) {
+function analyzeCodeWithLines(code) {
     const ast = parseCode(code);
-    const matches = [];
-    
-    sampleRules.forEach(rule => {
-        const regex = new RegExp(rule.pattern);
-        const violations = findViolations(ast, regex);
 
-        matches.push(...violations.map(violation => ({
-            rule: rule.name,
-            description: rule.description,
-            location: getLocation(violation)
-        })));
+    const vulnerabilities = [];
+
+    // Traverse the AST
+    walk.simple(ast, {
+        Literal(node) {
+            // Check if the node matches any rule pattern
+            for (const rule of rules) {
+            const regex = new RegExp(rule.pattern);
+            if (regex.test(node.raw)) {
+                // Report vulnerability
+                vulnerabilities.push({
+                ruleName: rule.name,
+                description: rule.description,
+                location: {
+                    start: node.start,
+                    end: node.end,
+                },
+                line: code.substring(node.start, node.end)
+                });
+                break;
+            }
+            }
+        },
+        Identifier(node) {
+            // Check if the node matches any rule pattern
+            for (const rule of rules) {
+            const regex = new RegExp(rule.pattern);
+            if (regex.test(node.name)) {
+                // Report vulnerability
+                vulnerabilities.push({
+                ruleName: rule.name,
+                description: rule.description,
+                location: {
+                    start: node.start,
+                    end: node.end,
+                },
+                line: code.substring(node.start, node.end)
+                });
+                break;
+            }
+            }
+        },
+        MemberExpression(node) {
+            // Check if the node matches any rule pattern
+            for (const rule of rules) {
+            const regex = new RegExp(rule.pattern);
+            if (regex.test(node.property.name)) {
+                // Report vulnerability
+                vulnerabilities.push({
+                ruleName: rule.name,
+                description: rule.description,
+                location: {
+                    start: node.property.start,
+                    end: node.property.end,
+                },
+                line: code.substring(node.property.start, node.property.end)
+                });
+                break;
+            }
+            }
+        },
     });
 
-    return matches;
+    return vulnerabilities;
 }
 
-function findViolations(node, regex) {
-    let violations = [];
-    
-    if (node.type === "Program" || node.type === "BlockStatement") {
-        node.body.forEach(childNode => {
-            violations = violations.concat(findViolations(childNode, regex));
-        });
-    } else {
-        Object.keys(node).forEach(key => {
-            if (typeof node[key] === "object" && node[key] !== null) {
-                violations = violations.concat(findViolations(node[key], regex));
-            } else if (typeof node[key] === "string") {
-                const matches = node[key].match(regex);
-                if (matches) {
-                    violations.push(node);
-                }
-            }
-        });
-    }
-    
-    return violations;
-}
-
-function getLocation(node) {
-    return {
-        start: node.start,
-        end: node.end
-    };
-}
-
-module.exports ={
-    analyzeCode
+module.exports = {
+    analyzeCodeWithLines,
 };
