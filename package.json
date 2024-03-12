@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "acorn": "^8.11.3",
+    "acorn-walk": "^8.3.2"
+  },
+  "scripts": {
+    "protego": "cd src && node main.js"
+  }
+}
