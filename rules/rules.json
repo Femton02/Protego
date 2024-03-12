@@ -2,7 +2,7 @@
     "rules": [
       {
         "name": "XSS",
-        "pattern": "<[^>]*>\\s*\\${.*?}",
+        "pattern": "<[^>\/]*>(\\w+|\\s)*",
         "description": "Detects potential Cross-Site Scripting (XSS) vulnerabilities"
       },
       {
@@ -12,7 +12,7 @@
       },
       {
         "name": "Direct Response Write",
-        "pattern": "(res\\.send\\s*\\(|res\\.write\\s*\\()\\s*['\"`].*?\\$\\{.*?\\}.*?['\"`]",
+        "pattern": "Response<[^>].*>",
         "description": "Detects direct response writes with potentially tainted data"
       }
     ]

@@ -14,7 +14,7 @@ function analyzeCodeWithLines(code) {
     walk.simple(ast, {
         Literal(node) {
             // Check if the node matches any rule pattern
-            for (const rule of rules) {
+            for (const rule of rules) {         
             const regex = new RegExp(rule.pattern);
             if (regex.test(node.raw)) {
                 // Report vulnerability
@@ -26,44 +26,6 @@ function analyzeCodeWithLines(code) {
                     end: node.end,
                 },
                 line: code.substring(node.start, node.end)
-                });
-                break;
-            }
-            }
-        },
-        Identifier(node) {
-            // Check if the node matches any rule pattern
-            for (const rule of rules) {
-            const regex = new RegExp(rule.pattern);
-            if (regex.test(node.name)) {
-                // Report vulnerability
-                vulnerabilities.push({
-                ruleName: rule.name,
-                description: rule.description,
-                location: {
-                    start: node.start,
-                    end: node.end,
-                },
-                line: code.substring(node.start, node.end)
-                });
-                break;
-            }
-            }
-        },
-        MemberExpression(node) {
-            // Check if the node matches any rule pattern
-            for (const rule of rules) {
-            const regex = new RegExp(rule.pattern);
-            if (regex.test(node.property.name)) {
-                // Report vulnerability
-                vulnerabilities.push({
-                ruleName: rule.name,
-                description: rule.description,
-                location: {
-                    start: node.property.start,
-                    end: node.property.end,
-                },
-                line: code.substring(node.property.start, node.property.end)
                 });
                 break;
             }

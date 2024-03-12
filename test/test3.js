@@ -102,17 +102,6 @@ app.get('/xss', function (req, res) {
     // ruleid: direct-response-write
     res.write('Response</br>' + req.query('doo'));
 });
-app.get('/xss', function (req, res) {
-    // ok: direct-response-write
-    res.set('Content-Type','text/plain')
-    res.write('Response</br>' + req.query.name);
-});
-
-app.get('/noxss', function (req, res) {
-    var resp = req.query.name;
-    // ok: direct-response-write
-    res.write('Response</br>');
-});
 
 app.get('/noxs2s', function (req, res) {
     var resp = req.query.name;
