@@ -1,7 +1,8 @@
 from tree_sitter import Parser, Language, Tree, Node
 from typing import Generator
+import graphviz
 
-JS_LANGUAGE = Language("./tree-sitter/build/my-languages.so", "javascript")
+JS_LANGUAGE = Language("./t_sitter/build/my-languages.so", "javascript")
 
 def get_js_parser() -> Parser:
     parser = Parser()
@@ -164,8 +165,8 @@ def query_tree(tree: Tree, query_str: str) -> tuple[list[tuple[Node, str]], list
     try:
         query = JS_LANGUAGE.query(query_str)
     except Exception as e:
-        print(e)
         print("Error in query")
+        raise e
 
     captures = query.captures(tree.root_node)
 
@@ -185,7 +186,28 @@ def test_query_tree():
     tree = parse_js_code("a = 1; z = 2; console.log(a);")
     query_tree(tree, "(assignment_expression (number) @num-value)  @assig-expr")
 
+def visualize_tree(tree: Tree, output_file: str = "tree"):
+    """Visualize the syntax tree using graphviz.
+
+    Args:
+        tree (Tree): The syntax tree to visualize
+        output_file (str): The path to save the visualization
+    """
+    graph = graphviz.Digraph(format="png")
+    cursor = traverse_tree(tree)
+    for node in cursor:
+        graph.node(str(node), str(node.type))
+        if node.parent:
+            graph.edge(str(node.parent), str(node))
+    graph.render("./visualization/" + output_file)
+
+def test_visualize_tree():
+    tree = parse_js_code("a = 1; z = 2; console.log(a);")
+    visualize_tree(tree, "tree")
+
 # test_edit_tree()
 # test_query_tree()
+
+# test_visualize_tree()
 
 
