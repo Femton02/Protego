@@ -17,7 +17,7 @@ To install Protego, follow these steps:
 1. Clone the repository to your local machine:
 
     ```
-    git clone https://github.com/yourusername/protego.git
+    git clone https://github.com/femton02/protego.git
     ```
 
 2. Navigate to the Protego directory:
