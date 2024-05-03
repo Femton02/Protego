@@ -1,0 +1,3 @@
+[submodule "src/core/t_sitter/languages/tree-sitter-javascript"]
+	path = src/core/t_sitter/languages/tree-sitter-javascript
+	url = https://github.com/tree-sitter/tree-sitter-javascript
