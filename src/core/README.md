@@ -2,9 +2,10 @@
 
 1. Install tree-sitter needed language parsers
 
-    Make sure you are in `src/core/t_sitter` directory and run the following command:
+    Make sure you are in `src/core` directory and run the following command:
 
     ```bash
+    cd src/core
     pip install -r requirements.txt
     python3 ./t_sitter/language_build.py
     ```

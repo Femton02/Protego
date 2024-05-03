@@ -5,6 +5,6 @@ Language.build_library(
     "./t_sitter/build/my-languages.so",
     # Include one or more languages
     [
-        "./languages/tree-sitter-javascript",
+        "./t_sitter/languages/tree-sitter-javascript",
     ],
 )
