@@ -26,8 +26,11 @@ def traverse_anas(node: Node, counter: int,  catch: dict, variables: dict, conte
     for i in range(level):
         query += "    "
     for child in node.named_children:
+        if child == node.named_child(0):
+            query += " ."
         concatquery, counter, _, _, _ = traverse_anas(child, counter, catch, variables, content, level+1)
         query += concatquery
+        query += " ."
     query += "\n"
     for i in range(level-1):
         query += "    "
@@ -53,13 +56,14 @@ def parse_rule(rule: str) -> tuple[str, dict, dict]:
     preprocessedrule, catch = rule_preprocessing(rule)
     tree = parse_js_code(preprocessedrule)
     root = get_first_multi_children_node(tree)
+    visualize_tree(tree)
     variables = {}
     content = {}
     query, _, _, variables, content = traverse_anas(root, 1, catch, variables, content)
 
     return query, variables, content
 
-query, var, cont = parse_rule("$<MODULE>.sign($<parameter>)")
+query, var, cont = parse_rule("x = 1;_;x = 3;")
 print(query)
 print(var)
 print(cont)

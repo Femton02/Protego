@@ -2,7 +2,7 @@ from tree_sitter import Parser, Language, Tree, Node
 from typing import Generator
 import graphviz
 
-JS_LANGUAGE = Language("./t_sitter/build/my-languages.so", "javascript")
+JS_LANGUAGE = Language("./src/core/t_sitter/build/my-languages.so", "javascript")
 
 def get_js_parser() -> Parser:
     parser = Parser()
