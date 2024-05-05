@@ -1,0 +1,41 @@
+patterns:
+  - pattern: |
+      $<MODULE>($<SECRET_IN_HASH>)
+    filters:
+      - variable: MODULE
+        detection: another_rule_id_1
+      - variable: SECRET_IN_HASH
+        detection: another_rule_id_2
+languages:
+  - javascript
+helper-patterns:
+  - id: another_rule_id_1
+    patterns:
+      - pattern: |
+          import $<_> from $<LIBRARY_NAME>
+        filters:
+          - variable: LIBRARY_NAME
+            regex: expressjwt
+  - id: another_rule_id_2
+    patterns:
+      - pattern: |
+          { secret: $<STRING_LITERAL> }
+        filters:
+          - variable: STRING_LITERAL
+            detection: string_literal
+metadata:
+  id: test_rule
+  name: Test Rule
+  description: This is a test rule
+  severity: HIGH
+  category: SQL Injection
+  status: ACTIVE
+  message: "Remidiation steps: https://example.com"
+  tags:
+    - test
+    - sql
+    - injection
+  references:
+    - https://example.com
+    - https://example.com
+  
