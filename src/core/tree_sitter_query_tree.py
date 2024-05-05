@@ -75,21 +75,6 @@ class TSQueryTree:
         self.variables = {}
         self.content = {}
 
-    def get_child_index_from_value(self, node: QTNode) -> int:
-        """
-        This function gets the index of the child with the given value.
-        
-        Args:
-            node (QGNode): The node
-            value (str): The value of the child
-            
-        Returns:
-            int: The index of the child
-        """
-        for i, child in enumerate(node.parent.children):
-            if child.text == node.text:
-                return i
-        return -1
     
     
     def build_query_str(self, node: QTNode):
@@ -128,14 +113,35 @@ class TSQueryTree:
         if node.text != None and len(node.text) > 39:
             if node.text[39:] == "ELLIPSIS":
                 return True
-        for child in node.children:
+        for index, child in enumerate(node.children):
             if self.handle_ellipsis(child):
-                index = self.get_child_index_from_value(child)
                 for i in range(3):
                     node.delete_child_index(index - 1) # delete the previous node then i becomes the previous and delete me and so on
+                if(node.value == "(field_definition" or node.value == "(expression_statement"):
+                    return True
             else:
                 continue
         return False
+    
+    def handle_for(self, node: QTNode):
+        if node.text != None and len(node.text) > 39:
+            if node.text[39:] == "FOR":
+                return True
+        for index, child in enumerate(node.children):
+            if self.handle_for(child):
+                if node.value == "(for_statement":
+                    node.children[index].value = "(_"
+                else:
+                    for i in range(3):
+                        node.delete_child_index(index -1)
+                    node.value = "(_"
+            else:
+                continue
+        return False
+    
+    def handle_ellipsis_and_for(self, node: QTNode):
+        self.handle_ellipsis(node)
+        self.handle_for(node)
 
 #____________________________________________________________________________________#
 #                             MAIN FUCNTION IN CLASS
