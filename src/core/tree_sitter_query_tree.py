@@ -167,6 +167,7 @@ class TSQueryTree:
                 if(node.text.decode()[39:] in self.catch and node.text.decode()[39:] != "_" and node.text.decode()[39:] != "ELLIPSIS"):
                     if(self.catch[node.text.decode()[39:]] == node.text.decode()[1:39]):
                         parent.add_child(QTNode("@param" + str(self.counter)))
+                        parent.value = "(_"
                         self.variables[self.counter] = node.text.decode()[39:]
                         self.counter += 1
                     else:
