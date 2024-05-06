@@ -62,13 +62,13 @@ def get_matches(src_code: str, patterns: list[Pattern], helper_patterns: list[He
         for x in matches:
             match = x[1]
             if not compare_content(pattern.content, match):
-                print(f"Content Mismatch for match \n{match}\nand pattern \n{pattern}\n")
+                # print(f"Content Mismatch for match \n{match}\nand pattern \n{pattern}\n")
                 continue
             if not compare_variables(match, pattern, helper_patterns):
-                print(f"Type or variable Mismatch for match \n{match}\nand pattern \n{pattern}\n")
+                # print(f"Type or variable Mismatch for match \n{match}\nand pattern \n{pattern}\n")
                 continue
 
-            print(f"Found match: {match} for pattern {pattern}")
+            # print(f"Found match: {match} for pattern {pattern}")
             result.append(match)
     
     return result
