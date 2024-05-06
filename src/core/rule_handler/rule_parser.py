@@ -33,7 +33,7 @@ def process_rule(rulepath: str):
         pattern_obj.variables = var
         pattern_obj.content = content
         pattern_obj.types = types
-    for helper_pattern_obj in rule.helper_patterns:
+    for helper_pattern_obj in rule.helper_patterns.values():
         for pattern_obj in helper_pattern_obj.patterns:
             query, var, content, types = parse_pattern(pattern_obj.pattern)
             pattern_obj.query = query

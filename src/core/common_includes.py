@@ -17,7 +17,6 @@ from core.rule_handler.rule import *
 from rule_handler.pattern_parser import *
 from core.rule_handler.rule_parser import *
 
-from core.rule_handler.rule import Rule
 # Code snippet to be used in each file that needs to run from
 
 # import os
