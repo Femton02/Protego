@@ -9,8 +9,54 @@ if not protego_workspace_dir:
 sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
 from common_includes import *
 
+#____________________________________________________________________________________#
+#                                   ENTRY POINT
+#____________________________________________________________________________________#   
 
-process_rule(protego_workspace_dir + "/test/rules/rule.yaml")
+def compare_content(content: dict, match: dict[str, Node]):
+    for key, value in content.items():
+        comparestr = "param" + str(key)
+        if comparestr not in match:
+            return False
+        node = match[comparestr]
+        if node.text.decode() != value:
+            return False
+    return True
+
+def check_type(types: dict, variable_name: str, node: Node):
+    if variable_name in types:
+        if types[variable_name] != node.type:
+            return False
+    return True
+
+def compare_variables(variables: dict, types: dict, match: dict[str, Node]):
+    for key, value in variables.items():
+        comparestr = "param" + str(key)
+        if comparestr not in match:
+            return False
+        node = match[comparestr]
+        if not check_type(types, value, node):
+            return False
+        # TODO: get the filters for this variable and process it
+    return True
+
+rule = process_rule(protego_workspace_dir + "/test/rules/rule.yaml")
+
+pattern = rule.patterns[0]
+
+src_code = "{\ncookie: { httpOnly: false }\n}"
+parsedcode = parse_js_code(src_code)
+captures, matches = query_tree(parsedcode, pattern.query)
+
+for x in matches:
+    match = x[1]
+    if not compare_content(pattern.content, match):
+        print("Content Mismatch")
+        continue
+    if not compare_variables(pattern.variables, pattern.types, match):
+        print("Type or variable Mismatch")
+        continue
+    print(match)
 
 
 
