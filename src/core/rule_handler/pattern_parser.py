@@ -21,7 +21,7 @@ def pattern_preprocessing(pattern: str) -> tuple[str, dict, dict]:
     variablepattern = r'(\$<(\w+)>)'        #pattern to catch variables
     ellipsispattern = r'(\$<(\.\.\.)>)'     #pattern to catch ellipsis
     forpattern = r'for\((\$<\.\.\.>)\)'     #pattern to catch for loops
-    typepattern = r'(\$<((\w+):(\w+))>)'      #pattern to catch types
+    typepattern = r'(\$<((\w+):\s*(\w+))>)'      #pattern to catch types
     catches = {}
     types = {}
     uuidobj = uuid.uuid4()
@@ -65,7 +65,7 @@ def parse_pattern(pattern: str) -> tuple[str, dict, dict, dict]:
     tsqt = TSQueryTree(root, catch)
     tsqt.build_query_tree(root, tsqt.root)
     tsqt.handle_ellipsis_and_for(tsqt.root)
-    query = tsqt.build_query_str(tsqt.root) + "@content"
+    query = tsqt.build_query_str(tsqt.root) + "@root"
     variables = tsqt.variables
     content = tsqt.content
     tsqt.visualize_query_tree()
