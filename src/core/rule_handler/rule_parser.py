@@ -1,3 +1,5 @@
+from core.rule_handler.pattern_parser import parse_pattern
+from .rule import Rule, Pattern, HelperPattern
 import yaml
 
 def read_rules_from_yaml(rule_file_path: str) -> dict:
@@ -15,5 +17,11 @@ def read_rules_from_yaml(rule_file_path: str) -> dict:
     except Exception as e:
         print(f"Error: An unexpected error occurred: {e}")
 
-rules = read_rules_from_yaml("../../test/rules/rule.yaml")
-print(rules)
+def process_rule(rulepath: str):
+    rule = Rule(read_rules_from_yaml(rulepath))
+    for pattern in rule.patterns:
+        query, var, content, types = parse_pattern(pattern.pattern)
+        pattern.query = query
+        pattern.variables = var
+        pattern.content = content
+        pattern.types = types
