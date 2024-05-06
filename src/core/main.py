@@ -1,6 +1,16 @@
 from rule_handler.rule_parser import process_rule
 
-process_rule("test/rules/rule.yaml")
+import os
+import sys
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
+from common_includes import *
+
+
+process_rule(protego_workspace_dir + "/test/rules/rule.yaml")
 
 
 

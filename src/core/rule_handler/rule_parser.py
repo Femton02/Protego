@@ -1,5 +1,13 @@
-from core.rule_handler.pattern_parser import parse_pattern
-from .rule import Rule, Pattern, HelperPattern
+import os
+import sys
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
+from common_includes import *
+
+
 import yaml
 
 def read_rules_from_yaml(rule_file_path: str) -> dict:
@@ -25,3 +33,13 @@ def process_rule(rulepath: str):
         pattern.variables = var
         pattern.content = content
         pattern.types = types
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python rule_parser.py <rule_file>")
+        sys.exit(1)
+
+    rulepath = sys.argv[1]
+    process_rule(rulepath)
+    print("Rule processed successfully.")

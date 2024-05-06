@@ -1,5 +1,14 @@
+import os
+import sys
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
+from common_includes import *
+
 from t_sitter.tree_sitter_utils import parse_js_code, traverse_tree, visualize_tree, query_tree, Node
-from .tree_sitter_query_tree import QTNode, TSQueryTree
+from rule_handler.tree_sitter_query_tree import QTNode, TSQueryTree
 import uuid
 import re
 
@@ -63,8 +72,9 @@ def parse_pattern(pattern: str) -> tuple[str, dict, dict, dict]:
     return query, variables, content, types
 
 
-# query, var, cont, types = parse_pattern("app.use($<...>,serveIndex(),$<...>)")
-# print(query)
-# print(var)
-# print(cont)
-# print(types)
+if __name__ == "__main__":
+    query, var, cont, types = parse_pattern("app.use($<...>,serveIndex(),$<...>)")
+    print(query)
+    print(var)
+    print(cont)
+    print(types)

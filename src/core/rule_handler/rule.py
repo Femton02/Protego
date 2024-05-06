@@ -1,9 +1,11 @@
 import os
 import sys
 
-workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
-print(workspace_dir)
-sys.path.append(os.path.join(workspace_dir, "src/core"))
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
 from common_includes import *
 
 from rule_parser import read_rules_from_yaml
@@ -49,7 +51,7 @@ class Rule:
 
 
 if __name__ == "__main__":
-    rule = Rule(read_rules_from_yaml("test/rules/rule.yaml"))
+    rule = Rule(read_rules_from_yaml(protego_workspace_dir + "/test/rules/rule.yaml"))
     # Accessing rule attributes
     print(rule)
     print("Patterns:", rule.patterns)
