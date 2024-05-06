@@ -49,10 +49,17 @@ class Rule:
     def __str__(self):
         return f"Rule: {self.metadata.get('name')}"
 
+#____________________________________________________________________________________#
+#                                   ENTRY POINT
+#____________________________________________________________________________________#   
+
 
 if __name__ == "__main__":
-    rule = Rule(read_rules_from_yaml(protego_workspace_dir + "/test/rules/rule.yaml"))
+    #rule = Rule(read_rules_from_yaml(protego_workspace_dir + "/test/rules/rule.yaml"))
+    rule = process_rule(protego_workspace_dir + "/test/rules/rule.yaml")
+
     # Accessing rule attributes
+
     print(rule)
     print("Patterns:", rule.patterns)
     print("Languages:", rule.languages)

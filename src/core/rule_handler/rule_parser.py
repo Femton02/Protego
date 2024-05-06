@@ -25,14 +25,23 @@ def read_rules_from_yaml(rule_file_path: str) -> dict:
     except Exception as e:
         print(f"Error: An unexpected error occurred: {e}")
 
-def process_rule(rulepath: str):
+def process_rule(rulepath: str): 
     rule = Rule(read_rules_from_yaml(rulepath))
-    for pattern in rule.patterns:
-        query, var, content, types = parse_pattern(pattern.pattern)
-        pattern.query = query
-        pattern.variables = var
-        pattern.content = content
-        pattern.types = types
+    for pattern_obj in rule.patterns:
+        query, var, content, types = parse_pattern(pattern_obj.pattern)
+        pattern_obj.query = query
+        pattern_obj.variables = var
+        pattern_obj.content = content
+        pattern_obj.types = types
+    for helper_pattern_obj in rule.helper_patterns:
+        for pattern_obj in helper_pattern_obj.patterns:
+            query, var, content, types = parse_pattern(pattern_obj.pattern)
+            pattern_obj.query = query
+            pattern_obj.variables = var
+            pattern_obj.content = content
+            pattern_obj.types = types
+
+    return rule    
 
 
 if __name__ == "__main__":
