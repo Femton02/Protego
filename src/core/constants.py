@@ -1,0 +1,1 @@
+js_supported_extensions = [".js"]

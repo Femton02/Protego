@@ -1,17 +1,17 @@
-import argparse
+import os
+import sys
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
+from common_includes import *
 
-def scan_project(project_path, target_file=None, rule_path=None, verbose=False):
-    """
-    Function to simulate scanning a project with Protego.
-    Replace this function with actual Protego scanning logic.
-    """
-    print(f"Scanning project at path: {project_path}")
-    if target_file:
-        print(f"Target file: {target_file}")
-    if rule_path:
-        print(f"Rule path: {rule_path}")
-    if verbose:
-        print("Verbose mode enabled. Printing detailed scan information.")
+#____________________________________________________________________________________#
+
+
+import argparse
+from core.main import scan_project
 
 def create_rule(rule_name, rule_description, verbose=False):
     """
@@ -26,7 +26,7 @@ def create_rule(rule_name, rule_description, verbose=False):
 
 class ProtegoCLI:
     def __init__(self):
-        self.parser = argparse.ArgumentParser(description="CLI for Protego SAST tool")
+        self.parser: argparse.ArgumentParser = argparse.ArgumentParser(description="CLI for Protego SAST tool")
         self._define_commands()
 
 
@@ -46,17 +46,17 @@ class ProtegoCLI:
         self._define_create_rule_command()
 
     def _define_scan_command(self):
-        scan_parser = self.subparsers.add_parser("scan", help="Scan a project")
+        scan_parser = self.subparsers.add_parser("scan", help="Scan a project", aliases=["s"])
 
-        scan_parser.add_argument("-t", "--target-path", help="Path to the target file/directory")
+        scan_parser.add_argument("project_path", help="Path to the project to scan")
         scan_parser.add_argument("-r", "--rule-path", help="Path to custom rules")
         scan_parser.add_argument("-v", "--verbose", action="store_true", help="Enable verbose output")
     
-    def _run_scan_command(self, args):
-        scan_project(args.project_path, args.target_file, args.rule_path, args.verbose)
+    def _run_scan_command(self, args: argparse.Namespace):
+        scan_project(args.project_path, args.rule_path)
     
     def _define_create_rule_command(self):
-        create_rule_parser = self.subparsers.add_parser("create-rule", help="Create a new rule")
+        create_rule_parser = self.subparsers.add_parser("create-rule", help="Create a new custom rule", aliases=["cr"])
 
         create_rule_parser.add_argument("rule_name", help="Name of the new rule")
         create_rule_parser.add_argument("rule_directory", help="Location of the new rule")

@@ -16,6 +16,7 @@ from core.t_sitter.tree_sitter_utils import *
 from core.rule_handler.rule import *
 from rule_handler.pattern_parser import *
 from core.rule_handler.rule_parser import *
+from core.constants import *
 
 # Code snippet to be used in each file that needs to run from
 

@@ -57,6 +57,7 @@ def get_matches(src_code: str, patterns: list[Pattern], helper_patterns: list[He
     parsed_src_code_tree = parse_js_code(src_code)
     result = []
     for pattern in patterns:
+        print(f"Querying pattern: {pattern.id}")
         _, matches = query_tree(parsed_src_code_tree, pattern.query)
 
         for x in matches:

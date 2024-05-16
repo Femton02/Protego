@@ -11,11 +11,11 @@ from common_includes import *
 
 from core.matcher_engine import get_matches
 
-def generate_report(rule: Rule, match_results: list[dict], filePath: str):
+def generate_report(rule: Rule, match_results: list[dict], target_file_path: str):
 #     {'root': <Node type=object, start_point=(0, 0), end_point=(2, 1)>, 'param1': <Node type=property_identifier, start_point=(1, 0), end_point=(1, 6)>, 'param2': <Node type=object, start_point=(1, 8), end_point=(1, 27)>} for pattern Pattern: javascript_express_cookie_missing_http_only0, {
 #   cookie: $<INSECURE_COOKIE>
 # }
-    print(f"\nFile: {filePath}")
+    print(f"\nFile: {target_file_path}")
     if len(match_results) == 0:
         print("No vulnerabilities found.")
     else:
