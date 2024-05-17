@@ -1,5 +1,14 @@
-from t_sitter.tree_sitter_utils import parse_js_code, traverse_tree, visualize_tree, query_tree, Node, Tree
+import os
+import sys
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
+from common_includes import *
 
+
+from t_sitter.tree_sitter_utils import parse_js_code, traverse_tree, visualize_tree, query_tree, Node, Tree
 import graphviz
 import random
 
@@ -113,15 +122,23 @@ class TSQueryTree:
         if node.text != None and len(node.text) > 39:
             if node.text[39:] == "ELLIPSIS":
                 return True
+        to_be_deleted = set()
+        am_i_ellipsis = False
         for index, child in enumerate(node.children):
             if self.handle_ellipsis(child):
-                for i in range(3):
-                    node.delete_child_index(index - 1) # delete the previous node then i becomes the previous and delete me and so on
+                to_be_deleted.add(index - 1)
+                to_be_deleted.add(index)
+                to_be_deleted.add(index + 1)
                 if(node.value == "(field_definition" or node.value == "(expression_statement"):
-                    return True
+                    am_i_ellipsis = True
             else:
                 continue
-        return False
+        to_be_deleted = sorted(to_be_deleted, reverse=True)
+        for i in to_be_deleted:
+            node.delete_child_index(i)
+        if node.value == "(pair" and len(node.children) == 1:
+            am_i_ellipsis = True
+        return am_i_ellipsis
     
     def handle_for(self, node: QTNode):
         if node.text != None and len(node.text) > 39:
@@ -178,3 +195,7 @@ class TSQueryTree:
                 parent.add_child(QTNode("@param" + str(self.counter)))
                 self.content[self.counter] = node.text.decode()
                 self.counter += 1
+
+
+if __name__ == "__main__":
+    pass

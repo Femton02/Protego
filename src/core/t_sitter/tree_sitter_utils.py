@@ -1,8 +1,17 @@
+import os
+import sys
+protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
+if not protego_workspace_dir:
+    print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
+    sys.exit(1)
+sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
+from common_includes import *
+
 from tree_sitter import Parser, Language, Tree, Node
 from typing import Generator
 import graphviz
 
-JS_LANGUAGE = Language("./src/core/t_sitter/build/my-languages.so", "javascript")
+JS_LANGUAGE = Language(protego_workspace_dir + "/src/core/t_sitter/build/my-languages.so", "javascript")
 
 def get_js_parser() -> Parser:
     parser = Parser()
@@ -205,9 +214,10 @@ def test_visualize_tree():
     tree = parse_js_code("a = 1; z = 2; console.log(a);")
     visualize_tree(tree, "tree")
 
-# test_edit_tree()
-# test_query_tree()
 
-# test_visualize_tree()
-
+if __name__ == "__main__":
+    # test_edit_tree()
+    # test_query_tree()
+    # test_visualize_tree()
+    pass
 

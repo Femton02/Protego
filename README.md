@@ -14,37 +14,55 @@ Protego is a static analysis tool designed to identify security vulnerabilities 
 
 To install Protego, follow these steps:
 
-1. Clone the repository to your local machine:
+1. Clone the repository to your local machine and the submodules:
 
     ```
-    git clone https://github.com/femton02/protego.git
+    git clone https://github.com/Femton02/Protego.git
+    git submodule update --init --recursive
     ```
 
-2. Navigate to the Protego directory:
+1. Navigate to the Protego directory:
 
     ```
     cd protego
     ```
 
-3. Install dependencies:
+1. Add the working directory of the project to an environment variable called `PROTEGO_WORKSPACE_DIR`
 
+    If you are using bash, you can add the following line to your `.bashrc` or `.bash_profile` file:
+    ```bash
+    export PROTEGO_WORKSPACE_DIR=/path/to/your/workspace
     ```
-    npm install
+    If you are using powershell, you can add the following line to your `profile.ps1` file:
+    ```powershell
+    $Env:PROTEGO_WORKSPACE_DIR = "/path/to/your/workspace"
     ```
+    Make sure to replace `/path/to/your/workspace` with the path to the directory where you have the project.
+
+
+1. Install tree-sitter needed language parsers
+
+    ```bash
+    pip install -r src/requirements.txt
+    ```
+
+1. Build the tree-sitter parsers
+
+    ```bash
+    python3 src/core/t_sitter/language_build.py
+    ```
+
+    After running the above commands, you should have the tree-sitter parsers for the languages you need in the `src/core/t_sitter/languages` directory and the `src/core/t_sitter/build/languages.so` file.
+
 
 ## Usage
 
 To analyze your JavaScript code with Protego, run the following command:
 
-  
-    node src/main.js
+```
+python3 src/cli/cli_interface.py -h
+```
 
-By default, Protego analyzes all JavaScript files in the `test` directory. You can customize the file paths by editing the `filePaths` array in `main.js`.
+This will display the help message, which contains information about the available options and how to use them.
 
-## Contributing
 
-Contributions to Protego are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request on our GitHub repository.
-
-## License
-
-Protego is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
