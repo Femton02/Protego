@@ -41,7 +41,10 @@ def scan_project(
     else:
         print("No custom rules provided. Using default rules.")
         # TODO: Implement default rules
-        raise Exception("Default rules not implemented yet. Must provide custom rules.")
+        for root, dirs, files in os.walk(default_rules_path):
+            for file in files:
+                if file.endswith(".yaml"):
+                    processed_rules.append(process_rule(os.path.join(root, file)))
     
     for target_file in targeted_files:
         for rule in processed_rules:
