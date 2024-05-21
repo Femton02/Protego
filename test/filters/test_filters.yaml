@@ -1,0 +1,29 @@
+patterns:
+  - pattern: |
+      $<FUNCTION>()
+    filters:
+      - variable: FUNCTION
+        detection: helper_pattern_1
+helper_patterns:
+  - id: helper_pattern_1
+    patterns:
+      - pattern: |
+          $<LIBRARY>.$<FUNCTION_NAME>
+        filters:
+          - variable: LIBRARY
+            values:
+              - anas
+              - khaled
+              - seif
+          - variable: FUNCTION_NAME
+            regex: \Amarwan\Z
+languages:
+  - javascript
+metadata:
+  description: Testing filters
+  message: |-
+    Testing filters
+  cwe_id:
+    - 1004
+  id: filters_test
+  severity: medium
