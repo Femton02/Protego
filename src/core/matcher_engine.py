@@ -39,18 +39,43 @@ def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns:
 
         variable_name = value
         filters = pattern.filters[variable_name]
-        for filter in filters:
-            if filter.type == FilterType.HELPER_PATTERN:
+        if not check_filters(node, filters, helper_patterns):
+            return False
+
+    return True
+
+
+def check_filters(node: Node, filters: list[Filter], helper_patterns: list[HelperPattern]) -> bool:
+    """Handles the checking of filters in a given rule
+
+    Args:
+        node (Node): The matched node to check filters against
+        filters (list[Filter]): The filters to check against the node
+        helper_patterns (list[HelperPattern]): Helper patterns/rules that may be used in the filters
+
+    Returns:
+        bool: True if all filters pass, False otherwise
+    """
+
+    for filter in filters:
+        match filter.type:
+            case FilterType.HELPER_PATTERN:
                 helper_pattern_id = filter.method
                 helper_pattern = helper_patterns[helper_pattern_id]
                 helper_pattern_results = get_matches(node.text.decode(), helper_pattern.patterns, helper_patterns)
                 if not helper_pattern_results:
                     return False
-            
-            # TODO: Handle other filter types
         
+            case FilterType.REGEX:
+                if not re.match(filter.method, node.text.decode()):
+                    return False
+                
+            case FilterType.VALUES:
+                possible_values = filter.method
+                if node.text.decode() not in possible_values:
+                    return False
 
-
+        # TODO: Handle other filter types
     return True
 
 def get_matches(src_code: str, patterns: list[Pattern], helper_patterns: list[HelperPattern]):
