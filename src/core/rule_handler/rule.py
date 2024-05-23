@@ -36,6 +36,7 @@ class Pattern:
         self.variables = {}
         self.content = {}
         self.types = {}
+        self.focus = {}
 
     def __str__(self):
         return f"Pattern: {self.id}, {self.pattern}"
@@ -100,8 +101,8 @@ class Rule:
 
 
 if __name__ == "__main__":
-    #rule = Rule(read_rules_from_yaml(protego_workspace_dir + "/test/rules/rule.yaml"))
-    rule = process_rule(protego_workspace_dir + "/test/rules/rule.yaml")
+    #rule = Rule(read_rules_from_yaml(protego_workspace_dir + "/rules/rule.yaml"))
+    rule = process_rule(protego_workspace_dir + "/rules/rule.yaml")
 
     # Accessing rule attributes
 

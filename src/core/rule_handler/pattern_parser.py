@@ -17,19 +17,28 @@ import re
 #____________________________________________________________________________________#   
 
 
-def pattern_preprocessing(pattern: str) -> tuple[str, dict, dict]:
+def pattern_preprocessing(pattern: str) -> tuple[str, dict, dict, dict]:
     variablepattern = r'(\$<(\w+)>)'        #pattern to catch variables
     ellipsispattern = r'(\$<(\.\.\.)>)'     #pattern to catch ellipsis
     forpattern = r'for\((\$<\.\.\.>)\)'     #pattern to catch for loops
     typepattern = r'(\$<((\w+):\s*(\w+))>)'      #pattern to catch types
+    focuspattern = r'(\$<!>((\$<)?(\w*)>?))' #pattern to catch focus
     catches = {}
     types = {}
+    trace = []
     uuidobj = uuid.uuid4()
     uuidstr = str(uuidobj.int)[0:38] #to ensure fixed length
 
+    for match in re.finditer(focuspattern, pattern):
+        if(match.group(2) == match.group(4)):
+            trace.append([match.group(4), uuidstr, "LITERAL"])
+        else:
+            trace.append([match.group(4), uuidstr, "VARIABLE"])
+    outputstr = re.sub(focuspattern, "_"+ uuidstr +"FOCUS", pattern) #replace focus with a regular variable
+
     for match in re.finditer(typepattern, pattern):
         types[match.group(3)] = match.group(4)
-    outputstr = re.sub(typepattern, "$<" +r'\3' + ">", pattern)
+    outputstr = re.sub(typepattern, "$<" +r'\3' + ">", outputstr)
 
     for match in re.finditer(variablepattern, outputstr):
         catches[match.group(2)] = uuidstr
@@ -43,7 +52,7 @@ def pattern_preprocessing(pattern: str) -> tuple[str, dict, dict]:
     outputstr = re.sub(ellipsispattern, "_"+ uuidstr + "ELLIPSIS", outputstr) #replace ellipsis with a unique string
 
 
-    return outputstr, catches, types
+    return outputstr, catches, types, trace
 
 def get_first_multi_children_node(tree):
     last_node = None
@@ -59,13 +68,13 @@ def get_first_multi_children_node(tree):
 #____________________________________________________________________________________#   
 
 def parse_pattern(pattern: str) -> tuple[str, dict, dict, dict]:
-    preprocessedpattern, catch, types = pattern_preprocessing(pattern)
+    preprocessedpattern, catch, types, trace = pattern_preprocessing(pattern)
     tree = parse_js_code(preprocessedpattern)
     root = get_first_multi_children_node(tree)
-    tsqt = TSQueryTree(root, catch)
+    tsqt = TSQueryTree(root, catch, trace)
     tsqt.build_query_tree(root, tsqt.root)
     tsqt.handle_ellipsis_and_for(tsqt.root)
-    query = tsqt.build_query_str(tsqt.root) + "@root"
+    query = tsqt.build_query_str(tsqt.root)[1:] + "@root"
     variables = tsqt.variables
     content = tsqt.content
     tsqt.visualize_query_tree()
@@ -73,8 +82,11 @@ def parse_pattern(pattern: str) -> tuple[str, dict, dict, dict]:
 
 
 if __name__ == "__main__":
-    query, var, cont, types = parse_pattern("app.use($<...>,serveIndex(),$<...>)")
+    query, var, cont, types = parse_pattern("var x = 2;")
     print(query)
     print(var)
     print(cont)
     print(types)
+
+# ((identifier) @match1
+# (#eq? @match1 "x"))
