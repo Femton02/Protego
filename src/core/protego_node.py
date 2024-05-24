@@ -21,13 +21,17 @@ class ProtegoNode:
         self.end_point = node.end_point
         self.id = node.id
         self.points_to = None
+        self.tree_sitter_node = node
 
     def __str__(self):
-        return f"Node: {self.node}"
+        return f"Node: {self.id}, text: {self.text}"
     
 class ProtegoTree:
     def __init__(self, tree: Tree):
+        # TODO: Delete this
         self.original_tree = tree
+        self.tree_sitter_tree = tree
+        self.tree_sitter_nodes_map: dict[int, ProtegoNode] = dict()
         self.root = self._wrap_node(tree.root_node)
 
     def _wrap_node(self, node: Node, parent: ProtegoNode = None) -> ProtegoNode:
@@ -35,8 +39,18 @@ class ProtegoTree:
         protego_node.parent = parent
         protego_node.children = [self._wrap_node(child, protego_node) for child in node.children]
         protego_node.named_children = [self._wrap_node(child, protego_node) for child in node.named_children]
+        self.tree_sitter_nodes_map[protego_node.id] = protego_node
         return protego_node
+    
+    def get_node_by_id(self, node_id: int) -> ProtegoNode:
+        return self.tree_sitter_nodes_map.get(node_id)
 
     def __str__(self):
-        return f"ProtegoTree with root: {self.root}"
-    
+        return f"ProtegoTree with root: {self.root} and {len(self.tree_sitter_nodes_map)} nodes."
+
+
+
+if __name__ == "__main__":
+    tree = parse_js_code("const x = {a: 1, b: 2};")
+    protego_tree = ProtegoTree(tree)
+    print(protego_tree)
