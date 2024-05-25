@@ -12,16 +12,16 @@ from common_includes import *
 
 class ProtegoNode:
     def __init__(self, node: Node):
-        self.children = []
-        self.named_children = []
-        self.parent = None
-        self.type = node.type
-        self.text = node.text
+        self.children: list[ProtegoNode] = []
+        self.named_children: list[ProtegoNode] = []
+        self.parent: ProtegoNode = None
+        self.type: str = node.type
+        self.text: str = node.text
         self.start_point = node.start_point
         self.end_point = node.end_point
         self.id = node.id
         self.points_to = None
-        self.tree_sitter_node = node
+        self.tree_sitter_node: Node = node
 
     def __str__(self):
         return f"Node: {self.id}, text: {self.text}"
