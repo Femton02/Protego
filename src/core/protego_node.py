@@ -16,7 +16,7 @@ class ProtegoNode:
         self.named_children: list[ProtegoNode] = []
         self.parent: ProtegoNode = None
         self.type: str = node.type
-        self.text: str = node.text
+        self.text: str = node.text.decode()
         self.start_point = node.start_point
         self.end_point = node.end_point
         self.id = node.id
