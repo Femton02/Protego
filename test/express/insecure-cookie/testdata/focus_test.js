@@ -1,11 +1,11 @@
 var httpOnly;
 {
-	httpOnly: false
+	httpOnly = false
 }
 
 let x = false;
 
-x = true;
+let y = x;
 {
-	cookie: { httpOnly: x }
+	cookie: {httpOnly: y }
 }
