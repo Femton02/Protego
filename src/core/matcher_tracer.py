@@ -50,8 +50,12 @@ if __name__ == "__main__":
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table
     proTree = ProtegoTree(parsed_src_code)
+
+    node_map = proTree.node_mapping
     # create the symbol table
     symbol_table = SymbolTableBuilder()
+    aliases = symbol_table.root_symbol_table.aliases
     symbol_table.build(proTree)
     pre_caught_nodes = get_pre_run_matches(rule.helper_patterns, parsed_src_code)
+    print("done")
     
