@@ -23,6 +23,12 @@ def compare_content(content: dict, match: dict[str, Node]):
             return False
     return True
 
+def check_type(types: dict, variable_name: str, node: Node):
+    if variable_name in types:
+        if types[variable_name] != node.type:
+            return False
+    return True
+
 def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns: list[HelperPattern]):
     variables = pattern.variables
     types = pattern.types
@@ -40,28 +46,28 @@ def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns:
             if filter.type == FilterType.HELPER_PATTERN:
                 helper_pattern_id = filter.method
                 helper_pattern = helper_patterns[helper_pattern_id]
-                helper_pattern_results = get_pre_run_matches(helper_pattern, node.text.decode(), helper_patterns)
+                helper_pattern_results = get_pre_run_matches(node, helper_pattern.patterns, helper_patterns)
                 if not helper_pattern_results:
-                    return False                
+                    return False
+            # TODO: Handle other filter types
     return True
 
-def check_type(types: dict, variable_name: str, node: Node):
-    if variable_name in types:
-        if types[variable_name] != node.type:
-            return False
-    return True
-
-def get_pre_run_matches(helper_patterns, parsed_src_code, symbol_table, proTree):
-    caught_nodes = {}
-    for rule_id in helper_patterns:
-        rule = helper_patterns[rule_id]
-        for pattern in rule.patterns:
-            _, matches = query_tree(parsed_src_code, pattern.query)
-            for submatch in matches:
-                match = submatch[1]
-                if compare_content(pattern.content, match) and compare_variables(match, pattern, helper_patterns):
-                        caught_nodes[match] = rule_id
-    return caught_nodes
+def get_pre_run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[HelperPattern]):
+    result = []
+    for pattern in patterns:
+        print(f"Querying pattern: {pattern.id}")
+        _, matches = query_tree(parsed_src_code, pattern.query)
+        for x in matches:
+            match = x[1]
+            if not compare_content(pattern.content, match):
+                # print(f"Content Mismatch for match \n{match}\nand pattern \n{pattern}\n")
+                continue
+            if not compare_variables(match, pattern, helper_patterns):
+                # print(f"Type or variable Mismatch for match \n{match}\nand pattern \n{pattern}\n")
+                continue
+            # print(f"Found match: {match} for pattern {pattern}")
+            result.append(match)
+    return result
 
 
 if __name__ == "__main__":
@@ -77,8 +83,8 @@ if __name__ == "__main__":
     symbol_table = SymbolTableBuilder()
     aliases = symbol_table.root_symbol_table.aliases
     symbol_table.build(proTree)
-    pre_caught_nodes = get_pre_run_matches(rule.helper_patterns, parsed_src_code, symbol_table.root_symbol_table, proTree)
-
+    pre_caught_nodes = get_pre_run_matches(parsed_src_code.root_node, rule.patterns, rule.helper_patterns)
+    print("done")
     # print("__________________________")
     # for node_id in pre_caught_nodes:
     #     print(node_map[node_id])
