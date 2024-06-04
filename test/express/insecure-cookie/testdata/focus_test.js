@@ -1,11 +1,42 @@
-var httpOnly;
-{
-	httpOnly = false
-}
+import { cookieSession } from "cookie-session"
+
+const session = require("express-session")
+var express = require("express")
+var helmet = require("helmet")
+
+var app = express()
+app.use(helmet())
+app.use(helmet.hidePoweredBy())
 
 let x = false;
-
-let y = x;
+let z = false;
 {
-	cookie: {httpOnly: y }
+  let y = false;
 }
+
+y = x || z;
+
+y = true;
+
+app.use(
+  // bearer:expected javascript_express_cookie_missing_http_only
+  session({
+    cookie: {
+      httpOnly: y,
+    },
+  })
+)
+
+app.use(
+  // bearer:expected javascript_express_cookie_missing_http_only
+  cookieSession({
+    httpOnly: false,
+  })
+)
+
+app.use(
+  // bearer:expected javascript_express_cookie_missing_http_only
+  cookieSession({
+    httpOnly: true,
+  })
+)

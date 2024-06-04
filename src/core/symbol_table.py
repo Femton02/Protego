@@ -26,10 +26,16 @@ class SymbolTable:
         self.table[var_name] = node
 
     def add_alias(self, var_name: str, alias: str):
+        if var_name == alias:
+            return
         if var_name not in self.aliases:
             self.aliases[var_name] = []
         if alias not in self.aliases[var_name]:
             self.aliases[var_name].append(alias)
+
+    def remove_aliases(self, var_name: str):
+        if var_name in self.aliases:
+            del self.aliases[var_name]
 
     def __str__(self):
         return f"SymbolTable: {self.table}, Children: {len(self.children)}, Aliases: {self.aliases}"
@@ -56,19 +62,21 @@ class SymbolTableBuilder:
             self._traverse(child, new_scope)
 
     def _handle_node_logic(self, node: ProtegoNode, current_symbol_table: SymbolTable):
-        if node.type in {"lexical_declaration", "variable_declaration"}:
+        if node.type == "lexical_declaration":
+            var = self.find_first_identifier(node)
+            var_name = var.text.decode()
+            current_symbol_table.add_variable(var_name, node)
+            self._add_aliases(node, current_symbol_table, var_name)
+        elif node.type == "variable_declaration":
             var = self.find_first_identifier(node)
             var_name = var.text.decode()
             current_symbol_table.add_variable(var_name, node)
             self.add_global_variable(current_symbol_table, var_name, node)
             self._add_aliases(node, current_symbol_table, var_name)
-
         elif node.type in {"assignment_expression", "augmented_assignment_expression"}:
             var = node.named_children[0]
             var_name = var.text.decode()
-            self._add_aliases(node, current_symbol_table, var_name)
             self._update_variable_reference(current_symbol_table, var, node, var_name)
-
         elif node.type == "pair":
             var = node.named_children[0]
             var_name = var.text.decode()
@@ -83,19 +91,30 @@ class SymbolTableBuilder:
             global_table.add_variable(var_name, node)
 
     def _update_variable_reference(self, current_symbol_table: SymbolTable, var: ProtegoNode, node: ProtegoNode, var_name: str):
-        existing_node = self._find_variable_in_scope_chain(current_symbol_table, var_name)
-        if existing_node:
+        current_table = self._find_variable_in_scope_chain(current_symbol_table, var_name)
+        if current_table:
+            # Remove existing aliases for the variable
+            self._remove_aliases_in_scope_chain(current_table, var_name)
+            # Add new aliases for the variable
+            self._add_aliases(node, current_table, var_name)
+            existing_node = current_table.table[var_name]
             node.points_to = existing_node
+            current_table.table[var_name] = node
         else:
             current_symbol_table.add_variable(var_name, node)
-            return
         self._update_aliases_in_scope_chain(current_symbol_table, var_name, var_name)
+
+    def _remove_aliases_in_scope_chain(self, symbol_table: SymbolTable, var_name: str):
+        current = symbol_table
+        while current:
+            current.remove_aliases(var_name)
+            current = current.parent
 
     def _find_variable_in_scope_chain(self, symbol_table: SymbolTable, var_name: str):
         current = symbol_table
         while current:
             if var_name in current.table:
-                return current.table[var_name]
+                return current
             current = current.parent
         return None
 
