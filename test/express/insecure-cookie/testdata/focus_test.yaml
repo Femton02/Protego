@@ -24,6 +24,8 @@ helper_patterns:
       - pattern: |
           false
       - pattern: |
+          $<!>$<_> = false
+      - pattern: |
           let $<!>$<_> = false
       - pattern: |
           var $<!>$<_> = false

@@ -154,7 +154,7 @@ def test_edit_tree():
     for node in node_gen_object:
         print(node)
 
-def query_tree(tree: Tree, query_str: str) -> tuple[list[tuple[Node, str]], list[tuple[int, dict]]]:
+def query_tree(root: Node, query_str: str) -> tuple[list[tuple[Node, str]], list[tuple[int, dict]]]:
     """Query the tree using the given query string.
 
     Read more about tree-sitter queries here: https://tree-sitter.github.io/tree-sitter/using-parsers#pattern-matching-with-queries
@@ -177,14 +177,14 @@ def query_tree(tree: Tree, query_str: str) -> tuple[list[tuple[Node, str]], list
         print("Error in query")
         raise e
 
-    captures = query.captures(tree.root_node)
+    captures = query.captures(root)
 
     # print("Captures:")
     # for capture in captures:
     #     print(capture[0]) # Node
     #     print(capture[1]) # Capture name
 
-    matches = query.matches(tree.root_node)
+    matches = query.matches(root)
     # print("Matches:")
     # for match in matches:
     #     print(match) # Match object (0, {'assig-expr': <Node type=assignment_expression, start_point=(0, 0), end_point=(0, 5)>, 'num-value': <Node type=number, start_point=(0, 4), end_point=(0, 5)>})
