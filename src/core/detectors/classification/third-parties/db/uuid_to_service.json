@@ -1,0 +1,4509 @@
+{
+    "cdbf50c4-4c6e-495d-a15c-9de211528045": {
+        "name": "ABBYY Cloud OCR SDK",
+        "type": "external_service",
+        "urls": [
+            "https://ocrsdk.com",
+            "https://cloud-westus.ocrsdk.com",
+            "https://cloud-eu.ocrsdk.com",
+            "https://cloud.ocrsdk.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cdbf50c4-4c6e-495d-a15c-9de211528045"
+    },
+    "e5cb557f-b534-42ed-8bef-864aea214665": {
+        "name": "ABTasty",
+        "type": "external_service",
+        "urls": [
+            "https://try.abtasty.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e5cb557f-b534-42ed-8bef-864aea214665"
+    },
+    "486d164d-51d1-4997-9d8a-235f918c66b6": {
+        "name": "ActiveCampaign",
+        "type": "external_service",
+        "urls": [
+            "https://api-us1.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "486d164d-51d1-4997-9d8a-235f918c66b6"
+    },
+    "89e33847-48f3-4278-8e8f-fdef2872fa18": {
+        "name": "Active Directory",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "activedirectory",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "89e33847-48f3-4278-8e8f-fdef2872fa18"
+    },
+    "d3522226-d726-4bca-a641-ea76c8a7e15b": {
+        "name": "Adictiz",
+        "type": "external_service",
+        "urls": [
+            "https://api.adictiz.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "d3522226-d726-4bca-a641-ea76c8a7e15b"
+    },
+    "e7140016-3ac0-41ee-98bd-324d781abebd": {
+        "name": "Adjust",
+        "type": "external_service",
+        "urls": [
+            "https://api.adjust.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e7140016-3ac0-41ee-98bd-324d781abebd"
+    },
+    "68ce63ad-eab6-45dd-8182-a5cbd44ab567": {
+        "name": "Adobe Scene7",
+        "type": "external_service",
+        "urls": [
+            "https://*.scene7.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "68ce63ad-eab6-45dd-8182-a5cbd44ab567"
+    },
+    "0cb32806-23e6-4112-aa74-ab2f36897c77": {
+        "name": "Adotmob",
+        "type": "external_service",
+        "urls": [
+            "https://dmp.adotmob.com",
+            "https://tracker.adotmob.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0cb32806-23e6-4112-aa74-ab2f36897c77"
+    },
+    "f137f0cb-e499-4747-bb38-36198b9f81d1": {
+        "name": "AdRoll",
+        "type": "external_service",
+        "urls": [
+            "https://*.adroll.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f137f0cb-e499-4747-bb38-36198b9f81d1"
+    },
+    "1f10bf7f-c141-431d-a81f-06a81833b649": {
+        "name": "Adyen",
+        "type": "external_service",
+        "urls": [
+            "https://live-us.adyen.com",
+            "https://live-au.adyen.com",
+            "https://live.adyen.com",
+            "https://test.adyen.com",
+            "https://live.adyenpayments.com",
+            "https://pal-test.adyen.com",
+            "https://checkout-test.adyen.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1f10bf7f-c141-431d-a81f-06a81833b649"
+    },
+    "c6e62f04-3d25-4c0a-b5a7-ccc9c90d0b2c": {
+        "name": "Airbrake",
+        "type": "external_service",
+        "urls": [
+            "https://airbrake.io/api",
+            "https://api.airbrake.io"
+        ],
+        "packages": [
+            {
+                "name": "airbrake-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "c6e62f04-3d25-4c0a-b5a7-ccc9c90d0b2c"
+    },
+    "29109404-d561-4bf7-9497-c55a1dd8fb5a": {
+        "name": "Airtable",
+        "type": "external_service",
+        "urls": [
+            "https://api.airtable.com"
+        ],
+        "packages": [
+            {
+                "name": "airtable",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "29109404-d561-4bf7-9497-c55a1dd8fb5a"
+    },
+    "e5241d65-dedc-4093-a721-f9edc7d4732d": {
+        "name": "alexa.com",
+        "type": "external_service",
+        "urls": [
+            "https://data.alexa.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e5241d65-dedc-4093-a721-f9edc7d4732d"
+    },
+    "89b889c1-623e-4ca5-849f-5dbc12cc8de1": {
+        "name": "Algolia",
+        "type": "external_service",
+        "urls": [
+            "https://*.algolia.com",
+            "https://cdn.jsdelivr.net/npm/algoliasearch",
+            "https://algolianet.com",
+            "https://cdn.jsdelivr.net/npm/places.js",
+            "https://cdn.jsdelivr.net/npm/instantsearch.js",
+            "https://*.algolianet.com"
+        ],
+        "packages": [
+            {
+                "name": "algoliasearch",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "react-instantsearch-core",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@algolia/transporter",
+                "group": "",
+                "package_manager": "npm"
+            },
+            {
+                "name": "@algolia/client-search",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "89b889c1-623e-4ca5-849f-5dbc12cc8de1"
+    },
+    "660f1207-9dcd-44a6-bd26-07d5af53ce5c": {
+        "name": "Alibaba Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://*.aliyuncs.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "660f1207-9dcd-44a6-bd26-07d5af53ce5c"
+    },
+    "5a311a48-53b7-4c7a-a24b-a69e195b8179": {
+        "name": "Almerys",
+        "type": "external_service",
+        "urls": [
+            "https://edi.b2bi.almerys.com",
+            "https://rec.edi.b2bi.almerys.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5a311a48-53b7-4c7a-a24b-a69e195b8179"
+    },
+    "588cd63d-e636-419b-afb8-a1d7f39fda22": {
+        "name": "Alpaca",
+        "type": "external_service",
+        "urls": [
+            "https://api.alpaca.markets"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "588cd63d-e636-419b-afb8-a1d7f39fda22"
+    },
+    "aa5bdab4-25df-46fd-89e0-5791c9ef411f": {
+        "name": "Amazon AWS APIs",
+        "type": "external_service",
+        "urls": [
+            "https://amazonaws.com.cn",
+            "https://amazonaws.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "aa5bdab4-25df-46fd-89e0-5791c9ef411f"
+    },
+    "cbc82860-9ca8-412f-b783-4fe5ba841899": {
+        "name": "Amc Theater",
+        "type": "external_service",
+        "urls": [
+            "https://api.amctheatres.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cbc82860-9ca8-412f-b783-4fe5ba841899"
+    },
+    "7cabb25f-c8fd-4bee-bc93-42d679cf50c2": {
+        "name": "Ameli",
+        "type": "external_service",
+        "urls": [
+            "https://ameli.fr/api",
+            "https://services-ps.ameli.fr/lps"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "7cabb25f-c8fd-4bee-bc93-42d679cf50c2"
+    },
+    "ba313e5f-38ce-42be-ae16-85ee10a15795": {
+        "name": "Amplitude",
+        "type": "external_service",
+        "urls": [
+            "https://cdn.amplitude.com/libs",
+            "https://api.eu.amplitude.com",
+            "https://api2.amplitude.com",
+            "https://api.amplitude.com"
+        ],
+        "packages": [
+            {
+                "name": "@amplitude/react-native",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "ba313e5f-38ce-42be-ae16-85ee10a15795"
+    },
+    "fa61ba10-bdf5-414b-b414-e5f7fafa9190": {
+        "name": "Apache Kafka",
+        "type": "internal_service",
+        "urls": [],
+        "packages": [
+            {
+                "name": "kafkajs",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "kafka-node",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "kafka-node-avro",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "message_bus",
+        "id": "fa61ba10-bdf5-414b-b414-e5f7fafa9190"
+    },
+    "5291f10c-c41e-42a9-b5cd-68675de3ecb6": {
+        "name": "Apollographql",
+        "type": "external_service",
+        "urls": [
+            "https://usage-reporting.api.apollographql.com",
+            "https://studio.apollographql.com",
+            "https://schema-reporting.api.apollographql.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5291f10c-c41e-42a9-b5cd-68675de3ecb6"
+    },
+    "c7c3e7d8-1dc7-4730-bfbc-ef6fadbdaaf3": {
+        "name": "Appbase",
+        "type": "external_service",
+        "urls": [
+            "https://api.appbase.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c7c3e7d8-1dc7-4730-bfbc-ef6fadbdaaf3"
+    },
+    "b033aa3b-377f-487c-a9d4-9a1500e70f7f": {
+        "name": "AppDynamics",
+        "type": "external_service",
+        "urls": [
+            "https://*.um-appdynamics.com",
+            "https://appd.com/controller/rest"
+        ],
+        "packages": [
+            {
+                "name": "appdynamics",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "b033aa3b-377f-487c-a9d4-9a1500e70f7f"
+    },
+    "0f64f931-97a9-4008-8d66-da54e9ff9b30": {
+        "name": "Apple",
+        "type": "external_service",
+        "urls": [
+            "https://cdn.apple-mapkit.com",
+            "https://cdn.apple-cloudkit.com",
+            "https://api.searchads.apple.com",
+            "https://js-cdn.music.apple.com",
+            "https://api.storekit.itunes.apple.com",
+            "https://api.appstoreconnect.apple.com",
+            "https://appleid.cdn-apple.com/appleauth/static/jsapi",
+            "https://api.music.apple.com",
+            "https://api.storekit-sandbox.itunes.apple.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0f64f931-97a9-4008-8d66-da54e9ff9b30"
+    },
+    "aa434e75-22b1-400a-8d90-e3155a5cf908": {
+        "name": "Apple Pay",
+        "type": "external_service",
+        "urls": [
+            "https://apple-pay-gateway-cert.apple.com",
+            "https://apple-pay-gateway.apple.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "aa434e75-22b1-400a-8d90-e3155a5cf908"
+    },
+    "48c28e6c-0178-4c56-9a1e-86e2431d769a": {
+        "name": "Aquasec",
+        "type": "external_service",
+        "urls": [
+            "https://api.aquasec.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "48c28e6c-0178-4c56-9a1e-86e2431d769a"
+    },
+    "8d73b7ca-c6ee-4aa6-b4b9-ee686077d8c8": {
+        "name": "Asana",
+        "type": "external_service",
+        "urls": [
+            "https://app.asana.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8d73b7ca-c6ee-4aa6-b4b9-ee686077d8c8"
+    },
+    "b4fd9420-3159-48c7-a6ee-17157f38f1e2": {
+        "name": "Assurcard",
+        "type": "external_service",
+        "urls": [
+            "https://insurer.soap.assurcard.be",
+            "https://insurer.assurcard.be",
+            "https://testinsurer.soap.assurcard.be",
+            "https://testinsurer.assurcard.be"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b4fd9420-3159-48c7-a6ee-17157f38f1e2"
+    },
+    "30d34e9a-5b7b-48f9-8dfa-5a710919632d": {
+        "name": "Athos Worldline",
+        "type": "external_service",
+        "urls": [
+            "https://office-server.test.sips-services.com",
+            "https://office-server.sips-services.com",
+            "https://rcet-payment.sips-atos.com",
+            "https://payment.test.sips-atos.com",
+            "https://office-server.test.sips-atos.com",
+            "https://office-server.sips-atos.com",
+            "https://acqsim.test.sips-atos.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "30d34e9a-5b7b-48f9-8dfa-5a710919632d"
+    },
+    "f579a530-1e1e-43f5-8061-4f96cf2afb47": {
+        "name": "Atinternet",
+        "type": "external_service",
+        "urls": [
+            "https://xiti.com",
+            "https://api.atinternet.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f579a530-1e1e-43f5-8061-4f96cf2afb47"
+    },
+    "e7fa5094-1896-46fa-8882-1f267800471c": {
+        "name": "Atlassian Cloud",
+        "type": "external_service",
+        "urls": [
+            "https://api.atlassian.com",
+            "https://atlassian.net/rest/api/",
+            "https://auth.atlassian.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e7fa5094-1896-46fa-8882-1f267800471c"
+    },
+    "291f3b5f-d34c-4b53-9394-bb91692e5796": {
+        "name": "Auth0",
+        "type": "external_service",
+        "urls": [
+            "https://auth0.com/api"
+        ],
+        "packages": [
+            {
+                "name": "auth0-lock",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "auth0",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "auth0-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "291f3b5f-d34c-4b53-9394-bb91692e5796"
+    },
+    "282d3c7c-2912-4b9d-9b17-6220bdf5d504": {
+        "name": "AWS Athena",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-athena",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "datalake",
+        "id": "282d3c7c-2912-4b9d-9b17-6220bdf5d504"
+    },
+    "4c92b925-4a67-4d44-a814-9796aea3b871": {
+        "name": "AWS DynamoDB",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-dynamodb",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "4c92b925-4a67-4d44-a814-9796aea3b871"
+    },
+    "c89ac0d7-3f96-436b-8263-73896ca1bbd9": {
+        "name": "AWS Key Management Service (KMS)",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-kms",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "object_storage",
+        "id": "c89ac0d7-3f96-436b-8263-73896ca1bbd9"
+    },
+    "d3381386-a402-44bb-a3d0-77f98d2a40ca": {
+        "name": "AWS Redshift",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-redshift",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "d3381386-a402-44bb-a3d0-77f98d2a40ca"
+    },
+    "23ac2967-3c09-461e-8248-18b37734b7ad": {
+        "name": "AWS S3",
+        "type": "data_store",
+        "urls": [
+            "https://s3-*.amazonaws.com",
+            "https://s3.*.amazonaws.com"
+        ],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-s3",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "aws4",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "object_storage",
+        "id": "23ac2967-3c09-461e-8248-18b37734b7ad"
+    },
+    "291d6825-dc0f-4bff-b23b-3dba54e0fa08": {
+        "name": "AWS S3 Glacier",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-glacier",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "object_storage",
+        "id": "291d6825-dc0f-4bff-b23b-3dba54e0fa08"
+    },
+    "4b5a7264-4f5b-439b-9db1-9e6b4223cd1f": {
+        "name": "AWS SQS",
+        "type": "internal_service",
+        "urls": [],
+        "packages": [
+            {
+                "name": "sqs-consumer",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "message_bus",
+        "id": "4b5a7264-4f5b-439b-9db1-9e6b4223cd1f"
+    },
+    "2280d9e3-c35d-4c88-82c1-df0e93e02d8c": {
+        "name": "Azure Storage",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "azure-storage",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "object_storage",
+        "id": "2280d9e3-c35d-4c88-82c1-df0e93e02d8c"
+    },
+    "c441e2c6-2705-48f6-bb43-8f7d9f4467c6": {
+        "name": "BambooHR",
+        "type": "external_service",
+        "urls": [
+            "https://api.bamboohr.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c441e2c6-2705-48f6-bb43-8f7d9f4467c6"
+    },
+    "3db7a6a5-d002-47e9-9ff2-687a0fd3592e": {
+        "name": "Bambuser",
+        "type": "external_service",
+        "urls": [
+            "https://api.bambuser.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3db7a6a5-d002-47e9-9ff2-687a0fd3592e"
+    },
+    "753984a9-cfb3-4943-b0f9-b3e889f51b09": {
+        "name": "Bank of APIs (NatWest, RBS)",
+        "type": "external_service",
+        "urls": [
+            "https://natwestpayit.com",
+            "https://secure1t.rbs.co.uk",
+            "https://feedservice-api.rbs.co.uk",
+            "https://uat-feedservice-api.rbs.co.uk",
+            "https://api.sandbox.rbs.co.uk",
+            "https://api.rbs.co.uk",
+            "https://api.cop.natwest.com",
+            "https://openapi.natwest.com",
+            "https://feedservice-api.natwest.com",
+            "https://uat-feedservice-api.natwest.com",
+            "https://api.sandbox.natwest.com",
+            "https://ob.sandbox.natwest.com",
+            "https://api.natwest.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "753984a9-cfb3-4943-b0f9-b3e889f51b09"
+    },
+    "ba354fe4-d937-4d8c-84ca-fea5cb47aa47": {
+        "name": "Barclays",
+        "type": "external_service",
+        "urls": [
+            "https://api.barclays.com",
+            "https://sandbox-api.barclays.com",
+            "https://dataservices.secure.barclays.co.uk"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ba354fe4-d937-4d8c-84ca-fea5cb47aa47"
+    },
+    "75a7d968-96bb-429e-a6c5-5f1ccf9ef052": {
+        "name": "Basecamp",
+        "type": "external_service",
+        "urls": [
+            "https://basecamp.com/*/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "75a7d968-96bb-429e-a6c5-5f1ccf9ef052"
+    },
+    "6955cba6-4086-455a-83bb-7bd9e0cfe2a7": {
+        "name": "BigCommerce",
+        "type": "external_service",
+        "urls": [
+            "https://api.bigcommerce.com/stores/*/v2",
+            "https://api.bigcommerce.com/stores/*/v3",
+            "https://mybigcommerce.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "6955cba6-4086-455a-83bb-7bd9e0cfe2a7"
+    },
+    "8fc7f073-9760-4f7d-9adb-6e79bdfa8b02": {
+        "name": "Bintray (JFrog)",
+        "type": "external_service",
+        "urls": [
+            "https://api.bintray.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8fc7f073-9760-4f7d-9adb-6e79bdfa8b02"
+    },
+    "cab23e11-ce24-405d-a157-89de4cdbd279": {
+        "name": "Bitbucket",
+        "type": "external_service",
+        "urls": [
+            "https://api.bitbucket.org"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cab23e11-ce24-405d-a157-89de4cdbd279"
+    },
+    "79cc1123-9368-4c1d-aa0c-375d08a69497": {
+        "name": "Bitly",
+        "type": "external_service",
+        "urls": [
+            "https://api.bitly.com",
+            "https://api-ssl.bitly.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "79cc1123-9368-4c1d-aa0c-375d08a69497"
+    },
+    "2a59dcff-58a6-4c64-b99a-dfd47701915d": {
+        "name": "Bitrise",
+        "type": "external_service",
+        "urls": [
+            "https://api.bitrise.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2a59dcff-58a6-4c64-b99a-dfd47701915d"
+    },
+    "2c6cdd16-7c14-400f-b9a4-15420d98be9a": {
+        "name": "Box",
+        "type": "external_service",
+        "urls": [
+            "https://api.box.com"
+        ],
+        "packages": [
+            {
+                "name": "box-node-sdk",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "2c6cdd16-7c14-400f-b9a4-15420d98be9a"
+    },
+    "43ff34c2-0878-41ba-8644-6144c76f3138": {
+        "name": "Braze",
+        "type": "external_service",
+        "urls": [
+            "https://sdk.*.braze.eu",
+            "https://sdk.*.braze.com",
+            "https://rest.*.braze.eu",
+            "https://rest.*.braze.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "43ff34c2-0878-41ba-8644-6144c76f3138"
+    },
+    "ca7a14dc-3c1f-44bb-b35b-acd2e9d7ee6c": {
+        "name": "Alloy",
+        "type": "external_service",
+        "urls": [
+            "https://alloy.co/v1/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ca7a14dc-3c1f-44bb-b35b-acd2e9d7ee6c"
+    },
+    "55b4976c-7e91-40df-bf85-145f0bec98ca": {
+        "name": "Appveyor",
+        "type": "external_service",
+        "urls": [
+            "https://ci.appveyor.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "55b4976c-7e91-40df-bf85-145f0bec98ca"
+    },
+    "a0253b7c-63ed-4d3f-892c-380b7160e80b": {
+        "name": "Brightbox",
+        "type": "external_service",
+        "urls": [
+            "https://api.*.brightbox.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "a0253b7c-63ed-4d3f-892c-380b7160e80b"
+    },
+    "16e1dc79-aac8-4987-8146-e63189187e7b": {
+        "name": "Cloudinary",
+        "type": "external_service",
+        "urls": [
+            "https://res.cloudinary.com",
+            "https://api.cloudinary.com"
+        ],
+        "packages": [
+            {
+                "name": "cloudinary",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "16e1dc79-aac8-4987-8146-e63189187e7b"
+    },
+    "7c89ad09-066e-4cfd-b53a-4c1259400a25": {
+        "name": "DigitalOcean APIs",
+        "type": "external_service",
+        "urls": [
+            "https://api.digitalocean.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "7c89ad09-066e-4cfd-b53a-4c1259400a25"
+    },
+    "7e162cd1-f15b-4df5-b988-145e90663a60": {
+        "name": "Enboarder",
+        "type": "external_service",
+        "urls": [
+            "https://api.*.e1.enboarder.com",
+            "https://enboarder.com/restapi"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "7e162cd1-f15b-4df5-b988-145e90663a60"
+    },
+    "fc99ac17-4cf0-4519-9b3a-dcd46f8243f4": {
+        "name": "Galileo",
+        "type": "external_service",
+        "urls": [
+            "https://api.gpsrv.com",
+            "https://sandbox-api.gpsrv.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "fc99ac17-4cf0-4519-9b3a-dcd46f8243f4"
+    },
+    "1948044c-90a8-4374-abb4-58e55f1a52f9": {
+        "name": "Heap",
+        "type": "external_service",
+        "urls": [
+            "https://heapanalytics.com/api",
+            "https://cdn.heapanalytics.com/js"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1948044c-90a8-4374-abb4-58e55f1a52f9"
+    },
+    "d001cf85-15e3-44b5-9b10-94687236fb7d": {
+        "name": "Intercom",
+        "type": "external_service",
+        "urls": [
+            "https://api.intercom.io",
+            "https://widget.intercom.io/widget"
+        ],
+        "packages": [
+            {
+                "name": "intercom-client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "d001cf85-15e3-44b5-9b10-94687236fb7d"
+    },
+    "b355c0a7-5468-41a2-821b-a4cca0cf0069": {
+        "name": "Lever",
+        "type": "external_service",
+        "urls": [
+            "https://jobs.lever.co",
+            "https://api.lever.co"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b355c0a7-5468-41a2-821b-a4cca0cf0069"
+    },
+    "3bac677e-e660-43eb-a7f4-8bfe493f3002": {
+        "name": "Microsoft Azure APIs",
+        "type": "external_service",
+        "urls": [
+            "https://*.chinacloudapi.cn",
+            "https://*.management.azure.com"
+        ],
+        "packages": [
+            {
+                "name": "msal",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "3bac677e-e660-43eb-a7f4-8bfe493f3002"
+    },
+    "c36f3dc2-2f62-4171-b3e1-ff707dec1c5e": {
+        "name": "Nimble",
+        "type": "external_service",
+        "urls": [
+            "https://api.nimble.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c36f3dc2-2f62-4171-b3e1-ff707dec1c5e"
+    },
+    "48d66646-8407-4060-b3ce-413eedc38821": {
+        "name": "Payfit",
+        "type": "external_service",
+        "urls": [
+            "https://partner-api.payfit.com",
+            "https://manager-api.payfit.com",
+            "https://atlas-api.payfit.com",
+            "https://api.payfit.tech",
+            "https://api.payfit.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "48d66646-8407-4060-b3ce-413eedc38821"
+    },
+    "4561e160-b5e7-461e-9e3a-ce5c2fab70ba": {
+        "name": "Pusher",
+        "type": "external_service",
+        "urls": [
+            "https://api-*.pusher.com",
+            "https://api.pusherapp.com",
+            "https://js.pusher.com",
+            "https://sockjs.pusher.com"
+        ],
+        "packages": [
+            {
+                "name": "pusher-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "4561e160-b5e7-461e-9e3a-ce5c2fab70ba"
+    },
+    "730c378a-895b-424e-8977-0fa82a63ff43": {
+        "name": "SAP Hana",
+        "type": "external_service",
+        "urls": [
+            "https://hana.ondemand.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "730c378a-895b-424e-8977-0fa82a63ff43"
+    },
+    "e23a2fff-d462-4d27-a286-75e113676e80": {
+        "name": "Snowflake",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "snowflake-sdk",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "datalake",
+        "id": "e23a2fff-d462-4d27-a286-75e113676e80"
+    },
+    "0f3c7c68-1b44-4c9c-aa70-53e292f10962": {
+        "name": "Tradier",
+        "type": "external_service",
+        "urls": [
+            "https://sandbox.tradier.com",
+            "https://stream.tradier.com",
+            "https://api.tradier.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0f3c7c68-1b44-4c9c-aa70-53e292f10962"
+    },
+    "56745e97-b055-4637-8044-0aee887a6234": {
+        "name": "Browserstack",
+        "type": "external_service",
+        "urls": [
+            "https://api.browserstack.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "56745e97-b055-4637-8044-0aee887a6234"
+    },
+    "c46c62c0-03e2-44e2-916b-195a73bbe5b1": {
+        "name": "Bugsnag",
+        "type": "external_service",
+        "urls": [
+            "https://sessions.bugsnag.com",
+            "https://build.bugsnag.com",
+            "https://api.bugsnag.com",
+            "https://notify.bugsnag.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c46c62c0-03e2-44e2-916b-195a73bbe5b1"
+    },
+    "a879c5d9-b256-41f3-8a10-c8cc9a921741": {
+        "name": "Calendly",
+        "type": "external_service",
+        "urls": [
+            "https://calendly.com/assets/external/",
+            "https://calendly.com/api/v1",
+            "https://api.calendly.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "a879c5d9-b256-41f3-8a10-c8cc9a921741"
+    },
+    "eef6eefd-c763-4111-8bfc-9093933c3350": {
+        "name": "Cashplus",
+        "type": "external_service",
+        "urls": [
+            "https://api.ob.cashplus.com",
+            "https://sandbox.matls.identity.ob.cashplus.com",
+            "https://sandbox.matls.api.ob.cashplus.com",
+            "https://sandbox.identity.ob.cashplus.com",
+            "https://api.mycashplus.co.uk",
+            "https://apisandbox.mycashplus.co.uk",
+            "https://cashplus.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "eef6eefd-c763-4111-8bfc-9093933c3350"
+    },
+    "9add08e1-f8d1-44ce-9b96-e4e4b686fd65": {
+        "name": "Cassandara",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "cassandra-driver",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "9add08e1-f8d1-44ce-9b96-e4e4b686fd65"
+    },
+    "7c9ae61a-ac02-42b2-96af-7424c9380fed": {
+        "name": "Chargebee",
+        "type": "external_service",
+        "urls": [
+            "https://chargebee.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "7c9ae61a-ac02-42b2-96af-7424c9380fed"
+    },
+    "e0cfc9ac-800e-458c-a21f-d0d05352c1fa": {
+        "name": "Chargify",
+        "type": "external_service",
+        "urls": [
+            "https://js.chargify.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e0cfc9ac-800e-458c-a21f-d0d05352c1fa"
+    },
+    "64205d6a-2880-4373-8321-37c2ae23aba4": {
+        "name": "Checkout.com",
+        "type": "external_service",
+        "urls": [
+            "https://api.sandbox.checkout.com",
+            "https://api.checkout.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "64205d6a-2880-4373-8321-37c2ae23aba4"
+    },
+    "2814d265-cfa6-4c96-957b-3722c0b80353": {
+        "name": "CircleCI",
+        "type": "external_service",
+        "urls": [
+            "https://circleci.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2814d265-cfa6-4c96-957b-3722c0b80353"
+    },
+    "528b3982-d0c7-46a3-8c85-6c29781f9051": {
+        "name": "Cirrus Ci",
+        "type": "external_service",
+        "urls": [
+            "https://api.cirrus-ci.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "528b3982-d0c7-46a3-8c85-6c29781f9051"
+    },
+    "5fec174e-750e-4b99-ae77-f19efed9dfa8": {
+        "name": "Clearbit",
+        "type": "external_service",
+        "urls": [
+            "https://autocomplete.clearbit.com",
+            "https://reveal.clearbit.com",
+            "https://risk.clearbit.com",
+            "https://prospector.clearbit.com",
+            "https://discovery.clearbit.com",
+            "https://company.clearbit.com",
+            "https://logo.clearbit.com",
+            "https://person.clearbit.com"
+        ],
+        "packages": [
+            {
+                "name": "clearbit",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "5fec174e-750e-4b99-ae77-f19efed9dfa8"
+    },
+    "247b3d1a-cb19-4a79-9592-a0755557110f": {
+        "name": "ClickUp",
+        "type": "external_service",
+        "urls": [
+            "https://api.clickup.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "247b3d1a-cb19-4a79-9592-a0755557110f"
+    },
+    "cccab4d1-0e6a-41b7-a021-16d784bd641f": {
+        "name": "Clodo",
+        "type": "external_service",
+        "urls": [
+            "https://api.clodo.ru"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cccab4d1-0e6a-41b7-a021-16d784bd641f"
+    },
+    "2e5d9014-bdbe-43f5-b6fa-1e65ec3f8c1f": {
+        "name": "Cloudflare",
+        "type": "external_service",
+        "urls": [
+            "https://api.cloudflare.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2e5d9014-bdbe-43f5-b6fa-1e65ec3f8c1f"
+    },
+    "49ecbb45-11eb-402b-85cd-3decc92b8e4b": {
+        "name": "CloudWatch",
+        "type": "external_service",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@aws-sdk/client-cloudwatch",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@aws-sdk/client-cloudwatch-logs",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "49ecbb45-11eb-402b-85cd-3decc92b8e4b"
+    },
+    "15c5d8b0-6d61-4914-8f2b-80adf928f4b8": {
+        "name": "Companies House (GOV.UK)",
+        "type": "external_service",
+        "urls": [
+            "https://xmlgw.companieshouse.gov.uk",
+            "https://api.companieshouse.gov.uk"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "15c5d8b0-6d61-4914-8f2b-80adf928f4b8"
+    },
+    "301967e6-d72a-4537-ac09-de90f26dc7e6": {
+        "name": "ComplyAdvantage",
+        "type": "external_service",
+        "urls": [
+            "https://api.complyadvantage.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "301967e6-d72a-4537-ac09-de90f26dc7e6"
+    },
+    "839ab7fa-df3a-4914-9ef5-352d67005c22": {
+        "name": "Contentful",
+        "type": "external_service",
+        "urls": [
+            "https://graphql.contentful.com",
+            "https://images.ctfassets.net",
+            "https://api.contentful.com",
+            "https://cdn.contentful.com",
+            "https://preview.contentful.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "839ab7fa-df3a-4914-9ef5-352d67005c22"
+    },
+    "0a87e1de-b558-4902-a9b2-2a12e2b42814": {
+        "name": "Cookiebot.com",
+        "type": "external_service",
+        "urls": [
+            "https://consent.cookiebot.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0a87e1de-b558-4902-a9b2-2a12e2b42814"
+    },
+    "f2d1baad-fe54-4772-8e0c-612f9b5b4d90": {
+        "name": "Copper",
+        "type": "external_service",
+        "urls": [
+            "https://api.prosperworks.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f2d1baad-fe54-4772-8e0c-612f9b5b4d90"
+    },
+    "aa4307df-fa41-4387-984b-ae4eb319e5a5": {
+        "name": "Crmgang",
+        "type": "external_service",
+        "urls": [
+            "https://api.crmgang.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "aa4307df-fa41-4387-984b-ae4eb319e5a5"
+    },
+    "41b14271-f515-4b96-abf7-bcee8abe4734": {
+        "name": "Customer",
+        "type": "external_service",
+        "urls": [
+            "https://beta-api.customer.io/*/api",
+            "https://api.customer.io/v1/",
+            "https://track.customer.io/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "41b14271-f515-4b96-abf7-bcee8abe4734"
+    },
+    "56a4464c-d686-4568-82c8-24454bc2a898": {
+        "name": "Dalenys",
+        "type": "external_service",
+        "urls": [
+            "https://*.dalenys.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "56a4464c-d686-4568-82c8-24454bc2a898"
+    },
+    "9e201405-95c6-46d1-aba9-8983977012bd": {
+        "name": "Datadog",
+        "type": "external_service",
+        "urls": [
+            "https://app.datadoghq.eu/api",
+            "https://api.datadoghq.eu",
+            "https://api.datadoghq.com",
+            "https://logs.datadoghq.com"
+        ],
+        "packages": [
+            {
+                "name": "@datadog/datadog-api-client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@datadog/datadog-ci",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "9e201405-95c6-46d1-aba9-8983977012bd"
+    },
+    "00b0cbd6-58c0-4e84-ac64-a821f54ba2d4": {
+        "name": "Datadome",
+        "type": "external_service",
+        "urls": [
+            "https://js.datadome.co",
+            "https://api.datadome.co"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "00b0cbd6-58c0-4e84-ac64-a821f54ba2d4"
+    },
+    "3b8764f9-73bf-4d51-87ba-5fe8c0b639ee": {
+        "name": "Debounce",
+        "type": "external_service",
+        "urls": [
+            "https://api.debounce.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3b8764f9-73bf-4d51-87ba-5fe8c0b639ee"
+    },
+    "ad77a018-a815-49b0-93cf-3e540cfe53c9": {
+        "name": "Demdex (Adobe)",
+        "type": "external_service",
+        "urls": [
+            "https://api.demdex.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ad77a018-a815-49b0-93cf-3e540cfe53c9"
+    },
+    "6c7c3e5c-e80f-49bf-b198-bc6aa2d61a13": {
+        "name": "Discord",
+        "type": "external_service",
+        "urls": [
+            "https://discord.com/api"
+        ],
+        "packages": [
+            {
+                "name": "discordjs",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "6c7c3e5c-e80f-49bf-b198-bc6aa2d61a13"
+    },
+    "39d9527e-4ced-4446-8eb6-6b1dae18bd1e": {
+        "name": "DMP",
+        "type": "external_service",
+        "urls": [
+            "https://lps2.dmp.gouv.fr/si-dmp-server/*"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "39d9527e-4ced-4446-8eb6-6b1dae18bd1e"
+    },
+    "ef7593d2-88ca-4255-b62e-782b0009157a": {
+        "name": "Dnsimple",
+        "type": "external_service",
+        "urls": [
+            "https://api.dnsimple.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ef7593d2-88ca-4255-b62e-782b0009157a"
+    },
+    "0589f5cd-3fc8-4c5d-8e3d-4a5aab952471": {
+        "name": "Dnsmadeeasy",
+        "type": "external_service",
+        "urls": [
+            "https://api.sandbox.dnsmadeeasy.com",
+            "https://api.dnsmadeeasy.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0589f5cd-3fc8-4c5d-8e3d-4a5aab952471"
+    },
+    "433a67cd-991b-4ebd-85a5-a8a8a859e2b7": {
+        "name": "Docusign",
+        "type": "external_service",
+        "urls": [
+            "https://account.docusign.com",
+            "https://docusign.net/restapi"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "433a67cd-991b-4ebd-85a5-a8a8a859e2b7"
+    },
+    "d65b59a0-687b-4c59-8692-299729813645": {
+        "name": "Dossier pharmaceutique",
+        "type": "external_service",
+        "urls": [
+            "http://ws-fac.dossier-pharmaceutique.fr"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "d65b59a0-687b-4c59-8692-299729813645"
+    },
+    "b50a4b69-1452-4469-9c1c-9f8d7db3fc78": {
+        "name": "Dreamhost",
+        "type": "external_service",
+        "urls": [
+            "https://api.dreamhost.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b50a4b69-1452-4469-9c1c-9f8d7db3fc78"
+    },
+    "8f6a50b6-4f3f-482c-bf13-4f1d277da651": {
+        "name": "Drift",
+        "type": "external_service",
+        "urls": [
+            "https://js.driftt.com",
+            "https://driftapi.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8f6a50b6-4f3f-482c-bf13-4f1d277da651"
+    },
+    "e8ef1360-1cc0-4a87-b741-806d74224245": {
+        "name": "Dropbox",
+        "type": "external_service",
+        "urls": [
+            "https://api.dropboxapi.com",
+            "https://api.dropbox.com"
+        ],
+        "packages": [
+            {
+                "name": "dropbox",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "e8ef1360-1cc0-4a87-b741-806d74224245"
+    },
+    "d6607128-2ca5-4b87-93ee-bd38c47ddb51": {
+        "name": "Dropcontact",
+        "type": "external_service",
+        "urls": [
+            "https://api.dropcontact.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "d6607128-2ca5-4b87-93ee-bd38c47ddb51"
+    },
+    "5aba6ddd-1281-457a-8f7a-0515c86b4550": {
+        "name": "Dyn (Oracle)",
+        "type": "external_service",
+        "urls": [
+            "https://api.dynect.net",
+            "https://api-v4.dynect.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5aba6ddd-1281-457a-8f7a-0515c86b4550"
+    },
+    "a6f7533f-87b7-48c4-a950-32eaeee37166": {
+        "name": "EasyPost",
+        "type": "external_service",
+        "urls": [
+            "https://api.easypost.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "a6f7533f-87b7-48c4-a950-32eaeee37166"
+    },
+    "8b8cb79c-ba21-491e-b5f7-ce8c6cdbabb7": {
+        "name": "Edgecast",
+        "type": "external_service",
+        "urls": [
+            "https://api.edgecast.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8b8cb79c-ba21-491e-b5f7-ce8c6cdbabb7"
+    },
+    "3cd3ca64-9899-4e38-b736-237d44429cce": {
+        "name": "Elastic",
+        "type": "external_service",
+        "urls": [
+            "https://*.found.io",
+            "https://cloud.es.io"
+        ],
+        "packages": [
+            {
+                "name": "elastic-apm-http-client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@elastic/apm-rum-vue",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "elastic-apm-nest",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@elastic/apm-rum-angular",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@elastic/ecs-winston-format",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "3cd3ca64-9899-4e38-b736-237d44429cce"
+    },
+    "08f23ce6-5ce1-4339-a46e-f039c097174c": {
+        "name": "Elasticsearch",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@digital-factory/elk-client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "elasticsearch",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@aws-sdk/client-elasticsearch-service",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "elasticsearchclient",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "08f23ce6-5ce1-4339-a46e-f039c097174c"
+    },
+    "1d7db71a-d509-4ff1-9838-e16c626a340c": {
+        "name": "Emburse",
+        "type": "external_service",
+        "urls": [
+            "https://api.emburse.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1d7db71a-d509-4ff1-9838-e16c626a340c"
+    },
+    "166cc2cf-1dd8-4928-b413-02083129a34d": {
+        "name": "Envoy",
+        "type": "external_service",
+        "urls": [
+            "https://api.envoy.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "166cc2cf-1dd8-4928-b413-02083129a34d"
+    },
+    "5af79ddc-a223-48f5-823b-23fa0751ae69": {
+        "name": "eSante Gouv",
+        "type": "external_service",
+        "urls": [
+            "https://auth.esw.esante.gouv.fr",
+            "http://wallet.esw.esante.gouv.fr"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5af79ddc-a223-48f5-823b-23fa0751ae69"
+    },
+    "069244e5-7d14-4994-9b12-5d4df07afc3a": {
+        "name": "Essendex",
+        "type": "external_service",
+        "urls": [
+            "https://api.esendex.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "069244e5-7d14-4994-9b12-5d4df07afc3a"
+    },
+    "bb99f6f1-8a53-4db9-ab47-6f24062a58fa": {
+        "name": "Exoscale Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://api.runstatus.com",
+            "https://sos-*.exo.io",
+            "https://api.exoscale.com",
+            "https://api-ch-gva-2.exoscale.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "bb99f6f1-8a53-4db9-ab47-6f24062a58fa"
+    },
+    "de01db45-545c-4ba9-9560-65bea36a7acf": {
+        "name": "Expensify",
+        "type": "external_service",
+        "urls": [
+            "https://integrations.expensify.com/Integration-Server"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "de01db45-545c-4ba9-9560-65bea36a7acf"
+    },
+    "3e693044-9faf-4e5a-9c84-882810a62e48": {
+        "name": "Facebook",
+        "type": "external_service",
+        "urls": [
+            "https://api.facebook.com",
+            "https://api-read.facebook.com",
+            "https://graph.facebook.com",
+            "https://connect.facebook.net"
+        ],
+        "packages": [
+            {
+                "name": "facebook-node-sdk",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "3e693044-9faf-4e5a-9c84-882810a62e48"
+    },
+    "1c22723b-5b10-4819-90e2-5db55a324f83": {
+        "name": "Fauna",
+        "type": "external_service",
+        "urls": [
+            "https://graphql.fauna-preview.com",
+            "https://graphql.fauna.com",
+            "https://graphql.eu.fauna.com",
+            "https://graphql.us.fauna.com"
+        ],
+        "packages": [
+            {
+                "name": "faunadb",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "1c22723b-5b10-4819-90e2-5db55a324f83"
+    },
+    "d5d6a4e8-777b-4574-94a9-266b24a7fd64": {
+        "name": "Firebase",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "firebase-core",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@react-native-firebase/messaging",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@react-native-firebase/app",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "d5d6a4e8-777b-4574-94a9-266b24a7fd64"
+    },
+    "6df7f47b-3b62-4a1c-876d-69755360beb6": {
+        "name": "Fluentd",
+        "type": "internal_service",
+        "urls": [],
+        "packages": [
+            {
+                "name": "pino-fluentd",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "message_bus",
+        "id": "6df7f47b-3b62-4a1c-876d-69755360beb6"
+    },
+    "9a6d088b-6d79-4c38-9e91-7a92a987cd5e": {
+        "name": "Forestadmin",
+        "type": "external_service",
+        "urls": [
+            "https://api.forestadmin.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "9a6d088b-6d79-4c38-9e91-7a92a987cd5e"
+    },
+    "90e6654c-88f1-4b56-8abc-3bcdc3739172": {
+        "name": "Fountain",
+        "type": "external_service",
+        "urls": [
+            "https://api.fountain.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "90e6654c-88f1-4b56-8abc-3bcdc3739172"
+    },
+    "0ca78259-6c24-427b-98fa-1db60c8cf740": {
+        "name": "France Billet",
+        "type": "external_service",
+        "urls": [
+            "https://billetweb.fr/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0ca78259-6c24-427b-98fa-1db60c8cf740"
+    },
+    "5eeaccb4-287c-4570-8c8e-901d7e82d0ee": {
+        "name": "Freshworks",
+        "type": "external_service",
+        "urls": [
+            "https://freshcaller.com/api",
+            "https://freshteam.com/api",
+            "https://api.freshchat.com",
+            "https://myfreshworks.com/crm/sales/api",
+            "https://freshservice.com/api/",
+            "https://freshdesk.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5eeaccb4-287c-4570-8c8e-901d7e82d0ee"
+    },
+    "7c79dab3-62a7-4810-9246-985819c3ec22": {
+        "name": "Front",
+        "type": "external_service",
+        "urls": [
+            "https://webhook.frontapp.com",
+            "https://api2.frontapp.com",
+            "https://chat-assets.frontapp.com/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "7c79dab3-62a7-4810-9246-985819c3ec22"
+    },
+    "5128e23b-66e1-47f2-a862-baedc176bdc5": {
+        "name": "FTP/SFTP",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "ftp",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "shared_folders",
+        "id": "5128e23b-66e1-47f2-a862-baedc176bdc5"
+    },
+    "825d6480-39bb-4bf9-a6dd-5603d9ddb53d": {
+        "name": "Gandi",
+        "type": "external_service",
+        "urls": [
+            "https://rpc.gandi.net",
+            "https://api.gandi.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "825d6480-39bb-4bf9-a6dd-5603d9ddb53d"
+    },
+    "47ede0d6-2a27-4b52-a581-8083e8028cc2": {
+        "name": "Geckoboard",
+        "type": "external_service",
+        "urls": [
+            "https://api.geckoboard.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "47ede0d6-2a27-4b52-a581-8083e8028cc2"
+    },
+    "4c320704-e232-4eb1-a1ab-7fbf5540a49c": {
+        "name": "Gfycat",
+        "type": "external_service",
+        "urls": [
+            "https://api.gfycat.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "4c320704-e232-4eb1-a1ab-7fbf5540a49c"
+    },
+    "881e9d89-7ae4-4e55-afcb-d3ccb203a978": {
+        "name": "GitHub",
+        "type": "external_service",
+        "urls": [
+            "https://api.github.com"
+        ],
+        "packages": [
+            {
+                "name": "@octokit/rest",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "github-api",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "octonode",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "github-oauth",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "881e9d89-7ae4-4e55-afcb-d3ccb203a978"
+    },
+    "ba8465aa-379e-44d1-83b4-9c037484ca0e": {
+        "name": "Gitlab",
+        "type": "external_service",
+        "urls": [
+            "https://gitlab.com/api"
+        ],
+        "packages": [
+            {
+                "name": "gitlab",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "ba8465aa-379e-44d1-83b4-9c037484ca0e"
+    },
+    "c3161df1-cdec-436c-8bf7-4f10dc3a8948": {
+        "name": "Glesys",
+        "type": "external_service",
+        "urls": [
+            "https://api.glesys.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c3161df1-cdec-436c-8bf7-4f10dc3a8948"
+    },
+    "2507f482-4ce3-4122-82b5-318b58e1c6ef": {
+        "name": "GoCardless",
+        "type": "external_service",
+        "urls": [
+            "https://pay-sandbox.gocardless.com/js/",
+            "https://api-sandbox.gocardless.com",
+            "https://api.gocardless.com",
+            "https://connect.gocardless.com",
+            "https://connect-sandbox.gocardless.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2507f482-4ce3-4122-82b5-318b58e1c6ef"
+    },
+    "5ffaa17d-c3ed-41f1-a442-6308ff4fff80": {
+        "name": "Google Ads",
+        "type": "external_service",
+        "urls": [
+            "http://pagead2.googlesyndication.com",
+            "https://googleadservices.com/pagead/conversion.js",
+            "https://googleads.googleapis.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5ffaa17d-c3ed-41f1-a442-6308ff4fff80"
+    },
+    "51a7dd26-a083-489b-9062-e14dc1f3ccb2": {
+        "name": "Google Analytics",
+        "type": "external_service",
+        "urls": [
+            "https://www.google-analytics.com/analytics.js",
+            "https://analyticsreporting.googleapis.com"
+        ],
+        "packages": [
+            {
+                "name": "react-ga",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "workbox-google-analytics",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "node-ga",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "51a7dd26-a083-489b-9062-e14dc1f3ccb2"
+    },
+    "d1ce2237-0ab1-46d9-a1b7-4efd72f2d8e5": {
+        "name": "Google Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://*.googleapis.com"
+        ],
+        "exclude_urls": [
+            "https://ajax.googleapis.com"
+        ],
+        "packages": [
+            {
+                "name": "@google-cloud/dns",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "dialogflow",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "apiai",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "d1ce2237-0ab1-46d9-a1b7-4efd72f2d8e5"
+    },
+    "c548e3bd-f19c-4364-bdcc-540d207a0f3e": {
+        "name": "Google Cloud BigQuery",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@google-cloud/bigquery",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@google-cloud/bigquery-reservation",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@google-cloud/bigquery-connection",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@google-cloud/bigquery-data-transfer",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@google-cloud/bigquery-storage",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "datalake",
+        "id": "c548e3bd-f19c-4364-bdcc-540d207a0f3e"
+    },
+    "4ce6fe6c-d7ae-4cbd-b516-93140188c378": {
+        "name": "Google Cloud Pub/Sub",
+        "type": "internal_service",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@google-cloud/pubsub",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "message_bus",
+        "id": "4ce6fe6c-d7ae-4cbd-b516-93140188c378"
+    },
+    "b31a3beb-600a-495c-b4e0-048126a9176d": {
+        "name": "Google Cloud Storage",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "@google-cloud/storage",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "object_storage",
+        "id": "b31a3beb-600a-495c-b4e0-048126a9176d"
+    },
+    "a9a2dfee-9f3d-469e-acc5-a831fda294da": {
+        "name": "Google Maps",
+        "type": "external_service",
+        "urls": [
+            "https://maps.googleapis.com/maps/api/"
+        ],
+        "packages": [
+            {
+                "name": "google-map-react",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "react-google-maps",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "vue2-google-maps",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@react-google-maps/api",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "a9a2dfee-9f3d-469e-acc5-a831fda294da"
+    },
+    "b7321fc7-a58c-4b34-9d72-74c4e668cb5e": {
+        "name": "Google reCAPTCHA ",
+        "type": "external_service",
+        "urls": [
+            "https://*.google.com/recaptcha/*"
+        ],
+        "packages": [
+            {
+                "name": "recaptcha-v3",
+                "group": "",
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "b7321fc7-a58c-4b34-9d72-74c4e668cb5e"
+    },
+    "679f70cc-0a3c-4495-9907-219007d93dcd": {
+        "name": "Google Service APIs",
+        "type": "external_service",
+        "urls": [
+            "https://apis.google.com"
+        ],
+        "packages": [
+            {
+                "name": "googleapis",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "googleapis-common",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "google-auth-library",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "679f70cc-0a3c-4495-9907-219007d93dcd"
+    },
+    "067d5b18-33a9-4eff-bd08-66f3607b19cf": {
+        "name": "Google Spreadsheets",
+        "type": "external_service",
+        "urls": [
+            "https://googleapis.com/auth/spreadsheets/",
+            "https://docs.google.com/spreadsheets/",
+            "https://spreadsheets.google.com/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "067d5b18-33a9-4eff-bd08-66f3607b19cf"
+    },
+    "5b06f9a8-3c11-4625-a2b4-a6907892b482": {
+        "name": "Google Tag Manager",
+        "type": "external_service",
+        "urls": [
+            "https://googletagmanager.com/gtag/js",
+            "https://googletagmanager.com/gtm.js"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5b06f9a8-3c11-4625-a2b4-a6907892b482"
+    },
+    "48ba4763-127f-4256-a2b7-28e81970deb9": {
+        "name": "Google Workspace APIs",
+        "type": "external_service",
+        "urls": [
+            "https://ldap.google.com",
+            "https://accounts.google.com",
+            "https://oauth2.googleapis.com",
+            "https://slides.googleapis.com",
+            "https://chat.googleapis.com",
+            "https://googleapis.com/calendar",
+            "https://gmail.googleapis.com",
+            "https://docs.googleapis.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "48ba4763-127f-4256-a2b7-28e81970deb9"
+    },
+    "f960620c-3976-41b1-a23e-684f44153b77": {
+        "name": "Gouv.fr Data",
+        "type": "external_service",
+        "urls": [
+            "https://data.gouv.fr/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f960620c-3976-41b1-a23e-684f44153b77"
+    },
+    "d6366721-fcc9-41d5-8ca4-b001b8516be0": {
+        "name": "Gravatar",
+        "type": "external_service",
+        "urls": [
+            "https://gravatar.com",
+            "https://secure.gravatar.com/xmlrpc"
+        ],
+        "packages": [
+            {
+                "name": "gravatar",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "d6366721-fcc9-41d5-8ca4-b001b8516be0"
+    },
+    "89de10c2-f170-4639-b550-3887438a2008": {
+        "name": "Gravity Payments",
+        "type": "external_service",
+        "urls": [
+            "https://api.gravitypayments.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "89de10c2-f170-4639-b550-3887438a2008"
+    },
+    "5350906d-c26f-4644-bde7-290e3b33d5f4": {
+        "name": "Greenhouse",
+        "type": "external_service",
+        "urls": [
+            "https://boards-api.greenhouse.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "5350906d-c26f-4644-bde7-290e3b33d5f4"
+    },
+    "906370ef-e35c-41c0-ae5f-da72e45abebf": {
+        "name": "Hashicorp Vault",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "node-vault-client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "node-vault",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "vault-auth-aws",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "906370ef-e35c-41c0-ae5f-da72e45abebf"
+    },
+    "cfff5463-fc60-4d34-a63e-c5c4c413d47b": {
+        "name": "Have I been pwned?",
+        "type": "external_service",
+        "urls": [
+            "https://api.pwnedpasswords.com",
+            "https://haveibeenpwned.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cfff5463-fc60-4d34-a63e-c5c4c413d47b"
+    },
+    "2b32969c-7215-4895-81c3-981444e72f86": {
+        "name": "Hellosign",
+        "type": "external_service",
+        "urls": [
+            "https://api.hellosign.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2b32969c-7215-4895-81c3-981444e72f86"
+    },
+    "6af52b80-b915-4e0c-9a9f-2ae0888fd7e4": {
+        "name": "Heroku",
+        "type": "external_service",
+        "urls": [
+            "https://api.heroku.com"
+        ],
+        "packages": [
+            {
+                "name": "heroku-client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "6af52b80-b915-4e0c-9a9f-2ae0888fd7e4"
+    },
+    "f826dd8e-b679-434c-858a-ac832f3b3723": {
+        "name": "Hiscox",
+        "type": "external_service",
+        "urls": [
+            "https://quote.hiscox.co.uk",
+            "https://hiscoxukpartners.azure-api.net",
+            "https://hiscoxclientapi.azurewebsites.net",
+            "https://hiscoxukpartners-test.azure-api.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f826dd8e-b679-434c-858a-ac832f3b3723"
+    },
+    "4a78b73e-1979-4a6f-ae5c-db79a745b89f": {
+        "name": "HMRC (GOV.UK)",
+        "type": "external_service",
+        "urls": [
+            "https://api.service.hmrc.gov.uk",
+            "https://test-api.service.hmrc.gov.uk",
+            "https://transaction-engine.tax.service.gov.uk",
+            "https://test-transaction-engine.tax.service.gov.uk"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "4a78b73e-1979-4a6f-ae5c-db79a745b89f"
+    },
+    "360350c0-7e0d-4e4d-a4f2-2592e8f2fe33": {
+        "name": "Honeybadger",
+        "type": "external_service",
+        "urls": [
+            "https://api.honeybadger.io",
+            "https://app.honeybadger.io/v2/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "360350c0-7e0d-4e4d-a4f2-2592e8f2fe33"
+    },
+    "27b6bbb1-ba1f-415f-baa8-6b9d87878f52": {
+        "name": "Hotjar",
+        "type": "external_service",
+        "urls": [
+            "https://static.hotjar.com"
+        ],
+        "packages": [
+            {
+                "name": "react-hotjar",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "27b6bbb1-ba1f-415f-baa8-6b9d87878f52"
+    },
+    "a6d94121-3c4d-4309-a687-c43dfb8a00d7": {
+        "name": "Hubspot",
+        "type": "external_service",
+        "urls": [
+            "https://forms.hubspot.com",
+            "https://app.hubspot.com",
+            "https://api.hubapi.com"
+        ],
+        "packages": [
+            {
+                "name": "@hubspot/api-client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "a6d94121-3c4d-4309-a687-c43dfb8a00d7"
+    },
+    "eeafd0d3-7a8e-43c7-85dd-49ea7373cdb5": {
+        "name": "Hugging Face",
+        "type": "external_service",
+        "urls": [
+            "https://cdn-datasets.huggingface.co",
+            "https://cdn.huggingface.co",
+            "https://huggingface.co"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "eeafd0d3-7a8e-43c7-85dd-49ea7373cdb5"
+    },
+    "527a7405-1864-4fc8-b9d1-1bfc4e67e5d6": {
+        "name": "Hunter",
+        "type": "external_service",
+        "urls": [
+            "https://api.hunter.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "527a7405-1864-4fc8-b9d1-1bfc4e67e5d6"
+    },
+    "f17358ca-05c3-4660-8578-7d85f15b3532": {
+        "name": "Iagility",
+        "type": "external_service",
+        "urls": [
+            "https://iagility.smsizer.com/api/*"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f17358ca-05c3-4660-8578-7d85f15b3532"
+    },
+    "0d0bea5b-052a-4ac8-a160-606aa0614e03": {
+        "name": "IBAN",
+        "type": "external_service",
+        "urls": [
+            "https://api.iban.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0d0bea5b-052a-4ac8-a160-606aa0614e03"
+    },
+    "cab0984b-6f46-4d2e-9ed4-e3d469830121": {
+        "name": "Iceberg Technology",
+        "type": "external_service",
+        "urls": [
+            "https://tracking.iceberg.com",
+            "https://api.sandbox.iceberg.technology",
+            "https://api.iceberg.technology",
+            "https://api.iceberg.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cab0984b-6f46-4d2e-9ed4-e3d469830121"
+    },
+    "9f44313a-8cd7-45e5-a7d9-22701f88a34b": {
+        "name": "InfluxDB",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "influx",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "9f44313a-8cd7-45e5-a7d9-22701f88a34b"
+    },
+    "1d27bc47-c5e7-42bf-bcaf-3a0185942c85": {
+        "name": "Instagram",
+        "type": "external_service",
+        "urls": [
+            "https://api.instagram.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1d27bc47-c5e7-42bf-bcaf-3a0185942c85"
+    },
+    "013890f1-5970-4c80-9e7e-d699000d5021": {
+        "name": "Instana",
+        "type": "external_service",
+        "urls": [
+            "https://instana.io/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "013890f1-5970-4c80-9e7e-d699000d5021"
+    },
+    "f59c5e81-ca99-43ca-8a87-f356a80ee0a2": {
+        "name": "Intuit",
+        "type": "external_service",
+        "urls": [
+            "https://api.intuit.com"
+        ],
+        "packages": [
+            {
+                "name": "intuit-oauth",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "f59c5e81-ca99-43ca-8a87-f356a80ee0a2"
+    },
+    "4e14726c-aa55-4ace-91fa-9ae0a33f83f2": {
+        "name": "Ipdata",
+        "type": "external_service",
+        "urls": [
+            "https://api.ipdata.co"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "4e14726c-aa55-4ace-91fa-9ae0a33f83f2"
+    },
+    "3100caa8-3b19-4f5d-aad4-8b843292c516": {
+        "name": "ipify.org",
+        "type": "external_service",
+        "urls": [
+            "https://api.ipify.org"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3100caa8-3b19-4f5d-aad4-8b843292c516"
+    },
+    "1be4e3f9-a70d-4a68-9f3c-e41336bc199d": {
+        "name": "Ipregistry",
+        "type": "external_service",
+        "urls": [
+            "https://api.ipregistry.co"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1be4e3f9-a70d-4a68-9f3c-e41336bc199d"
+    },
+    "b0b48165-5129-4529-a0a3-dff275855425": {
+        "name": "iProov",
+        "type": "external_service",
+        "urls": [
+            "https://eu.rp.secure.iproov.me"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b0b48165-5129-4529-a0a3-dff275855425"
+    },
+    "1219b992-449b-4bd3-b04c-7eee596b35f0": {
+        "name": "Ipstack",
+        "type": "external_service",
+        "urls": [
+            "https://api.ipstack.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1219b992-449b-4bd3-b04c-7eee596b35f0"
+    },
+    "0a0193bd-eb2f-4b78-8d86-f209cabfcab6": {
+        "name": "Iris Openbooks (FreeAgent)",
+        "type": "external_service",
+        "urls": [
+            "https://admin.irisopenbooks.co.uk"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0a0193bd-eb2f-4b78-8d86-f209cabfcab6"
+    },
+    "4f6e826f-14ae-4440-9c65-a5983948e08a": {
+        "name": "Izberg Marketplace",
+        "type": "external_service",
+        "urls": [
+            "https://api.izberg.me"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "4f6e826f-14ae-4440-9c65-a5983948e08a"
+    },
+    "6ac7903d-b85c-43d3-967f-403d70246be2": {
+        "name": "Jfrog",
+        "type": "external_service",
+        "urls": [
+            "https://*.jfrog.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "6ac7903d-b85c-43d3-967f-403d70246be2"
+    },
+    "8005bb7c-c943-4d9a-a12c-cf3c41bfa5c4": {
+        "name": "Jsdelivr",
+        "type": "external_service",
+        "urls": [
+            "https://api.jsdelivr.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8005bb7c-c943-4d9a-a12c-cf3c41bfa5c4"
+    },
+    "8ae64c02-c3d6-4e40-9842-f250227983a4": {
+        "name": "Jumio",
+        "type": "external_service",
+        "urls": [
+            "https://jumio.com/api/",
+            "https://netverify.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8ae64c02-c3d6-4e40-9842-f250227983a4"
+    },
+    "a1c36826-7f59-47dc-a9f0-11efb0dec077": {
+        "name": "Klarna",
+        "type": "external_service",
+        "urls": [
+            "https://api.playground.klarna.com",
+            "https://banking.klarna.com",
+            "https://api.klarna.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "a1c36826-7f59-47dc-a9f0-11efb0dec077"
+    },
+    "2b4922ef-b12a-47b8-962c-23d585eed2bf": {
+        "name": "LaunchDarkly",
+        "type": "external_service",
+        "urls": [
+            "https://app.launchdarkly.com/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2b4922ef-b12a-47b8-962c-23d585eed2bf"
+    },
+    "e2671c26-09f1-40e8-9d72-7e416ec7304e": {
+        "name": "La Poste",
+        "type": "external_service",
+        "urls": [
+            "https://ws.colissimo.fr",
+            "https://api.laposte.fr"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e2671c26-09f1-40e8-9d72-7e416ec7304e"
+    },
+    "6c3fd4a6-8d6f-4801-aa27-0de77732bf60": {
+        "name": "Lengow",
+        "type": "external_service",
+        "urls": [
+            "https://tracking.lengow.com",
+            "https://api.lengow.io",
+            "https://api.lengow.com",
+            "https://api.lengow.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "6c3fd4a6-8d6f-4801-aa27-0de77732bf60"
+    },
+    "3bd4354f-cb5a-4cd0-a2fe-eaccf6d300e5": {
+        "name": "Lets enhance",
+        "type": "external_service",
+        "urls": [
+            "https://api.letsenhance.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3bd4354f-cb5a-4cd0-a2fe-eaccf6d300e5"
+    },
+    "c522f995-493c-4545-8a32-e0c08b4242d2": {
+        "name": "Lightstep",
+        "type": "external_service",
+        "urls": [
+            "https://api.lightstep.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c522f995-493c-4545-8a32-e0c08b4242d2"
+    },
+    "f69f3b3f-2ece-4b52-b9c8-862b643ea035": {
+        "name": "LinkedIn",
+        "type": "external_service",
+        "urls": [
+            "https://linkedin.com/oauth",
+            "https://api.linkedin.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f69f3b3f-2ece-4b52-b9c8-862b643ea035"
+    },
+    "8fe611a3-b640-427b-b051-91a2be871d09": {
+        "name": "Liquid Web Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://api.stormondemand.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8fe611a3-b640-427b-b051-91a2be871d09"
+    },
+    "01fcde60-c004-449c-84af-d9148db129c0": {
+        "name": "LogRocket",
+        "type": "external_service",
+        "urls": [
+            "https://cdn.lr-ingest.io"
+        ],
+        "packages": [
+            {
+                "name": "logrocket",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "01fcde60-c004-449c-84af-d9148db129c0"
+    },
+    "c7070170-967a-49df-b8c1-c6d6d7097de7": {
+        "name": "Logz.io",
+        "type": "external_service",
+        "urls": [
+            "https://api.logz.io",
+            "https://api-*.logz.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c7070170-967a-49df-b8c1-c6d6d7097de7"
+    },
+    "f1b5a9e6-1a4e-4a12-ac73-615cfa8d2752": {
+        "name": "Mabaya",
+        "type": "external_service",
+        "urls": [
+            "https://manage-api.mabaya.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f1b5a9e6-1a4e-4a12-ac73-615cfa8d2752"
+    },
+    "18097445-c925-4d2a-b10a-20e751d2ca91": {
+        "name": "Mailchimp",
+        "type": "external_service",
+        "urls": [
+            "https://api.mailchimp.com",
+            "https://mandrillapp.com/api"
+        ],
+        "packages": [
+            {
+                "name": "@mailchimp/mailchimp_marketing",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@mailchimp/mailchimp_transactional",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "18097445-c925-4d2a-b10a-20e751d2ca91"
+    },
+    "356315ba-f32e-494b-90e7-95165d8fbd12": {
+        "name": "Mailjet",
+        "type": "external_service",
+        "urls": [
+            "https://api.mailjet.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "356315ba-f32e-494b-90e7-95165d8fbd12"
+    },
+    "9ca6208e-996e-4b25-bd8a-0a929b96b444": {
+        "name": "MangoPay",
+        "type": "external_service",
+        "urls": [
+            "https://api.sandbox.mangopay.com",
+            "https://api.mangopay.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "9ca6208e-996e-4b25-bd8a-0a929b96b444"
+    },
+    "881c8b99-b632-4a12-a591-24b7ab7a1d70": {
+        "name": "Mapbox",
+        "type": "external_service",
+        "urls": [
+            "https://api.mapbox.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "881c8b99-b632-4a12-a591-24b7ab7a1d70"
+    },
+    "52954cb6-8aeb-4082-9160-be41e13dd7bf": {
+        "name": "MariaDB",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "mariadb",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "mariadb-connector-nodejs",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "52954cb6-8aeb-4082-9160-be41e13dd7bf"
+    },
+    "d275448a-44bd-40af-ba16-faf012ad9301": {
+        "name": "Marketo",
+        "type": "external_service",
+        "urls": [
+            "https://mktoapi.com/soap",
+            "https://mktorest.com/rest"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "d275448a-44bd-40af-ba16-faf012ad9301"
+    },
+    "bcca0e6f-1afc-42e8-8b01-bf85f55ec8aa": {
+        "name": "MaxMind",
+        "type": "external_service",
+        "urls": [
+            "https://geoip-js.com/js/apis/",
+            "https://geoip.maxmind.com/geoip",
+            "https://minfraud.maxmind.com/minfraud"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "bcca0e6f-1afc-42e8-8b01-bf85f55ec8aa"
+    },
+    "3fca576e-7173-42f2-be42-ae681433f8ea": {
+        "name": "Memcached",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "memcached",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "memcache-client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "key_value_cache",
+        "id": "3fca576e-7173-42f2-be42-ae681433f8ea"
+    },
+    "c45654a3-77bb-4381-8562-4dfd47b030d2": {
+        "name": "Mettle",
+        "type": "external_service",
+        "urls": [
+            "https://api.openbanking.stg-mettle.co.uk",
+            "https://auth.openbanking.prd-mettle.co.uk",
+            "https://api.openbanking.prd-mettle.co.uk"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c45654a3-77bb-4381-8562-4dfd47b030d2"
+    },
+    "d40fbb90-4cb0-4e8e-8f1d-7edbb910caba": {
+        "name": "Microsoft",
+        "type": "external_service",
+        "urls": [
+            "https://login.microsoftonline.com",
+            "https://graph.microsoft.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "d40fbb90-4cb0-4e8e-8f1d-7edbb910caba"
+    },
+    "f0b2bae3-268c-47ff-a12c-d6babc550ecf": {
+        "name": "Microsoft SQL Server",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "tedious",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "mssql",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "f0b2bae3-268c-47ff-a12c-d6babc550ecf"
+    },
+    "96d72fc4-d21e-4bbc-a48b-86a8eebd5b38": {
+        "name": "Microsoft Teams",
+        "type": "external_service",
+        "urls": [
+            "https://graph.microsoft.com/*/teams"
+        ],
+        "packages": [
+            {
+                "name": "@microsoft-teams-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "96d72fc4-d21e-4bbc-a48b-86a8eebd5b38"
+    },
+    "791e6be1-a517-4b75-9d58-5b318bf7ce91": {
+        "name": "Mixpanel",
+        "type": "external_service",
+        "urls": [
+            "https://cdn.mxpnl.com/libs/",
+            "https://mixpanel.com/api",
+            "https://api-eu.mixpanel.com",
+            "https://api.mixpanel.com"
+        ],
+        "packages": [
+            {
+                "name": "react-mixpanel",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "791e6be1-a517-4b75-9d58-5b318bf7ce91"
+    },
+    "335fec54-e0de-4d63-93a3-43f1dfed20a0": {
+        "name": "Monday",
+        "type": "external_service",
+        "urls": [
+            "https://api.monday.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "335fec54-e0de-4d63-93a3-43f1dfed20a0"
+    },
+    "748f11f1-1493-45eb-9c78-3680df27b191": {
+        "name": "Mondial Relay",
+        "type": "external_service",
+        "urls": [
+            "https://api.mondialrelay.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "748f11f1-1493-45eb-9c78-3680df27b191"
+    },
+    "7a86e8a6-40f9-4e05-a9ea-18227cbf0d58": {
+        "name": "MongoDB",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "mongodb-memory-server",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "mongoose",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "mongodb-uri",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "connect-mongo",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "mongodb",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "7a86e8a6-40f9-4e05-a9ea-18227cbf0d58"
+    },
+    "350044a5-dfc6-4a35-86c2-5d804f4b5968": {
+        "name": "MUX",
+        "type": "external_service",
+        "urls": [
+            "https://image.mux.com",
+            "https://stream.mux.com",
+            "https://api.mux.com/data",
+            "https://api.mux.com/video"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "350044a5-dfc6-4a35-86c2-5d804f4b5968"
+    },
+    "6dd62816-14f4-4da2-9b93-437f0b965903": {
+        "name": "MySQL",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "mysql2",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "mysql",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "6dd62816-14f4-4da2-9b93-437f0b965903"
+    },
+    "c9a184e3-78b2-442c-a630-346a954ddaf3": {
+        "name": "Namesilo",
+        "type": "external_service",
+        "urls": [
+            "https://www.namesilo.com/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c9a184e3-78b2-442c-a630-346a954ddaf3"
+    },
+    "c6ce6e3f-ebcd-499b-835a-ea1a37a00ee9": {
+        "name": "Name.com",
+        "type": "external_service",
+        "urls": [
+            "https://api.name.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c6ce6e3f-ebcd-499b-835a-ea1a37a00ee9"
+    },
+    "082c0583-6f52-412f-862e-015ae1ef6ae2": {
+        "name": "NativeX (Mobvista)",
+        "type": "external_service",
+        "urls": [
+            "https://3s.mobvista.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "082c0583-6f52-412f-862e-015ae1ef6ae2"
+    },
+    "98dbbbe8-7943-47f6-abeb-78fa6ca749f2": {
+        "name": "Neo4j",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "neo4j-driver",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "98dbbbe8-7943-47f6-abeb-78fa6ca749f2"
+    },
+    "868cc103-bb12-483b-8474-c73c9c114bd6": {
+        "name": "NetHunt CRM",
+        "type": "external_service",
+        "urls": [
+            "https://nethunt.com/api/v1/zapier"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "868cc103-bb12-483b-8474-c73c9c114bd6"
+    },
+    "8f5d5e3f-d10e-48c6-a75a-826327336e12": {
+        "name": "Netlify",
+        "type": "external_service",
+        "urls": [
+            "https://api.netlify.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8f5d5e3f-d10e-48c6-a75a-826327336e12"
+    },
+    "0f670125-df37-4dd6-be0a-2fbcfe18e6d1": {
+        "name": "New Relic",
+        "type": "external_service",
+        "urls": [
+            "https://js-agent.newrelic.com",
+            "https://api.eu.newrelic.com",
+            "https://api.newrelic.com",
+            "https://synthetics.newrelic.com/synthetics/api",
+            "https://log-api.eu.newrelic.com",
+            "https://log-api.newrelic.com",
+            "https://insights-collector.eu01.nr-data.net",
+            "https://insights-collector.newrelic.com",
+            "https://metric-api.newrelic.com"
+        ],
+        "packages": [
+            {
+                "name": "newrelic",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "0f670125-df37-4dd6-be0a-2fbcfe18e6d1"
+    },
+    "988d068b-c50a-4f35-9d64-aac356473b1f": {
+        "name": "Nightfall",
+        "type": "external_service",
+        "urls": [
+            "https://api.nightfall.ai",
+            "https://radar.nightfall.ai/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "988d068b-c50a-4f35-9d64-aac356473b1f"
+    },
+    "f71da756-b835-4bfb-a127-30eb1cf43700": {
+        "name": "Nodemailer",
+        "type": "external_service",
+        "urls": [
+            "https://api.nodemailer.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f71da756-b835-4bfb-a127-30eb1cf43700"
+    },
+    "f034e627-4b9e-456b-b67d-7b768b4b7806": {
+        "name": "Nylas",
+        "type": "external_service",
+        "urls": [
+            "https://api.nylas.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f034e627-4b9e-456b-b67d-7b768b4b7806"
+    },
+    "b3045d36-9a3c-42e3-b958-0e406287eea8": {
+        "name": "Ocrolus",
+        "type": "external_service",
+        "urls": [
+            "https://api.ocrolus.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b3045d36-9a3c-42e3-b958-0e406287eea8"
+    },
+    "dfa84d8b-14ad-4777-86f2-2e16dcfdb186": {
+        "name": "Okta",
+        "type": "external_service",
+        "urls": [
+            "https://global.oktacdn.com/okta-auth-js",
+            "https://app.scaleft.com/v1"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "dfa84d8b-14ad-4777-86f2-2e16dcfdb186"
+    },
+    "77a2be76-eee6-4184-b86d-68b2bf0cc628": {
+        "name": "Oney",
+        "type": "external_service",
+        "urls": [
+            "https://api.oney.io",
+            "https://api-staging.oney.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "77a2be76-eee6-4184-b86d-68b2bf0cc628"
+    },
+    "695408a7-7ea2-433b-8331-465d8cbb33f6": {
+        "name": "Onfido",
+        "type": "external_service",
+        "urls": [
+            "https://api.eu.onfido.com",
+            "https://api.us.onfido.com",
+            "https://api.onfido.com"
+        ],
+        "packages": [
+            {
+                "name": "onfido-sdk-ui",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "695408a7-7ea2-433b-8331-465d8cbb33f6"
+    },
+    "225e4023-2d0c-4d9c-b538-d46587c776a5": {
+        "name": "OpenAI",
+        "type": "external_service",
+        "urls": [
+            "https://api.openai.com"
+        ],
+        "packages": [
+            {
+                "name": "openai",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "openai-api",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "openai-api-node",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "gpt-x",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "gpt3",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "gpts",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@dalenguyen/openai",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@tectalic/openai",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "225e4023-2d0c-4d9c-b538-d46587c776a5"
+    },
+    "6fc297f7-f835-44d2-8b35-8846527edc96": {
+        "name": "OpenTok",
+        "type": "external_service",
+        "urls": [
+            "https://api.opentok.com",
+            "https://static.opentok.com/*/js"
+        ],
+        "packages": [
+            {
+                "name": "opentok-react-native",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "6fc297f7-f835-44d2-8b35-8846527edc96"
+    },
+    "ed55786e-9da2-4888-b9ca-9d8a3d1488b8": {
+        "name": "OpenWeather",
+        "type": "external_service",
+        "urls": [
+            "https://api.openweathermap.org"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ed55786e-9da2-4888-b9ca-9d8a3d1488b8"
+    },
+    "0d7fb347-adb8-476a-b9e3-1aee0a4de3c8": {
+        "name": "Optimizely",
+        "type": "external_service",
+        "urls": [
+            "https://cdn.optimizely.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0d7fb347-adb8-476a-b9e3-1aee0a4de3c8"
+    },
+    "fac238f4-1a64-43c7-a56e-849ea4ad8d97": {
+        "name": "Oracle",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "oracledb",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "fac238f4-1a64-43c7-a56e-849ea4ad8d97"
+    },
+    "bace1383-47f3-41e9-bc8f-ffae0ed767d3": {
+        "name": "OVH Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://api.ovh.com"
+        ],
+        "packages": [
+            {
+                "name": "ovh",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "bace1383-47f3-41e9-bc8f-ffae0ed767d3"
+    },
+    "27dafddd-3123-4a9a-bdbd-7015a69e13f4": {
+        "name": "Ozone Open Banking Sandbox",
+        "type": "external_service",
+        "urls": [
+            "https://ob19-auth1.o3bank.co.uk",
+            "https://ob19-rs1.o3bank.co.uk",
+            "https://ob19-auth1-ui.o3bank.co.uk"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "27dafddd-3123-4a9a-bdbd-7015a69e13f4"
+    },
+    "a9825b6e-7e59-4a83-bad6-157ad33cfbaa": {
+        "name": "PagerDuty",
+        "type": "external_service",
+        "urls": [
+            "https://api.pagerduty.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "a9825b6e-7e59-4a83-bad6-157ad33cfbaa"
+    },
+    "68b50ae3-2cf6-40e8-8fbb-31abf6e67a29": {
+        "name": "PandaDoc",
+        "type": "external_service",
+        "urls": [
+            "https://api.pandadoc.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "68b50ae3-2cf6-40e8-8fbb-31abf6e67a29"
+    },
+    "d540a5e7-49ad-42b5-8b32-9b95b3c669f2": {
+        "name": "Payline",
+        "type": "external_service",
+        "urls": [
+            "https://services.payline.com",
+            "https://payment.payline.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "d540a5e7-49ad-42b5-8b32-9b95b3c669f2"
+    },
+    "45a02e34-5c31-41c9-9e8f-963d32294dc4": {
+        "name": "paylocity",
+        "type": "external_service",
+        "urls": [
+            "https://api.paylocity.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "45a02e34-5c31-41c9-9e8f-963d32294dc4"
+    },
+    "ef3dbc3f-bffb-4042-8eb3-8a443e2930f4": {
+        "name": "Payoneer",
+        "type": "external_service",
+        "urls": [
+            "https://login.sandbox.payoneer.com",
+            "https://api.sandbox.payoneer.com",
+            "https://login.payoneer.com",
+            "https://api.payoneer.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ef3dbc3f-bffb-4042-8eb3-8a443e2930f4"
+    },
+    "041073cf-684a-42d7-b0f6-be6b38ae7fa8": {
+        "name": "PayPal",
+        "type": "external_service",
+        "urls": [
+            "https://api-3t.sandbox.paypal.com",
+            "https://api-3t.paypal.com",
+            "https://api.sandbox.paypal.com",
+            "https://api.paypal.com"
+        ],
+        "packages": [
+            {
+                "name": "@paypal/checkout-server-sdk",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@paypal/payouts-sdk",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@paypal/react-paypal-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "041073cf-684a-42d7-b0f6-be6b38ae7fa8"
+    },
+    "27f2f5bd-d414-44ac-991b-ef7cf4eb9da5": {
+        "name": "PayU",
+        "type": "external_service",
+        "urls": [
+            "https://secure.payu.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "27f2f5bd-d414-44ac-991b-ef7cf4eb9da5"
+    },
+    "1f65ad56-9bfc-4fa3-8af5-a7b3f433b15f": {
+        "name": "Phrase",
+        "type": "external_service",
+        "urls": [
+            "https://api.phraseapp.com",
+            "https://api.phrase.com"
+        ],
+        "packages": [
+            {
+                "name": "phrase-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "1f65ad56-9bfc-4fa3-8af5-a7b3f433b15f"
+    },
+    "fb31e327-cd40-4955-8209-5fb8d04cc711": {
+        "name": "Pipedrive",
+        "type": "external_service",
+        "urls": [
+            "https://api.pipedrive.com",
+            "https://pipedrive.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "fb31e327-cd40-4955-8209-5fb8d04cc711"
+    },
+    "569af393-9db7-4e25-b356-23d57b06d1c7": {
+        "name": "Pipeliner",
+        "type": "external_service",
+        "urls": [
+            "https://pipelinersales.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "569af393-9db7-4e25-b356-23d57b06d1c7"
+    },
+    "2b3ed75c-ce5a-4d5b-b8ef-15b597c9b4ac": {
+        "name": "Plaid",
+        "type": "external_service",
+        "urls": [
+            "https://production.plaid.com",
+            "https://sandbox.plaid.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2b3ed75c-ce5a-4d5b-b8ef-15b597c9b4ac"
+    },
+    "31e631cf-60e9-47b4-94dc-5a3953405b5f": {
+        "name": "Porkbun",
+        "type": "external_service",
+        "urls": [
+            "https://porkbun.com/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "31e631cf-60e9-47b4-94dc-5a3953405b5f"
+    },
+    "1a1b4fae-4330-4e67-b2f7-c1787748f024": {
+        "name": "PostgreSQL",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "pg",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "connect-pg-simple",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "postgres",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "ts-postgres",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "1a1b4fae-4330-4e67-b2f7-c1787748f024"
+    },
+    "7ade3702-f720-43ac-a302-84537c1db0d3": {
+        "name": "PostHog",
+        "type": "external_service",
+        "urls": [
+            "https://app.posthog.com"
+        ],
+        "packages": [
+            {
+                "name": "posthog-node",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "posthog-react-native",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "posthog-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "7ade3702-f720-43ac-a302-84537c1db0d3"
+    },
+    "a8439514-3db8-40dc-a1a4-ed1821eb2d02": {
+        "name": "Postmark",
+        "type": "external_service",
+        "urls": [
+            "https://api.postmarkapp.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "a8439514-3db8-40dc-a1a4-ed1821eb2d02"
+    },
+    "ab663caa-7c61-484a-a5f6-2b55a7f44d6a": {
+        "name": "Prestashop",
+        "type": "external_service",
+        "urls": [
+            "https://api.addons.prestashop.com",
+            "https://api-addons.prestashop.com",
+            "https://api.prestashop.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ab663caa-7c61-484a-a5f6-2b55a7f44d6a"
+    },
+    "f936ebf5-3b0d-42d0-98ee-d0e1ada020db": {
+        "name": "ProcessOut",
+        "type": "external_service",
+        "urls": [
+            "https://api.processout.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f936ebf5-3b0d-42d0-98ee-d0e1ada020db"
+    },
+    "8869fa80-4274-4f2f-b93d-2aa9a526c042": {
+        "name": "Profitbricks (IONOS)",
+        "type": "external_service",
+        "urls": [
+            "https://api.ionos.com",
+            "https://api.profitbricks.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "8869fa80-4274-4f2f-b93d-2aa9a526c042"
+    },
+    "b4097a16-24e3-4918-99c0-7ad83af38af5": {
+        "name": "Prometheus",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "prom-client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "prometheus-client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "b4097a16-24e3-4918-99c0-7ad83af38af5"
+    },
+    "1ca34fe1-21d5-4270-bcea-589fcd96d2e0": {
+        "name": "PubNub",
+        "type": "external_service",
+        "urls": [
+            "https://ps.pndsn.com"
+        ],
+        "packages": [
+            {
+                "name": "pubnub",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "1ca34fe1-21d5-4270-bcea-589fcd96d2e0"
+    },
+    "c65cf637-3f14-4a45-9f40-2dc3805dae30": {
+        "name": "Quanta",
+        "type": "external_service",
+        "urls": [
+            "https://app.quanta.io/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c65cf637-3f14-4a45-9f40-2dc3805dae30"
+    },
+    "3900fbf8-01db-4f4d-a167-1b9eecec4a84": {
+        "name": "RabbitMQ",
+        "type": "internal_service",
+        "urls": [],
+        "packages": [
+            {
+                "name": "amqplib",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "amqp",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@digital-factory/rabbitmq-client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "amqp-ts",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "message_bus",
+        "id": "3900fbf8-01db-4f4d-a167-1b9eecec4a84"
+    },
+    "65400ae6-5893-42de-9e83-8315011cefc0": {
+        "name": "Rackspace Cloud",
+        "type": "external_service",
+        "urls": [
+            "https://api.rackspacecloud.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "65400ae6-5893-42de-9e83-8315011cefc0"
+    },
+    "c970894d-1cbb-49fb-88a4-30aab27a62d1": {
+        "name": "Raygun",
+        "type": "external_service",
+        "urls": [
+            "https://api.raygun.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c970894d-1cbb-49fb-88a4-30aab27a62d1"
+    },
+    "fed88dd6-287e-428b-8964-7a7e8f71293f": {
+        "name": "Redis",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "connect-redis",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@aws-sdk/client-elasticache",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "redis",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "ioredis",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "async-redis",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "key_value_cache",
+        "id": "fed88dd6-287e-428b-8964-7a7e8f71293f"
+    },
+    "41346374-c350-4be6-8db8-e46be93a4fc1": {
+        "name": "ReportPortal",
+        "type": "external_service",
+        "urls": [
+            "https://rp.com/api"
+        ],
+        "packages": [
+            {
+                "name": "@reportportal/client-javascript",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "41346374-c350-4be6-8db8-e46be93a4fc1"
+    },
+    "088a7ebd-2aba-4d05-8a1f-a9e6dcc31c48": {
+        "name": "Revolut",
+        "type": "external_service",
+        "urls": [
+            "https://revolut.com/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "088a7ebd-2aba-4d05-8a1f-a9e6dcc31c48"
+    },
+    "eb4c2d48-878b-40cc-a3a9-a4ad65781166": {
+        "name": "Rollbar",
+        "type": "external_service",
+        "urls": [
+            "https://api.rollbar.com"
+        ],
+        "packages": [
+            {
+                "name": "rollbar",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "eb4c2d48-878b-40cc-a3a9-a4ad65781166"
+    },
+    "fd7fee5c-1ace-42b1-8a32-107bf92ac426": {
+        "name": "Runscope",
+        "type": "external_service",
+        "urls": [
+            "https://api.runscope.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "fd7fee5c-1ace-42b1-8a32-107bf92ac426"
+    },
+    "c1310db3-2c06-4caf-acdd-dae6528f55a9": {
+        "name": "Rydoo",
+        "type": "external_service",
+        "urls": [
+            "https://api.rydoo.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c1310db3-2c06-4caf-acdd-dae6528f55a9"
+    },
+    "1cfb6ca7-cd6e-404b-a355-996d066b9690": {
+        "name": "Sage",
+        "type": "external_service",
+        "urls": [
+            "https://banking.dev-fabric.sage.com/provider",
+            "https://banking.fabric.sage.com/provider",
+            "https://sage200.sage.es/api/sales",
+            "https://lohnabrechnung.sage.com/api",
+            "https://api.accounting.sage.com",
+            "https://api.intacct.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1cfb6ca7-cd6e-404b-a355-996d066b9690"
+    },
+    "7e768b38-5fe5-499f-919c-ae49bd396b3d": {
+        "name": "Sakura",
+        "type": "external_service",
+        "urls": [
+            "https://secure.sakura.ad.jp/cloud/zone/*/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "7e768b38-5fe5-499f-919c-ae49bd396b3d"
+    },
+    "ef636ed4-1c4a-4f2f-a090-7de8b8c3c5dd": {
+        "name": "Salesforce",
+        "type": "external_service",
+        "urls": [
+            "https://test.salesforce.com",
+            "https://login.salesforce.com",
+            "https://salesforce.com/services/data"
+        ],
+        "packages": [
+            {
+                "name": "jsforce",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "ef636ed4-1c4a-4f2f-a090-7de8b8c3c5dd"
+    },
+    "b0d89629-2f0f-4a55-8544-b9646e420ef1": {
+        "name": "SAP",
+        "type": "external_service",
+        "urls": [
+            "http://sap.com/xi/*"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b0d89629-2f0f-4a55-8544-b9646e420ef1"
+    },
+    "59f08d0f-7e9d-40b5-8440-dfca85a961b1": {
+        "name": "SatisMeter",
+        "type": "external_service",
+        "urls": [
+            "https://app.satismeter.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "59f08d0f-7e9d-40b5-8440-dfca85a961b1"
+    },
+    "2abf900d-d9ed-44e7-ab1c-ec647bedb0b0": {
+        "name": "Scaleway Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://cp-par1.scaleway.com",
+            "https://cp-ams1.scaleway.com",
+            "https://api.scaleway.com"
+        ],
+        "packages": [
+            {
+                "name": "scaleway",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "2abf900d-d9ed-44e7-ab1c-ec647bedb0b0"
+    },
+    "df871be3-d9bc-4674-8bfe-cd038a72631a": {
+        "name": "Scout APM",
+        "type": "external_service",
+        "urls": [
+            "https://scoutapm.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "df871be3-d9bc-4674-8bfe-cd038a72631a"
+    },
+    "f2ff26bc-c705-4448-8f30-f355657c09b7": {
+        "name": "Seeuletter (MySendingBox)",
+        "type": "external_service",
+        "urls": [
+            "https://api.MySendingBox.fr",
+            "https://api.seeuletter.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f2ff26bc-c705-4448-8f30-f355657c09b7"
+    },
+    "cc48d5fa-a8ab-43ed-b333-ce55186e1f7b": {
+        "name": "Segment",
+        "type": "external_service",
+        "urls": [
+            "https://api.segment.io",
+            "https://cdn.segment.com"
+        ],
+        "packages": [
+            {
+                "name": "analytics-node",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "cc48d5fa-a8ab-43ed-b333-ce55186e1f7b"
+    },
+    "ba3d2814-4e97-47f3-8573-fc0f64f27e5b": {
+        "name": "Selligent",
+        "type": "external_service",
+        "urls": [
+            "https://selligent.com/*/organizations"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ba3d2814-4e97-47f3-8573-fc0f64f27e5b"
+    },
+    "bcd20416-d355-4ae1-867b-6d9b59abde7d": {
+        "name": "SendBird",
+        "type": "external_service",
+        "urls": [
+            "https://*.sendbird.com"
+        ],
+        "packages": [
+            {
+                "name": "sendbird",
+                "group": "",
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "bcd20416-d355-4ae1-867b-6d9b59abde7d"
+    },
+    "7db8f6ac-8ab6-4dc8-b4d4-627387d4493a": {
+        "name": "Sendgrid",
+        "type": "external_service",
+        "urls": [
+            "https://api.sendgrid.com"
+        ],
+        "packages": [
+            {
+                "name": "@sendgrid/mail",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sendgrid/client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sendgrid/inbound-mail-parser",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sendgrid/contact-importer",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sendgrid/helpers",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sendgrid/eventwebhook",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "7db8f6ac-8ab6-4dc8-b4d4-627387d4493a"
+    },
+    "32cbf012-7232-45c8-beab-9895313e78e1": {
+        "name": "Sendinblue",
+        "type": "external_service",
+        "urls": [
+            "https://api.sendinblue.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "32cbf012-7232-45c8-beab-9895313e78e1"
+    },
+    "9fb1940a-3ca9-442e-84bb-9205532c804d": {
+        "name": "Sentry",
+        "type": "external_service",
+        "urls": [
+            "https://sentry.io/api"
+        ],
+        "packages": [
+            {
+                "name": "@sentry/browser",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "raven-js",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sentry/cli",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@sentry/node",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "winston-sentry",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "9fb1940a-3ca9-442e-84bb-9205532c804d"
+    },
+    "ad6e6772-e317-4a5a-bd06-e2bdeddb11c2": {
+        "name": "ShipBob",
+        "type": "external_service",
+        "urls": [
+            "https://api.shipbob.com",
+            "https://sandbox-api.shipbob.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ad6e6772-e317-4a5a-bd06-e2bdeddb11c2"
+    },
+    "97815c45-8284-40d2-814e-26c841e4016e": {
+        "name": "Shopify",
+        "type": "external_service",
+        "urls": [
+            "https://myshopify.com/api",
+            "https://myshopify.com/admin/api"
+        ],
+        "packages": [
+            {
+                "name": "Shopify-api-node",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "97815c45-8284-40d2-814e-26c841e4016e"
+    },
+    "1f294cf0-49d4-4cdc-881a-5f0878002bd9": {
+        "name": "Skyscanner",
+        "type": "external_service",
+        "urls": [
+            "https://partners.api.skyscanner.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1f294cf0-49d4-4cdc-881a-5f0878002bd9"
+    },
+    "cb0c507b-ac0a-49a4-9e88-d3429bc7a410": {
+        "name": "Slack",
+        "type": "external_service",
+        "urls": [
+            "https://hooks.slack.com",
+            "https://api.slack.com"
+        ],
+        "packages": [
+            {
+                "name": "slack",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "node-slackr",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "node-slack-upload",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@slack/client",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@slack/web-api",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "slackbots",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@slack/webhook",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "cb0c507b-ac0a-49a4-9e88-d3429bc7a410"
+    },
+    "0105daf4-17dd-4191-aebe-6bf6ea4ec34e": {
+        "name": "Small Improvements",
+        "type": "external_service",
+        "urls": [
+            "https://small-improvements.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0105daf4-17dd-4191-aebe-6bf6ea4ec34e"
+    },
+    "fbb611e8-966c-4f11-b70f-36c518bc49b2": {
+        "name": "Societeinfo",
+        "type": "external_service",
+        "urls": [
+            "https://societeinfo.com/app/rest/api/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "fbb611e8-966c-4f11-b70f-36c518bc49b2"
+    },
+    "ccd34452-6753-4d3b-9719-1ad0cd1417d9": {
+        "name": "Socket.IO",
+        "type": "external_service",
+        "urls": [
+            "https://socket.io/lib/*",
+            "https://*.socket.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ccd34452-6753-4d3b-9719-1ad0cd1417d9"
+    },
+    "68daec3b-54e7-4d6b-be6d-fdfad5a05d1f": {
+        "name": "Softlayer (IBM Cloud)",
+        "type": "external_service",
+        "urls": [
+            "https://api.softlayer.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "68daec3b-54e7-4d6b-be6d-fdfad5a05d1f"
+    },
+    "e10ac3cc-d645-4e3c-8ec2-ea4a9bbc422f": {
+        "name": "Solocal Bridge",
+        "type": "external_service",
+        "urls": [
+            "https://api.leadformance.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e10ac3cc-d645-4e3c-8ec2-ea4a9bbc422f"
+    },
+    "9fff08fe-d1fc-4922-afa8-e79abf2300bc": {
+        "name": "Splunk",
+        "type": "external_service",
+        "urls": [
+            "https://*.splunkcloud.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "9fff08fe-d1fc-4922-afa8-e79abf2300bc"
+    },
+    "6d85e094-4a50-4c38-8f7f-fa0fe6805ff6": {
+        "name": "SQLite",
+        "type": "data_store",
+        "urls": [],
+        "packages": [
+            {
+                "name": "sqlite3",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "sqlite",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "database",
+        "id": "6d85e094-4a50-4c38-8f7f-fa0fe6805ff6"
+    },
+    "9d01a793-b661-4eaf-a0b8-65cceed4a73b": {
+        "name": "Sqreen (Datadog)",
+        "type": "external_service",
+        "urls": [
+            "https://back.sqreen.com",
+            "https://ingestion.sqreen.com",
+            "https://back.sqreen.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "9d01a793-b661-4eaf-a0b8-65cceed4a73b"
+    },
+    "266e1945-a001-4466-8909-3609ff6e4958": {
+        "name": "Square",
+        "type": "external_service",
+        "urls": [
+            "https://connect.squareupsandbox.com",
+            "https://connect.squareup.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "266e1945-a001-4466-8909-3609ff6e4958"
+    },
+    "2c95e6a7-5ebd-43c6-83c2-f7f53d259a41": {
+        "name": "Stackify",
+        "type": "external_service",
+        "urls": [
+            "https://api.stackify.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2c95e6a7-5ebd-43c6-83c2-f7f53d259a41"
+    },
+    "058fe211-8e44-47f6-8fc3-d4ff3741dfc2": {
+        "name": "Statuspage",
+        "type": "external_service",
+        "urls": [
+            "https://api.statuspage.io"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "058fe211-8e44-47f6-8fc3-d4ff3741dfc2"
+    },
+    "39c86933-162f-4ae2-8da7-759892460d45": {
+        "name": "Stripe",
+        "type": "external_service",
+        "urls": [
+            "https://api.stripe.com",
+            "https://js.stripe.com"
+        ],
+        "packages": [
+            {
+                "name": "stripe",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "react-stripe-elements",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@stripe/stripe-js",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@stripe/react-stripe-js",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "39c86933-162f-4ae2-8da7-759892460d45"
+    },
+    "eba66d83-7551-4336-bab9-0e1993b385c7": {
+        "name": "Tanker",
+        "type": "external_service",
+        "urls": [
+            "https://fakeauth.tanker.io",
+            "https://api.tanker.io"
+        ],
+        "packages": [
+            {
+                "name": "@tanker/client-browser",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@tanker/client-node",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@tanker/core",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "@tanker/crypto",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "eba66d83-7551-4336-bab9-0e1993b385c7"
+    },
+    "ba649cd9-955e-4659-8815-774a92a1ac02": {
+        "name": "Telegram",
+        "type": "external_service",
+        "urls": [
+            "https://api.telegram.org"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "ba649cd9-955e-4659-8815-774a92a1ac02"
+    },
+    "1c4d02a4-0ee6-43ee-8966-27cd96bbf9d3": {
+        "name": "Tencent Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://tencentcloudapi.com",
+            "https://*.tencentcloudapi.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1c4d02a4-0ee6-43ee-8966-27cd96bbf9d3"
+    },
+    "0dd79073-ad1c-4ccd-89b2-bd19348fe3fd": {
+        "name": "Thunes (Limonethik)",
+        "type": "external_service",
+        "urls": [
+            "https://api.limonetikqualif.com",
+            "https://api.limonetik.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "0dd79073-ad1c-4ccd-89b2-bd19348fe3fd"
+    },
+    "c38cc2e0-392a-4c15-8662-51ed8311a067": {
+        "name": "Tide",
+        "type": "external_service",
+        "urls": [
+            "https://sandbox.tide.co",
+            "https://api.tide.co"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "c38cc2e0-392a-4c15-8662-51ed8311a067"
+    },
+    "f92ddff4-33e0-421f-a585-79a43847061c": {
+        "name": "Tidelift",
+        "type": "external_service",
+        "urls": [
+            "https://api.tidelift.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "f92ddff4-33e0-421f-a585-79a43847061c"
+    },
+    "343ec7ba-f3b2-4c62-b937-73f7e83583aa": {
+        "name": "Trafficvance",
+        "type": "external_service",
+        "urls": [
+            "https://api.trafficvance.com",
+            "https://apitest.trafficvance.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "343ec7ba-f3b2-4c62-b937-73f7e83583aa"
+    },
+    "29e786da-c215-4ef9-a127-f364f73b79b4": {
+        "name": "Travefy",
+        "type": "external_service",
+        "urls": [
+            "https://api.travefy.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "29e786da-c215-4ef9-a127-f364f73b79b4"
+    },
+    "3eb174de-db90-4059-b362-a4e4efbc49c1": {
+        "name": "Travis CI",
+        "type": "external_service",
+        "urls": [
+            "https://api.travis-ci.org"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3eb174de-db90-4059-b362-a4e4efbc49c1"
+    },
+    "4b926b7e-7140-4230-8c36-b330641327b1": {
+        "name": "Treezor",
+        "type": "external_service",
+        "urls": [
+            "https://treezor.com/v1/"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "4b926b7e-7140-4230-8c36-b330641327b1"
+    },
+    "b8387b98-2dd4-46ee-bed5-17afe629c097": {
+        "name": "Trello",
+        "type": "external_service",
+        "urls": [
+            "https://api.trello.com",
+            "https://p.trellocdn.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b8387b98-2dd4-46ee-bed5-17afe629c097"
+    },
+    "24181756-a096-4617-9dbf-a4049fe727ed": {
+        "name": "Twilio",
+        "type": "external_service",
+        "urls": [
+            "https://api.twilio.com",
+            "https://pricing.twilio.com",
+            "https://verify.twilio.com",
+            "https://lookups.twilio.com",
+            "https://notify.twilio.com",
+            "https://insights.twilio.com",
+            "https://video.twilio.com"
+        ],
+        "packages": [
+            {
+                "name": "twilio-node",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "24181756-a096-4617-9dbf-a4049fe727ed"
+    },
+    "fb65e5e7-6a38-4788-b5e2-2577d872a580": {
+        "name": "Twitter",
+        "type": "external_service",
+        "urls": [
+            "http://platform.twitter.com/widgets.js",
+            "https://stream.twitter.com",
+            "https://ads-api.twitter.com",
+            "https://api.twitter.com"
+        ],
+        "packages": [
+            {
+                "name": "twitter-autohook",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "fb65e5e7-6a38-4788-b5e2-2577d872a580"
+    },
+    "ce3077ba-e0d8-4ea5-ab3f-2ac792c85813": {
+        "name": "Typeform",
+        "type": "external_service",
+        "urls": [
+            "https://*.typeform.com/*",
+            "https://*.typeform.com",
+            "https://api.typeform.com"
+        ],
+        "packages": [
+            {
+                "name": "@typeform/api-client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "ce3077ba-e0d8-4ea5-ab3f-2ac792c85813"
+    },
+    "231a4995-aadf-4df6-937b-e18328ce0cfc": {
+        "name": "Unsplash",
+        "type": "external_service",
+        "urls": [
+            "https://api.unsplash.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "231a4995-aadf-4df6-937b-e18328ce0cfc"
+    },
+    "08e83d0c-2afb-4792-8be8-6508fb74a4af": {
+        "name": "Uploadecare",
+        "type": "external_service",
+        "urls": [
+            "https://upload.uploadcare.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "08e83d0c-2afb-4792-8be8-6508fb74a4af"
+    },
+    "1443c83f-a355-494b-a2db-0e2badd30b16": {
+        "name": "Uptrends",
+        "type": "external_service",
+        "urls": [
+            "https://api.uptrends.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1443c83f-a355-494b-a2db-0e2badd30b16"
+    },
+    "3a8c8a76-9305-4203-84fa-57e152aa329b": {
+        "name": "userlike.com",
+        "type": "external_service",
+        "urls": [
+            "https://api.userlike.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3a8c8a76-9305-4203-84fa-57e152aa329b"
+    },
+    "e3df0f64-b169-4829-b341-d8ef02067868": {
+        "name": "Usersnap",
+        "type": "external_service",
+        "urls": [
+            "https://platform.usersnap.com",
+            "https://widget.usersnap.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "e3df0f64-b169-4829-b341-d8ef02067868"
+    },
+    "1b70b372-58f3-4a75-bd04-d6d38a0ea2c7": {
+        "name": "Vercel",
+        "type": "external_service",
+        "urls": [
+            "https://api.vercel.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "1b70b372-58f3-4a75-bd04-d6d38a0ea2c7"
+    },
+    "6b8d2531-b9fa-4231-b66e-d6c41de57f21": {
+        "name": "Vero",
+        "type": "external_service",
+        "urls": [
+            "https://api.getvero.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "6b8d2531-b9fa-4231-b66e-d6c41de57f21"
+    },
+    "9ede0d83-2e63-4e1f-a08e-ad795cdd9c97": {
+        "name": "Victorops (Splunk)",
+        "type": "external_service",
+        "urls": [
+            "https://api.victorops.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "9ede0d83-2e63-4e1f-a08e-ad795cdd9c97"
+    },
+    "8a96bc3e-7a1e-464f-8ddb-a7785b2dc484": {
+        "name": "Vonage",
+        "type": "external_service",
+        "urls": [
+            "https://api.nexmo.com"
+        ],
+        "packages": [
+            {
+                "name": "@opentok/client",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "8a96bc3e-7a1e-464f-8ddb-a7785b2dc484"
+    },
+    "cf803876-e3b9-40e6-8261-3785910e8a52": {
+        "name": "Wistia",
+        "type": "external_service",
+        "urls": [
+            "https://api.wistia.com",
+            "https://upload.wistia.com",
+            "https://fast.wistia.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "cf803876-e3b9-40e6-8261-3785910e8a52"
+    },
+    "41b50dc2-1937-4de8-bacd-1784bdf03955": {
+        "name": "Wordnik",
+        "type": "external_service",
+        "urls": [
+            "https://api.wordnik.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "41b50dc2-1937-4de8-bacd-1784bdf03955"
+    },
+    "4ddf1a75-a8d9-40f1-bd0e-da1c59113c7a": {
+        "name": "WordPress",
+        "type": "external_service",
+        "urls": [
+            "https://public-api.wordpress.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "4ddf1a75-a8d9-40f1-bd0e-da1c59113c7a"
+    },
+    "2e1deebc-b79c-4cf5-b78a-53e4fc627f0f": {
+        "name": "Wrike",
+        "type": "external_service",
+        "urls": [
+            "https://wrike.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "2e1deebc-b79c-4cf5-b78a-53e4fc627f0f"
+    },
+    "a8060ab1-e2d0-4575-9044-40660b265950": {
+        "name": "Xero",
+        "type": "external_service",
+        "urls": [
+            "https://api.xero.com"
+        ],
+        "packages": [
+            {
+                "name": "xero-node",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "a8060ab1-e2d0-4575-9044-40660b265950"
+    },
+    "6914d208-4dcf-4090-b29e-510885924c8b": {
+        "name": "xignite",
+        "type": "external_service",
+        "urls": [
+            "https://navs.xignite.com/v1",
+            "https://navs.xignite.com/v2"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "6914d208-4dcf-4090-b29e-510885924c8b"
+    },
+    "3f1d989f-9a19-4a26-993a-c9e511ca4398": {
+        "name": "Yandex.Cloud APIs",
+        "type": "external_service",
+        "urls": [
+            "https://api.cloud.yandex.net"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "3f1d989f-9a19-4a26-993a-c9e511ca4398"
+    },
+    "15707314-52e3-48e3-a245-a5bb96cb72ce": {
+        "name": "Yodlee",
+        "type": "external_service",
+        "urls": [
+            "https://api.yodlee.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "15707314-52e3-48e3-a245-a5bb96cb72ce"
+    },
+    "db913c83-39fc-4cc2-b216-d39e1e20cea0": {
+        "name": "Youtube",
+        "type": "external_service",
+        "urls": [
+            "https://www.googleapis.com/youtube/"
+        ],
+        "packages": [
+            {
+                "name": "react-youtube",
+                "group": null,
+                "package_manager": "npm"
+            },
+            {
+                "name": "youtube-player",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "db913c83-39fc-4cc2-b216-d39e1e20cea0"
+    },
+    "03606cb3-81da-4231-877c-b19b79f149b6": {
+        "name": "Zapier",
+        "type": "external_service",
+        "urls": [
+            "https://hooks.zapier.com",
+            "https://api.zapier.com"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "03606cb3-81da-4231-877c-b19b79f149b6"
+    },
+    "f0f9cc5a-81fb-4fdb-8a00-5c00b1ee8559": {
+        "name": "Zendesk",
+        "type": "external_service",
+        "urls": [
+            "https://rtm.zopim.com",
+            "https://static.zdassets.com/ekr",
+            "https://api.getbase.com",
+            "https://chat-api.zopim.com",
+            "https://zendesk.com/api",
+            "https://zopim.com/api"
+        ],
+        "packages": [
+            {
+                "name": "node-zendesk",
+                "group": null,
+                "package_manager": "npm"
+            }
+        ],
+        "sub_type": "third_party",
+        "id": "f0f9cc5a-81fb-4fdb-8a00-5c00b1ee8559"
+    },
+    "51a7b46f-9fb9-414a-9f46-d52fae446f85": {
+        "name": "Zeplin",
+        "type": "external_service",
+        "urls": [
+            "https://api.zeplin.dev"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "51a7b46f-9fb9-414a-9f46-d52fae446f85"
+    },
+    "b2c9f473-1071-4f62-8668-5c8ab731a64c": {
+        "name": "Zoho",
+        "type": "external_service",
+        "urls": [
+            "https://*.zoho.eu/api/",
+            "https://accounts.zoho.eu",
+            "https://zohoapis.com",
+            "https://analyticsapi.zoho.com.cn",
+            "https://zoho.eu/restapi",
+            "https://zoho.com/pulse/api/",
+            "https://recruit.zoho.com/recruit/private/xml",
+            "https://analyticsapi.zoho.com.au",
+            "https://analyticsapi.zoho.in",
+            "https://analyticsapi.zoho.eu",
+            "https://analyticsapi.zoho.com",
+            "https://zoho.com/api"
+        ],
+        "packages": [],
+        "sub_type": "third_party",
+        "id": "b2c9f473-1071-4f62-8668-5c8ab731a64c"
+    }
+}

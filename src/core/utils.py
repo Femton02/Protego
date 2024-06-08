@@ -8,7 +8,7 @@ sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
 from common_includes import *
 
 #____________________________________________________________________________________#
-
+import json
 
 def read_file(file_path: str) -> str:
     """Reads the contents of a file and returns it as a string.
@@ -49,3 +49,16 @@ def get_js_files(
                 target_files.append(os.path.join(root, file))
 
     return target_files
+
+
+def read_json_file(file_path: str) -> dict:
+    """Reads the contents of a JSON file and returns it as a dictionary.
+
+    Args:
+        file_path (str): The path to the JSON file to read.
+
+    Returns:
+        dict: The contents of the JSON file.
+    """
+    with open(file_path, "r") as file:
+        return json.load(file)
