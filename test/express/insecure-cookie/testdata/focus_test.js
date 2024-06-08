@@ -16,7 +16,7 @@ let z = false;
 
 y = x || z;
 
-y = true;
+y = false;
 
 app.use(
   // bearer:expected javascript_express_cookie_missing_http_only

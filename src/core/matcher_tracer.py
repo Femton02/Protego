@@ -11,16 +11,29 @@ from common_includes import *
 #____________________________________________________________________________________#
 from core.report_engine import read_file
 from core.protego_node import ProtegoTree
-from core.symbol_table import SymbolTableBuilder
+from core.symbol_table import SymbolTableBuilder, SymbolTable
+
+parsed_src_code = None
+node_map = None
+symbol_table = None
+proTree = None
 
 def compare_content(content: dict, match: dict[str, Node]):
     for key, value in content.items():
-        comparestr = "param" + str(key)
-        if comparestr not in match:
-            return False
-        node = match[comparestr]
-        if node.text.decode() != value:
-            return False
+        if key == -1:
+            comparestr = "focus"
+            if comparestr not in match:
+                return False
+            node = match[comparestr]
+            if node.text.decode() != value:
+                return False
+        else:
+            comparestr = "param" + str(key)
+            if comparestr not in match:
+                return False
+            node = match[comparestr]
+            if node.text.decode() != value:
+                return False
     return True
 
 def check_type(types: dict, variable_name: str, node: Node):
@@ -46,24 +59,89 @@ def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns:
             if filter.type == FilterType.HELPER_PATTERN:
                 helper_pattern_id = filter.method
                 helper_pattern = helper_patterns[helper_pattern_id]
-                helper_pattern_results = get_pre_run_matches(node, helper_pattern.patterns, helper_patterns)
+                helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns)
                 if not helper_pattern_results:
                     return False
             # TODO: Handle other filter types
     return True
 
-def get_pre_run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[HelperPattern]):
+def check_trace(variable: Node, pattern: Pattern, helper_patterns: list[HelperPattern]):
+    protego_var = node_map[variable.id]
+    # Check if the variable source matches the pattern
+    current_scope = protego_var.symbol_table
+    while current_scope:
+        if protego_var.text.decode() in current_scope.table:
+            break
+        current_scope = current_scope.parent
+    if not current_scope:
+        return None
+
+    check_node = current_scope.table[protego_var.text.decode()]
+    result = match_single_node(check_node.original_node, pattern, helper_patterns)
+    if result:
+        return result
+
+    while check_node.points_to:
+        check_node = check_node.points_to
+        result = match_single_node(check_node.original_node, pattern, helper_patterns)
+        if result:
+            return result
+
+    # Check aliases recursively
+    return check_aliases_recursively(current_scope, variable.text.decode(), pattern, helper_patterns)
+
+def check_aliases_recursively(symbol_table: SymbolTable, var_name: str, pattern: Pattern, helper_patterns: list[HelperPattern]):
+    if var_name not in symbol_table.aliases:
+        return None
+
+    for alias in symbol_table.aliases[var_name]:
+        if alias in symbol_table.table:
+            check_node = symbol_table.table[alias]
+            result = match_single_node(check_node.original_node, pattern, helper_patterns)
+            if result:
+                return result
+
+            while check_node.points_to:
+                check_node = check_node.points_to
+                result = match_single_node(check_node.original_node, pattern, helper_patterns)
+                if result:
+                    return result
+
+            # Recursively check aliases of the current alias
+            result = check_aliases_recursively(symbol_table, alias, pattern, helper_patterns)
+            if result:
+                return result
+    return None
+
+
+def match_single_node(node: Node, pattern: Pattern, helper_patterns: list[HelperPattern]):
+    captures, matches = query_tree(node, pattern.query)
+    for x in matches:
+        match = x[1]
+        if not compare_content(pattern.content, match):
+            continue
+        if not compare_variables(match, pattern, helper_patterns):
+            continue
+        return match
+    return None
+
+def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[HelperPattern]):
     result = []
     for pattern in patterns:
         print(f"Querying pattern: {pattern.id}")
+        if 'focus' in pattern.query:
+            output = check_trace(parsed_src_code, pattern, helper_patterns)
+            if output:
+                result.append(output)
         _, matches = query_tree(parsed_src_code, pattern.query)
         for x in matches:
             match = x[1]
             if not compare_content(pattern.content, match):
                 # print(f"Content Mismatch for match \n{match}\nand pattern \n{pattern}\n")
                 continue
+            # if 'focus' in match then we need to trace the focus, lookup that variable in the symbol table and check if its source matches the pattern.
             if not compare_variables(match, pattern, helper_patterns):
-                # print(f"Type or variable Mismatch for match \n{match}\nand pattern \n{pattern}\n")
+            # print(f"Type or variable Mismatch for match \n{match}\nand pattern \n{pattern}\n")
                 continue
             # print(f"Found match: {match} for pattern {pattern}")
             result.append(match)
@@ -81,14 +159,13 @@ if __name__ == "__main__":
     node_map = proTree.node_mapping
     # create the symbol table
     symbol_table = SymbolTableBuilder()
-    aliases = symbol_table.root_symbol_table.aliases
-    symbol_table.build(proTree)
-    pre_caught_nodes = get_pre_run_matches(parsed_src_code.root_node, rule.patterns, rule.helper_patterns)
+    symbol_table.build(proTree.root)
+    caught_nodes = run_matches(parsed_src_code.root_node, rule.patterns, rule.helper_patterns)
     print("done")
     # print("__________________________")
-    # for node_id in pre_caught_nodes:
+    # for node_id in caught_nodes:
     #     print(node_map[node_id])
-    #     print(pre_caught_nodes[node_id])
+    #     print(caught_nodes[node_id])
     #     print("__________________________")
     # print("done")
     
