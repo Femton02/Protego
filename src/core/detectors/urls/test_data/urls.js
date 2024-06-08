@@ -44,5 +44,17 @@ let parts = ["https://", "api-new", ".domain", "ads"];
 let url8 = ["https://", "api-new", ".domain", "ads"].join('');
 let url9 = parts.join('');
 
+// Test Case 10: Environment Variables
+let env_url = process.env.BASE_URL;
+let url10 = env_url + "/api";
+
+// Test Case 11: Environment Variables with Brackets
+let env_url2 = process.env['BASE_URL'];
+let url11 = env_url2 + "/api";
+
+// Test Case 12: Destructuring Environment Variables
+const { BASE_URL } = process.env;
+let url12 = BASE_URL + "/api";
+
 // Not detected yet
-let url10 = Array(1).fill("https://").join('') + "api-new.domainads";
+let url13 = Array(1).fill("https://").join('') + "api-new.domainads";

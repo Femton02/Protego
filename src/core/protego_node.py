@@ -22,6 +22,7 @@ class ProtegoNode:
         self.id = node.id
         self.points_to = None
         self.tree_sitter_node: Node = node
+        self.value = None
 
     def __str__(self):
         return f"Node: {self.id}, text: {self.text}"
