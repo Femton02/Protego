@@ -11,6 +11,7 @@ from common_includes import *
 from typing import Any
 from enum import Enum
 from rule_parser import read_rules_from_yaml
+import re
 
 class FilterType(Enum):
     HELPER_PATTERN = 'detection'
@@ -42,7 +43,6 @@ class Pattern:
         return f"Pattern: {self.id}, {self.pattern}"
     
     def process_filters(self):
-        # convert list of filters to a dictionary with variable name as key and detection as value
         new_filters = {}
         for filter in self.filters:
             if filter['variable'] not in new_filters:
@@ -51,7 +51,11 @@ class Pattern:
             found_filter = False
             for filter_type in FilterType:
                 if filter_type.value in filter:
-                    filter_obj = Filter(filter['variable'], filter_type, filter[filter_type.value])
+                    # Correctly parse regex and other filter methods
+                    filter_method = filter[filter_type.value]
+                    if filter_type == FilterType.REGEX:
+                        filter_method = fix_regex(filter_method)
+                    filter_obj = Filter(filter['variable'], filter_type, filter_method)
                     new_filters[filter_obj.variable].append(filter_obj)
                     found_filter = True
                     break
@@ -59,13 +63,21 @@ class Pattern:
             if not found_filter:
                 raise Exception(f"Error in reading filter in yaml file: \nFor pattern {self.id}, filter {filter} is not in the correct format")
             
-
-
         self.filters = new_filters
 
+def fix_regex(regex: str) -> str:
+    # Look for any double backslashes and replace them with single backslashes
+    fixed_regex = ""
+    i = 0
+    while i < len(regex):
+        if regex[i] == "\\" and i + 1 < len(regex) and regex[i + 1] == "\\":
+            fixed_regex += regex[i]
+            i += 2
+        else:
+            fixed_regex += regex[i]
+            i += 1
+    return fixed_regex
 
-
-    
 class HelperPattern:
     def __init__(self, data):
         self.id = data.get('id', '')
@@ -91,7 +103,6 @@ class Rule:
         self.description = self.metadata.get('description', '')
         self.message = self.metadata.get('message', '')
 
-
     def __str__(self):
         return f"Rule: {self.metadata.get('id')}"
 
@@ -99,11 +110,8 @@ class Rule:
 #                                   ENTRY POINT
 #____________________________________________________________________________________#   
 
-
 if __name__ == "__main__":
-    #rule = Rule(read_rules_from_yaml(protego_workspace_dir + "/rules/rule.yaml"))
-    rule = process_rule(protego_workspace_dir + "/rules/rule.yaml")
+    rule = process_rule("test/express/insecure-cookie/testdata/filter_test.yaml")
 
     # Accessing rule attributes
-
     print(rule)

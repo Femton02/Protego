@@ -62,6 +62,15 @@ def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns:
                 helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns)
                 if not helper_pattern_results:
                     return False
+            if filter.type == FilterType.REGEX:
+                re_pattern = f'{filter.method}'
+                if not re.match(re_pattern, node.text.decode()):
+                    return False
+            if filter.type == FilterType.VALUES:
+                for value in filter.method:
+                    if node.text.decode() == value:
+                        return True
+                return False
             # TODO: Handle other filter types
     return True
 
@@ -149,8 +158,8 @@ def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[
 
 
 if __name__ == "__main__":
-    rule = process_rule("test/express/insecure-cookie/testdata/focus_test.yaml")
-    src_code = read_file("test/express/insecure-cookie/testdata/focus_test.js")
+    rule = process_rule("test/express/insecure-cookie/testdata/filter_test.yaml")
+    src_code = read_file("test/express/insecure-cookie/testdata/filter_test.js")
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables

@@ -1,14 +1,13 @@
 import os
 import sys
+import yaml
+
 protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
 if not protego_workspace_dir:
     print("Please set the environment variable PROTEGO_WORKSPACE_DIR to the path of the Protego workspace directory.")
     sys.exit(1)
 sys.path.append(os.path.join(protego_workspace_dir, "src/core"))
 from common_includes import *
-
-
-import yaml
 
 def read_rules_from_yaml(rule_file_path: str) -> dict:
     """
@@ -42,7 +41,6 @@ def process_rule(rulepath: str):
             pattern_obj.types = types
 
     return rule    
-
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
