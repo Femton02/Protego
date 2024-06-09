@@ -17,12 +17,18 @@ helper_patterns:
       - pattern: |
           { httpOnly: $<var> }
         filters:
-          - variable: var
-            values:
-              - 'false'
-              - 'null'
-              - '0'
-          
+          - either:
+            - variable: var
+              detection: javascript_express_cookie_missing_http_only
+            - not:
+              - variable: var
+                values:
+                - 'true'
+                - '1'
+  - id: javascript_express_cookie_missing_http_only
+    patterns:
+      - pattern: |
+          false
 languages:
   - javascript
 metadata:

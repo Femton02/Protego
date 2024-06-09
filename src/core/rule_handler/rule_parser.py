@@ -1,6 +1,6 @@
 import os
 import sys
-import yaml
+import ruamel.yaml as yaml
 
 protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
 if not protego_workspace_dir:
@@ -14,7 +14,7 @@ def read_rules_from_yaml(rule_file_path: str) -> dict:
     Function to read rules from a YAML file.
     """
     try:
-        with open(rule_file_path, "r") as file:
+        with open(rule_file_path, "r", encoding="utf-8") as file:
             rules = yaml.safe_load(file)
             return rules
     except FileNotFoundError:

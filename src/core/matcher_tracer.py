@@ -43,6 +43,9 @@ def check_type(types: dict, variable_name: str, node: Node):
     return True
 
 def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns: list[HelperPattern]):
+    result = True
+    if not pattern.variables:
+        return result
     variables = pattern.variables
     types = pattern.types
     for key, value in variables.items():
@@ -60,19 +63,32 @@ def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns:
                 helper_pattern_id = filter.method
                 helper_pattern = helper_patterns[helper_pattern_id]
                 helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns)
-                if not helper_pattern_results:
-                    return False
+                if not filter.negation:
+                    if helper_pattern_results:
+                        return True
+                else:
+                    if not helper_pattern_results:
+                        return True
             if filter.type == FilterType.REGEX:
                 re_pattern = f'{filter.method}'
-                if not re.match(re_pattern, node.text.decode()):
-                    return False
+                if not filter.negation:
+                    if re.match(re_pattern, node.text.decode()):
+                        return True
+                else:
+                    if not re.match(re_pattern, node.text.decode()):
+                        return True
             if filter.type == FilterType.VALUES:
                 for value in filter.method:
-                    if node.text.decode() == value:
-                        return True
-                return False
-            # TODO: Handle other filter types
-    return True
+                    result = True
+                    if not filter.negation:
+                        if node.text.decode() == value:
+                            return True
+                    else:
+                        if node.text.decode() == value:
+                            return False
+                if filter.negation:
+                    return True
+    return False
 
 def check_trace(variable: Node, pattern: Pattern, helper_patterns: list[HelperPattern]):
     protego_var = node_map[variable.id]
