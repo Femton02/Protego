@@ -1,0 +1,78 @@
+patterns:
+  - pattern: |
+      {
+        cookie: $<HASH_CONTENT>
+      }
+    filters:
+      - not:
+          variable: HASH_CONTENT
+          detection: javascript_express_default_cookie_config_hash_val
+  - pattern: |
+      cookieSession($<HASH_CONTENT>)
+    filters:
+      - not:
+          variable: HASH_CONTENT
+          detection: javascript_express_default_cookie_config_hash_val
+languages:
+  - javascript
+helper_patterns:
+  - id: javascript_express_default_cookie_config_hash_val
+    patterns:
+      - pattern: |
+          {$<attribute1>: $<...>, $<attribute2>: $<...>, $<attribute3>: $<...>, $<attribute4>: $<...>, $<attribute5>: $<...>, $<attribute6>: $<...>}
+        filters:
+          - variable: attribute1
+            detection: javascript_express_default_cookie_config_attribute
+
+          - variable: attribute2
+            detection: javascript_express_default_cookie_config_attribute
+
+          - variable: attribute3
+            detection: javascript_express_default_cookie_config_attribute
+
+          - variable: attribute4
+            detection: javascript_express_default_cookie_config_attribute
+
+          - variable: attribute5
+            detection: javascript_express_default_cookie_config_attribute
+
+          - variable: attribute6
+            detection: javascript_express_default_cookie_config_attribute
+  - id: javascript_express_default_cookie_config_attribute
+    patterns:
+      - pattern: |
+          name
+      - pattern: |
+          domain
+      - pattern: |
+          secure
+      - pattern: |
+          path
+      - pattern: |
+          httpOnly
+      - pattern: |
+          maxAge
+      - pattern: |
+          expires
+severity: medium
+metadata:
+  description: Usage of default cookie configuration
+  remediation_message: |-
+    ## Description
+
+    Using default cookie configurations can expose your application to security risks. This vulnerability arises when cookies are set with their default values, making them predictable and easier to exploit.
+
+    ## Remediations
+
+    - **Do not** rely on default cookie names.
+    - **Do** use generic, non-descriptive names for session cookies. This makes it harder for attackers to identify and exploit the session management mechanism of your application.
+    - **Do** always specify a `maxAge` or `expires` value to control cookie lifetime.
+
+    ## References
+
+    - [Express Security Best Practices](https://expressjs.com/en/advanced/best-practice-security.html#use-cookies-securely)
+  cwe_id:
+    - 693
+  id: javascript_express_default_cookie_config
+  documentation_url: https://docs.bearer.com/reference/rules/javascript_express_default_cookie_config
+  cloud_code_suggestions: true

@@ -34,7 +34,7 @@ def pattern_preprocessing(pattern: str) -> tuple[str, dict, dict, dict]:
             trace.append([match.group(4), uuidstr, "LITERAL"])
         else:
             trace.append([match.group(4), uuidstr, "VARIABLE"])
-    outputstr = re.sub(focuspattern, "_"+ uuidstr +"FOCUS", pattern) #replace focus with a regular variable
+    outputstr = re.sub(focuspattern, "_"+ uuidstr +"FOCUS", pattern)
 
     for match in re.finditer(typepattern, pattern):
         types[match.group(3)] = match.group(4)
@@ -82,7 +82,7 @@ def parse_pattern(pattern: str) -> tuple[str, dict, dict, dict]:
 
 
 if __name__ == "__main__":
-    query, var, cont, types = parse_pattern("var x = 2;")
+    query, var, cont, types = parse_pattern("$<!>$<_> = false")
     print(query)
     print(var)
     print(cont)

@@ -44,42 +44,44 @@ class SymbolTableBuilder:
     def __init__(self):
         self.root_symbol_table = SymbolTable()
 
-    def build(self, protego_tree: ProtegoTree):
-        self._traverse(protego_tree.root, self.root_symbol_table)
+    def build(self, root: ProtegoNode):
+        self._traverse(root, self.root_symbol_table)
 
     def _traverse(self, node: ProtegoNode, current_symbol_table: SymbolTable):
+        node.symbol_table = current_symbol_table  # Set the symbol table reference
         if node.type == "statement_block" or node.type == "object":
             new_scope = SymbolTable(current_symbol_table)
             current_symbol_table.add_child(new_scope)
             self._process_block(node, new_scope)
         else:
             self._handle_node_logic(node, current_symbol_table)
-            for child in node.children:
+            for child in node.children + node.named_children:
                 self._traverse(child, current_symbol_table)
 
     def _process_block(self, node: ProtegoNode, new_scope: SymbolTable):
-        for child in node.children:
+        for child in node.children + node.named_children:
             self._traverse(child, new_scope)
 
     def _handle_node_logic(self, node: ProtegoNode, current_symbol_table: SymbolTable):
+        node.symbol_table = current_symbol_table  # Set the symbol table reference
         if node.type == "lexical_declaration":
             var = self.find_first_identifier(node)
-            var_name = var.text.decode()
+            var_name = var.text
             current_symbol_table.add_variable(var_name, node)
             self._add_aliases(node, current_symbol_table, var_name)
         elif node.type == "variable_declaration":
             var = self.find_first_identifier(node)
-            var_name = var.text.decode()
+            var_name = var.text
             current_symbol_table.add_variable(var_name, node)
             self.add_global_variable(current_symbol_table, var_name, node)
             self._add_aliases(node, current_symbol_table, var_name)
         elif node.type in {"assignment_expression", "augmented_assignment_expression"}:
             var = node.named_children[0]
-            var_name = var.text.decode()
+            var_name = var.text
             self._update_variable_reference(current_symbol_table, var, node, var_name)
         elif node.type == "pair":
             var = node.named_children[0]
-            var_name = var.text.decode()
+            var_name = var.text
             current_symbol_table.add_variable(var_name, node)
             self._add_aliases(node, current_symbol_table, var_name)
 
@@ -127,14 +129,14 @@ class SymbolTableBuilder:
     def _add_aliases(self, node: ProtegoNode, symbol_table: SymbolTable, var_name: str):
         identifiers = self._find_all_identifiers(node)
         for identifier in identifiers:
-            alias = identifier.text.decode()
+            alias = identifier.text
             current = symbol_table
             while current:
                 current.add_alias(var_name, alias)
                 current = current.parent
             # Add logic for property identifiers
             if identifier.parent and identifier.parent.type == "property_identifier":
-                property_identifier = identifier.parent.text.decode()
+                property_identifier = identifier.parent.text
                 current = symbol_table
                 while current:
                     current.add_alias(property_identifier, alias)
