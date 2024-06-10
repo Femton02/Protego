@@ -38,6 +38,5 @@ metadata:
   cwe_id:
     - 1004
   id: javascript_express_cookie_missing_http_only
-  documentation_url: https://docs.bearer.com/reference/rules/javascript_express_cookie_missing_http_only
   cloud_code_suggestions: true
   severity: medium

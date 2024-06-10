@@ -174,8 +174,8 @@ def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[
 
 
 if __name__ == "__main__":
-    rule = process_rule("test/express/external_resource.yml")
-    src_code = read_file("testcode/express/external_resource.js")
+    rule = process_rule("test/express/open_redirect.yml")
+    src_code = read_file("testcode/express/open_redirect.js")
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables
@@ -191,6 +191,7 @@ if __name__ == "__main__":
     print("\n__________________________")
     for node in caught_nodes:
         print(node['root'].text.decode())
+        print("--------------------------")
     print("__________________________")
     print("done")
     

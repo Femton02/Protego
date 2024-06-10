@@ -9,7 +9,7 @@ app.use(helmet())
 app.use(helmet.hidePoweredBy())
 
 app.use(
-  // bearer:expected javascript_express_cookie_missing_http_only
+  // expected vulnerability
   session({
     cookie: {
       domain: "example.com",
@@ -23,7 +23,7 @@ app.use(
 )
 
 app.use(
-  // bearer:expected javascript_express_cookie_missing_http_only
+  // expected vulnerability
   cookieSession({
     domain: "example.com",
     httpOnly: false,
