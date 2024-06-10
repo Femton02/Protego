@@ -174,8 +174,8 @@ def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[
 
 
 if __name__ == "__main__":
-    rule = process_rule("test/express/default_cookie_config.yml")
-    src_code = read_file("testcode/express/default_cookie_config.js")
+    rule = process_rule("test/express/external_resource.yml")
+    src_code = read_file("testcode/express/external_resource.js")
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables

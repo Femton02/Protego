@@ -187,11 +187,14 @@ class TSQueryTree:
                         parent.add_child(QTNode("@param" + str(self.counter)))
                         parent.value = "(_"
                         self.variables[self.counter] = node.text.decode()[39:]
+                        curr_node.value = "(_"
                         self.counter += 1
                     else:
                         parent.add_child(QTNode("@param" + str(self.counter)))
                         self.content[self.counter] = node.text.decode()
                         self.counter += 1
+                if node.text.decode()[39:] == "_":
+                    curr_node.value = "(_"
                 if(node.text.decode()[39:] == "FOCUS" and node.text.decode()[1:39] == self.trace[0][1]):
                         if self.trace[0][2] == "LITERAL":
                             self.content[-1] = self.trace[0][0]
