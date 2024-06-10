@@ -61,7 +61,7 @@ class Pattern:
         
         if 'not' in filter:
             negation = True
-            filter = filter['not'][0]
+            filter = filter['not']
         else:
             negation = False
 

@@ -42,52 +42,52 @@ def check_type(types: dict, variable_name: str, node: Node):
             return False
     return True
 
-def compare_variables(match: dict[str, Node], pattern: Pattern, helper_patterns: list[HelperPattern]):
-    result = True
+def compare_variables(match: dict[str, Any], pattern: Pattern, helper_patterns: list[Any]) -> bool:
     if not pattern.variables:
-        return result
-    variables = pattern.variables
-    types = pattern.types
-    for key, value in variables.items():
-        comparestr = "param" + str(key)
+        return True
+
+    for variable_name, variable in pattern.variables.items():
+        comparestr = "param" + str(variable_name)
         if comparestr not in match:
             return False
         node = match[comparestr]
-        if not check_type(types, value, node):
+        if not check_type(pattern.types, variable, node):
             return False
+        if not handle_single_variable(variable, node, pattern.filters[variable], helper_patterns):
+            return False
+    return True
 
-        variable_name = value
-        filters = pattern.filters[variable_name]
-        for filter in filters:
-            if filter.type == FilterType.HELPER_PATTERN:
-                helper_pattern_id = filter.method
-                helper_pattern = helper_patterns[helper_pattern_id]
-                helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns)
-                if not filter.negation:
-                    if helper_pattern_results:
-                        return True
-                else:
-                    if not helper_pattern_results:
-                        return True
-            if filter.type == FilterType.REGEX:
-                re_pattern = f'{filter.method}'
-                if not filter.negation:
-                    if re.match(re_pattern, node.text.decode()):
-                        return True
-                else:
-                    if not re.match(re_pattern, node.text.decode()):
-                        return True
-            if filter.type == FilterType.VALUES:
-                for value in filter.method:
-                    result = True
-                    if not filter.negation:
-                        if node.text.decode() == value:
-                            return True
-                    else:
-                        if node.text.decode() == value:
-                            return False
-                if filter.negation:
+def handle_single_variable(variable: str, node: Any, filters: list[Filter], helper_patterns: list[Any]) -> bool:
+    for filter in filters:
+        if handle_single_filter(filter, node, helper_patterns):
+            return True
+    return False
+
+def handle_single_filter(filter: Filter, node: Any, helper_patterns: list[Any]) -> bool:
+    if filter.type == FilterType.HELPER_PATTERN:
+        helper_pattern_id = filter.method
+        helper_pattern = helper_patterns[helper_pattern_id]
+        helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns)
+        if filter.negation:
+            return not helper_pattern_results
+        else:
+            return bool(helper_pattern_results)
+    elif filter.type == FilterType.REGEX:
+        re_pattern = filter.method
+        match_result = re.match(re_pattern, node.text.decode())
+        if filter.negation:
+            return not match_result
+        else:
+            return bool(match_result)
+    elif filter.type == FilterType.VALUES:
+        for value in filter.method:
+            if filter.negation:
+                if node.text.decode() == value:
+                    return False
+            else:
+                if node.text.decode() == value:
                     return True
+        return filter.negation  # Return False if negation is False, True if negation is True
     return False
 
 def check_trace(variable: Node, pattern: Pattern, helper_patterns: list[HelperPattern]):
@@ -153,7 +153,7 @@ def match_single_node(node: Node, pattern: Pattern, helper_patterns: list[Helper
 def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[HelperPattern]):
     result = []
     for pattern in patterns:
-        print(f"Querying pattern: {pattern.id}")
+        #print(f"Querying pattern: {pattern.id}")
         if 'focus' in pattern.query:
             output = check_trace(parsed_src_code, pattern, helper_patterns)
             if output:
@@ -174,8 +174,8 @@ def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[
 
 
 if __name__ == "__main__":
-    rule = process_rule("test/express/insecure-cookie/testdata/filter_test.yaml")
-    src_code = read_file("test/express/insecure-cookie/testdata/filter_test.js")
+    rule = process_rule("test/express/default_cookie_config.yml")
+    src_code = read_file("testcode/express/default_cookie_config.js")
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables
@@ -186,11 +186,11 @@ if __name__ == "__main__":
     symbol_table = SymbolTableBuilder()
     symbol_table.build(proTree.root)
     caught_nodes = run_matches(parsed_src_code.root_node, rule.patterns, rule.helper_patterns)
+    print("__________________________")
+    print("Number of caught nodes: ", len(caught_nodes))
+    print("\n__________________________")
+    for node in caught_nodes:
+        print(node['root'].text.decode())
+    print("__________________________")
     print("done")
-    # print("__________________________")
-    # for node_id in caught_nodes:
-    #     print(node_map[node_id])
-    #     print(caught_nodes[node_id])
-    #     print("__________________________")
-    # print("done")
     

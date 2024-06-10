@@ -8,21 +8,16 @@ var app = express()
 app.use(helmet())
 app.use(helmet.hidePoweredBy())
 
-let x = false;
-let z = false;
-{
-  let y = false;
-}
-
-y = x || z;
-
-y = false;
-
 app.use(
   // bearer:expected javascript_express_cookie_missing_http_only
   session({
     cookie: {
-      httpOnly: y,
+      domain: "example.com",
+      httpOnly: false,
+      secure: true,
+      name: "my-custom-cookie-name",
+      maxAge: 24 * 60 * 60 * 1000,
+      path: "/some-path",
     },
   })
 )
@@ -30,13 +25,23 @@ app.use(
 app.use(
   // bearer:expected javascript_express_cookie_missing_http_only
   cookieSession({
+    domain: "example.com",
     httpOnly: false,
+    secure: false,
+    name: "my-custom-cookie-name",
+    maxAge: 24 * 60 * 60 * 1000,
+    path: "/some-path",
   })
 )
 
 app.use(
-  // bearer:expected javascript_express_cookie_missing_http_only
+  // ok
   cookieSession({
+    domain: "example.com",
     httpOnly: true,
+    secure: false,
+    name: "my-custom-cookie-name",
+    maxAge: 24 * 60 * 60 * 1000,
+    path: "/some-path",
   })
 )

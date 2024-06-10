@@ -1,6 +1,6 @@
 import os
 import sys
-import ruamel.yaml as yaml
+import yaml
 
 protego_workspace_dir = os.environ.get("PROTEGO_WORKSPACE_DIR")
 if not protego_workspace_dir:
