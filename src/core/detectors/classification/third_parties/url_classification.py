@@ -12,8 +12,8 @@ from common_includes import *
 import re
 
 
-urls_to_uuid = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third-parties/db/url_to_uuid.json"))
-uuid_to_service = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third-parties/db/uuid_to_service.json"))
+urls_to_uuid = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third_parties/db/url_to_uuid.json"))
+uuid_to_service = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third_parties/db/uuid_to_service.json"))
 def classify_url(url: str) -> dict | None:
     service_uuid = None
     # the urls are regex patterns

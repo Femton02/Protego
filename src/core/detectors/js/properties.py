@@ -43,7 +43,7 @@ nested_objects_query = "\
     "
 
 class HelperDataTypes(BaseModel):
-    node: ProtegoNode
+    node: ProtegoNode | Any
     name: str
     properties: dict[str, "HelperDataTypes"] = {}
     uuid: str = ""
@@ -55,10 +55,10 @@ class HelperDataTypes(BaseModel):
 class PropertiesDetector(DetectorInterface):
     """Detector for properties in JavaScript code."""
 
-    def __init__(self, js_code: str):
-        self.js_code = js_code
-        self.tree = parse_js_code(js_code)
-        self.protego_tree = ProtegoTree(self.tree)
+    def __init__(self, protego_tree: ProtegoTree):
+        self.js_code = protego_tree.original_tree.root_node.text
+        self.tree = protego_tree.original_tree
+        self.protego_tree = protego_tree
         self.results = []
         self.helper_data_types: dict[int, HelperDataTypes] = dict()
         self.data_types: dict[int, HelperDataTypes] = dict()
@@ -99,8 +99,11 @@ class PropertiesDetector(DetectorInterface):
         for data_type in self.data_types.values():
             data_type_uuid = uuid.uuid4().__str__()
             prettified_results[data_type_uuid] = {}
-            prettified_results[data_type_uuid][data_type.name] = {}
-            self._prettify_helper_data_types(data_type, prettified_results[data_type_uuid][data_type.name])
+            prettified_results[data_type_uuid]["filepath"] = self.protego_tree.file_name
+            prettified_results[data_type_uuid]["line"] = data_type.node.start_point[0]
+            prettified_results[data_type_uuid]["object"] = {}
+            prettified_results[data_type_uuid]["object"][data_type.name] = {}
+            self._prettify_helper_data_types(data_type, prettified_results[data_type_uuid]["object"][data_type.name])
 
         print(len(prettified_results))
         return prettified_results
@@ -136,7 +139,6 @@ class PropertiesDetector(DetectorInterface):
             match = x[1]
             root_property_node = match["param_property"]
             root_property_pnode = self.protego_tree.get_node_by_id(root_property_node.id)
-
             self.helper_data_types[root_property_pnode.id] = HelperDataTypes(node=root_property_pnode, name=root_property_pnode.text)
         
         _, matches = query_tree(self.tree.root_node, nested_properties_query)
@@ -419,8 +421,8 @@ class PropertiesDetector(DetectorInterface):
                     
 
 
-def detect_objects(js_code: str):
-    detector = PropertiesDetector(js_code)
+def detect_objects(protego_tree: ProtegoTree):
+    detector = PropertiesDetector(protego_tree)
     detector.detect()
     return detector.prettify_results()
 

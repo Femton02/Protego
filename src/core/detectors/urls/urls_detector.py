@@ -84,7 +84,12 @@ class URLDetector:
                     parts.append(self._traverse(expression, variables, functions))
                 else:
                     parts.append(child.text)
-            node.value = ''.join(parts)
+            cleaned_parts = []
+            for part in parts:
+                if not isinstance(part, str):
+                    continue
+                cleaned_parts.append(part)
+            node.value = ''.join(cleaned_parts)
             return node.value
         elif node.type == 'binary_expression' and node.children[1].type == '+':
             p_left_node = self.tree.get_node_by_id(node.tree_sitter_node.child_by_field_name("left").id)

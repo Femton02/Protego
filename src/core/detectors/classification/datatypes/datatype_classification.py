@@ -11,7 +11,7 @@ from common_includes import *
 
 import re
 from typing import Any
-from patterns_reader import known_persons_object_patterns,  \
+from core.detectors.classification.datatypes.patterns_reader import known_persons_object_patterns,  \
                 known_object_patterns, \
                 unknown_object_patterns, \
                 unknown_object_extended_patterns, \
@@ -116,7 +116,7 @@ obj = {
         "id": {},
         "name": {},
         "user_id": {},
-        "notification_enabled": {
+        "email": {
             "type": "boolean"
         },
     }

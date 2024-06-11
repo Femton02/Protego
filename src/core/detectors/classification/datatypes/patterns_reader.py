@@ -254,8 +254,11 @@ def add_category_group_name_to_classification(classification: dict[str, Any]):
         classification[attr_name].pop("include_regexp", None)
         classification[attr_name].pop("health_context_data_type_uuid", None)
 
-
-    return classification
+        for group_name in group_names:
+            if group_name not in new_classification:
+                new_classification[group_name] = []
+            new_classification[group_name].append(classification[attr_name])
+    return new_classification
 
 
 def normalize_object(obj_name: str, attributes: dict[str, str]):
@@ -265,3 +268,7 @@ def normalize_object(obj_name: str, attributes: dict[str, str]):
         attr_name = attr_name.lower().replace("_", " ").replace("-", " ")
         normalized_attributes[attr_name] = attr_value
     return obj_name, normalized_attributes
+
+
+if __name__ == "__main__":
+    pass

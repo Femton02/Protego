@@ -11,8 +11,8 @@ from common_includes import *
 
 
 
-npm_packages_to_uuid = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third-parties/db/npm_packages_to_uuid.json"))
-uuid_to_service = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third-parties/db/uuid_to_service.json"))
+npm_packages_to_uuid = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third_parties/db/npm_packages_to_uuid.json"))
+uuid_to_service = read_json_file(os.path.join(protego_workspace_dir, "src/core/detectors/classification/third_parties/db/uuid_to_service.json"))
 
 def classify_package(package: str, package_manager: str) -> dict | None:
 
