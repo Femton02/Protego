@@ -9,6 +9,7 @@ from common_includes import *
 
 #____________________________________________________________________________________#
 from core.main import scan_project
+import json
 
 import os
 import subprocess
@@ -45,6 +46,7 @@ def process_files():
     # remove the files after processing
     os.remove(rule_file_path)
     os.remove(code_file_path)
+    print(result)
     return jsonify(result)
 
 if __name__ == '__main__':

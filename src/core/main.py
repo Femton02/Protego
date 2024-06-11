@@ -49,11 +49,18 @@ def scan_project(
                 if file.endswith(".yml"):
                     processed_rules.append(process_rule(os.path.join(root, file)))
     
+    json_report = {}
     for target_file in targeted_files:
+        src_code = read_file(target_file)
+        parsed_src_code_tree = parse_js_code(src_code)
+        protego_tree = ProtegoTree(parsed_src_code_tree)
+        json_report[target_file] = {}
         for rule in processed_rules:
-            scan_file(target_file, rule)
+            rule_output = scan_file(target_file, rule)
+            if len(rule_output["detections"]) > 0:
+                json_report[target_file][rule.id] = rule_output
     
-
+    return json_report
 
 def scan_file(
         target_file: str,

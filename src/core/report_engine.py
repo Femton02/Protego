@@ -44,11 +44,10 @@ def generate_json_report(rule: Rule, match_results: list[ProtegoNode], target_fi
             "start_line_column": match.start_point[1] + 1,
             "end_line_row": match.end_point[0] + 1,
             "end_line_column": match.end_point[1] + 1,
-            "match_content": match.text,
+            "match_content": match.text.decode(),
             "recommendation": rule.message
         }
         json_report["detections"].append(detection)
-    print(json_report)
     return json_report
 
 def generate_html_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str) -> None:
