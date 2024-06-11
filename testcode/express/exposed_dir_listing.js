@@ -6,9 +6,10 @@ var app = express()
 app.use(helmet())
 app.use(helmet.hidePoweredBy())
 
-// bearer:expected javascript_express_exposed_dir_listing
+// expected vulnerability
 app.use("/public", serveIndex(__dirname + "files"))
 
+// Ok
 app.use("/ftp", express.static("public/ftp"))
 
 app.listen(3000)

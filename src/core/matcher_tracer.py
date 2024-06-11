@@ -195,8 +195,8 @@ def get_matches(protego_tree: ProtegoTree, rule: Rule) -> list[ProtegoNode]:
     
 
 if __name__ == "__main__":
-    rule = process_rule("test/express/external_resource.yml")
-    src_code = read_file("testcode/express/external_resource.js")
+    rule = process_rule("test/lang/jwt_hardcoded_secret.yml")
+    src_code = read_file("testcode/lang/jwt_hardcoded_secret.js")
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables

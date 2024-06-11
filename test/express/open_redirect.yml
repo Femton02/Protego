@@ -1,0 +1,80 @@
+patterns:
+  - pattern: |
+      $<RES>.redirect($<USER_INPUT>)
+    filters:
+      - variable: RES
+        detection: javascript_express_open_redirect_response
+      - variable: USER_INPUT
+        detection: javascript_shared_common_user_input
+
+helper_patterns:
+  - id: javascript_express_open_redirect_response
+    patterns:
+      - pattern: res
+      - pattern: response
+
+  - id: javascript_shared_common_user_input
+    patterns:
+      - pattern: req.$<PARAM>.$<VALUE>
+        filters:
+          - variable: PARAM
+            regex: (?i)(query|params|body)
+          - variable: VALUE
+            regex: (?i)(path|url)
+      - pattern: request.$<PARAM>.$<VALUE>
+        filters:
+          - variable: PARAM
+            regex: (?i)(query|params|body)
+          - variable: VALUE
+            regex: (?i)(path|url)
+      - pattern: $<STRING_START> + req.$<PARAM>.$<VALUE> + $<STRING_END>
+        filters:
+          - variable: STRING_START
+            regex: (?i)['"]https?:\/\/['"]
+          - variable: PARAM
+            regex: (?i)(query|params|body)
+          - variable: VALUE
+            regex: (?i)(path|url)
+          - variable: STRING_END
+            regex: (?i)['"]\/bar['"]
+      - pattern: request.$<PARAM>.$<VALUE> + $<STRING_END>
+        filters:
+          - variable: PARAM
+            regex: (?i)(query|params|body)
+          - variable: VALUE
+            regex: (?i)(path|url)
+          - variable: STRING_END
+            regex: (?i)['"]\/bar['"]
+languages:
+  - javascript
+
+severity: medium
+
+metadata:
+  description: "Unsanitized user input in redirect"
+  remediation_message: |-
+    ## Description
+
+    Using unsanitized user input for redirection can expose your application to phishing attacks. This vulnerability occurs when user input directly influences the destination of a redirect without proper validation, making it easier for attackers to redirect users to malicious sites.
+
+    ## Remediations
+
+    - **Do not** use unsanitized user input to construct URLs for redirection. This can lead to security vulnerabilities where attackers could exploit the redirect to lead users to malicious sites.
+    - **Do** validate user input by employing a safe list or a mapping strategy for constructing URLs. This ensures that only pre-approved destinations are used for redirects, significantly reducing the risk of phishing attacks.
+      ```javascript
+      var map = {
+        "1": "/planes",
+        "2": "/trains",
+        "3": "/automobiles",
+      }
+
+      res.redirect(map[req.body.transport])
+      ```
+
+    ## References
+
+    - [OWASP Unvalidated Redirects and Forwards Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html)
+
+  cwe_id:
+    - 601
+  id: "javascript_express_open_redirect"

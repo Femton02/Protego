@@ -31,4 +31,3 @@ metadata:
   cwe_id:
     - 693
   id: javascript_express_default_session_config
-  documentation_url: https://docs.bearer.com/reference/rules/javascript_express_default_session_config
