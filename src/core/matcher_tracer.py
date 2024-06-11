@@ -14,7 +14,6 @@ from core.protego_node import ProtegoTree
 from core.symbol_table import SymbolTableBuilder, SymbolTable
 
 parsed_src_code = None
-node_map = None
 symbol_table = None
 proTree = None
 
@@ -42,7 +41,7 @@ def check_type(types: dict, variable_name: str, node: Node):
             return False
     return True
 
-def compare_variables(match: dict[str, Any], pattern: Pattern, helper_patterns: list[Any]) -> bool:
+def compare_variables(match: dict[str, Any], pattern: Pattern, helper_patterns: list[Any], proTree) -> bool:
     if not pattern.variables:
         return True
 
@@ -53,21 +52,21 @@ def compare_variables(match: dict[str, Any], pattern: Pattern, helper_patterns: 
         node = match[comparestr]
         if not check_type(pattern.types, variable, node):
             return False
-        if not handle_single_variable(variable, node, pattern.filters[variable], helper_patterns):
+        if not handle_single_variable(variable, node, pattern.filters[variable], helper_patterns, proTree):
             return False
     return True
 
-def handle_single_variable(variable: str, node: Any, filters: list[Filter], helper_patterns: list[Any]) -> bool:
+def handle_single_variable(variable: str, node: Any, filters: list[Filter], helper_patterns: list[Any], proTree) -> bool:
     for filter in filters:
-        if handle_single_filter(filter, node, helper_patterns):
+        if handle_single_filter(filter, node, helper_patterns, proTree):
             return True
     return False
 
-def handle_single_filter(filter: Filter, node: Any, helper_patterns: list[Any]) -> bool:
+def handle_single_filter(filter: Filter, node: Any, helper_patterns: list[Any], proTree) -> bool:
     if filter.type == FilterType.HELPER_PATTERN:
         helper_pattern_id = filter.method
         helper_pattern = helper_patterns[helper_pattern_id]
-        helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns)
+        helper_pattern_results = run_matches(node, helper_pattern.patterns, helper_patterns, proTree)
         if filter.negation:
             return not helper_pattern_results
         else:
@@ -90,8 +89,8 @@ def handle_single_filter(filter: Filter, node: Any, helper_patterns: list[Any]) 
         return filter.negation  # Return False if negation is False, True if negation is True
     return False
 
-def check_trace(variable: Node, pattern: Pattern, helper_patterns: list[HelperPattern]):
-    protego_var = node_map[variable.id]
+def check_trace(variable: Node, pattern: Pattern, helper_patterns: list[HelperPattern], proTree: ProtegoTree):
+    protego_var = proTree.node_mapping[variable.id]
     # Check if the variable source matches the pattern
     current_scope = protego_var.symbol_table
     while current_scope:
@@ -102,33 +101,33 @@ def check_trace(variable: Node, pattern: Pattern, helper_patterns: list[HelperPa
         return None
 
     check_node = current_scope.table[protego_var.text.decode()]
-    result = match_single_node(check_node.original_node, pattern, helper_patterns)
+    result = match_single_node(check_node.original_node, pattern, helper_patterns, proTree)
     if result:
         return result
 
     while check_node.points_to:
         check_node = check_node.points_to
-        result = match_single_node(check_node.original_node, pattern, helper_patterns)
+        result = match_single_node(check_node.original_node, pattern, helper_patterns, proTree)
         if result:
             return result
 
     # Check aliases recursively
-    return check_aliases_recursively(current_scope, variable.text.decode(), pattern, helper_patterns)
+    return check_aliases_recursively(current_scope, variable.text.decode(), pattern, helper_patterns, proTree)
 
-def check_aliases_recursively(symbol_table: SymbolTable, var_name: str, pattern: Pattern, helper_patterns: list[HelperPattern]):
+def check_aliases_recursively(symbol_table: SymbolTable, var_name: str, pattern: Pattern, helper_patterns: list[HelperPattern], proTree):
     if var_name not in symbol_table.aliases:
         return None
 
     for alias in symbol_table.aliases[var_name]:
         if alias in symbol_table.table:
             check_node = symbol_table.table[alias]
-            result = match_single_node(check_node.original_node, pattern, helper_patterns)
+            result = match_single_node(check_node.original_node, pattern, helper_patterns, proTree)
             if result:
                 return result
 
             while check_node.points_to:
                 check_node = check_node.points_to
-                result = match_single_node(check_node.original_node, pattern, helper_patterns)
+                result = match_single_node(check_node.original_node, pattern, helper_patterns, proTree)
                 if result:
                     return result
 
@@ -139,23 +138,23 @@ def check_aliases_recursively(symbol_table: SymbolTable, var_name: str, pattern:
     return None
 
 
-def match_single_node(node: Node, pattern: Pattern, helper_patterns: list[HelperPattern]):
+def match_single_node(node: Node, pattern: Pattern, helper_patterns: list[HelperPattern], proTree: ProtegoTree):
     captures, matches = query_tree(node, pattern.query)
     for x in matches:
         match = x[1]
         if not compare_content(pattern.content, match):
             continue
-        if not compare_variables(match, pattern, helper_patterns):
+        if not compare_variables(match, pattern, helper_patterns, proTree):
             continue
         return match
     return None
 
-def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[HelperPattern]):
+def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[HelperPattern], proTree: ProtegoTree):
     result = []
     for pattern in patterns:
         #print(f"Querying pattern: {pattern.id}")
         if 'focus' in pattern.query:
-            output = check_trace(parsed_src_code, pattern, helper_patterns)
+            output = check_trace(parsed_src_code, pattern, helper_patterns, proTree)
             if output:
                 result.append(output)
         _, matches = query_tree(parsed_src_code, pattern.query)
@@ -165,7 +164,7 @@ def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[
                 # print(f"Content Mismatch for match \n{match}\nand pattern \n{pattern}\n")
                 continue
             # if 'focus' in match then we need to trace the focus, lookup that variable in the symbol table and check if its source matches the pattern.
-            if not compare_variables(match, pattern, helper_patterns):
+            if not compare_variables(match, pattern, helper_patterns, proTree):
             # print(f"Type or variable Mismatch for match \n{match}\nand pattern \n{pattern}\n")
                 continue
             # print(f"Found match: {match} for pattern {pattern}")
@@ -174,18 +173,16 @@ def run_matches(parsed_src_code, patterns: list[Pattern], helper_patterns: list[
 
 
 if __name__ == "__main__":
-    rule = process_rule("test/express/open_redirect.yml")
-    src_code = read_file("testcode/express/open_redirect.js")
+    rule = process_rule("test/express/jwt_not_revoked.yml")
+    src_code = read_file("testcode/express/jwt_not_revoked.js")
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables
     proTree = ProtegoTree(parsed_src_code)
-
-    node_map = proTree.node_mapping
     # create the symbol table
     symbol_table = SymbolTableBuilder()
     symbol_table.build(proTree.root)
-    caught_nodes = run_matches(parsed_src_code.root_node, rule.patterns, rule.helper_patterns)
+    caught_nodes = run_matches(parsed_src_code.root_node, rule.patterns, rule.helper_patterns, proTree)
     print("__________________________")
     print("Number of caught nodes: ", len(caught_nodes))
     print("\n__________________________")

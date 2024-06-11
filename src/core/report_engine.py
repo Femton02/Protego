@@ -11,6 +11,7 @@ from common_includes import *
 
 from core.matcher_engine import get_matches
 from core.protego_node import ProtegoNode
+import json
 
 def generate_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str, output_format: str = "json") -> None:
 
@@ -47,7 +48,7 @@ def generate_json_report(rule: Rule, match_results: list[ProtegoNode], target_fi
             "recommendation": rule.message
         }
         json_report["detections"].append(detection)
-    print(json.dumps(json_report, indent=4))
+    print(json_report)
     return json_report
 
 def generate_html_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str) -> None:
