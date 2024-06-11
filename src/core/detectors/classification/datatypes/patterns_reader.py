@@ -121,25 +121,25 @@ def read_data_classification_patterns():
 
 
 def read_data_types():
-    data_types = []
+    data_types = {}
     types_dir = os.path.join(protego_workspace_dir, "src/core/detectors/classification/datatypes/db/data_types")
     for file in os.listdir(types_dir):
         if file.endswith(".json"):
             with open(os.path.join(types_dir, file), 'r') as f:
                 data = json.load(f)
-                data_types.append(data)
+                data_types[data["uuid"]] = data
     return data_types
 
 
 
 def read_data_categories():
-    data_categories = []
+    data_categories = {}
     categories_dir = os.path.join(protego_workspace_dir, "src/core/detectors/classification/datatypes/db/data_categories")
     for file in os.listdir(categories_dir):
         if file.endswith(".json"):
             with open(os.path.join(categories_dir, file), 'r') as f:
                 data = json.load(f)
-                data_categories.append(data)
+                data_categories[data["uuid"]] = data
     return data_categories
 
 
@@ -232,13 +232,28 @@ def get_category_group_name(category_uuid):
     return []
 
 def add_category_group_name_to_classification(classification: dict[str, Any]):
+    new_classification = {}
     for attr_name in classification.keys():
         attr_type = classification[attr_name]
-        for data_type in data_types:
-            if data_type["name"] == attr_type:
-                category_uuid = data_type["category_uuid"]
-                group_names = get_category_group_name(category_uuid)
-                classification[attr_name] = (attr_type, group_names)
+        data_type_uuid = attr_type["data_type_uuid"]
+        data_type = data_types[data_type_uuid]
+        category_uuid = data_type["category_uuid"]
+        group_names = get_category_group_name(category_uuid)
+        classification[attr_name]["group_names"] = group_names
+        classification[attr_name]["category"] = data_categories[category_uuid]["name"]
+        classification[attr_name]["data_type"] = data_type["name"]
+
+        # remove unnecessary keys
+        classification[attr_name].pop("metadata", None)
+        classification[attr_name].pop("exclude_regexp", None)
+        classification[attr_name].pop("exclude_types", None)
+        classification[attr_name].pop("id", None)
+        classification[attr_name].pop("object_type", None)
+        classification[attr_name].pop("match_column", None)
+        classification[attr_name].pop("match_object", None)
+        classification[attr_name].pop("include_regexp", None)
+        classification[attr_name].pop("health_context_data_type_uuid", None)
+
 
     return classification
 

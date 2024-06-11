@@ -111,10 +111,36 @@ attributes = {
     'user_name': 'string'
 }
 
+obj = {
+    "user": {
+        "id": {},
+        "name": {},
+        "user_id": {},
+        "notification_enabled": {
+            "type": "boolean"
+        },
+    }
+}
+
+def flattern_obj(obj: dict[str, Any]):
+    obj_name = list(obj.keys())[0]
+    attributes = obj[obj_name]
+    normalized_obj = {}
+    for attr_name, attr in attributes.items():
+        if 'type' in attr:
+            normalized_obj[attr_name] = attr['type']
+        else:
+            normalized_obj[attr_name] = 'string'
+
+    return obj_name, normalized_obj
+
+def classify_datatype(obj: dict):
+    obj_name, attributes = flattern_obj(obj)
+    classification = classify_object(obj_name, attributes)
+    classification = add_category_group_name_to_classification(classification)
+    return classification
 
 if __name__ == "__main__":
-    
-    classification = classify_object('ads', attributes)
-    print(classification)
-    classification = add_category_group_name_to_classification(classification)
+    classification = classify_datatype(obj)
+    print(json.dumps(classification, indent=4))
     

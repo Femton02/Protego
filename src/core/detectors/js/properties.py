@@ -86,6 +86,31 @@ class PropertiesDetector(DetectorInterface):
                 print("\n=====================\n")
             print("\n\n----------------------\n\n")
     
+    def prettify_results(self):
+       # output should be json a dict with the following structure
+       # {
+       #    "user": {
+         #        "name": {},
+            #        "surname": {}
+            #    }
+            #}
+        prettified_results = {}
+        
+        for data_type in self.data_types.values():
+            data_type_uuid = uuid.uuid4().__str__()
+            prettified_results[data_type_uuid] = {}
+            prettified_results[data_type_uuid][data_type.name] = {}
+            self._prettify_helper_data_types(data_type, prettified_results[data_type_uuid][data_type.name])
+
+        print(len(prettified_results))
+        return prettified_results
+    
+    def _prettify_helper_data_types(self, data_type, prettified_results):
+        for property_name, property in data_type.properties.items():
+            prettified_results[property_name] = {}
+            self._prettify_helper_data_types(property, prettified_results[property_name])
+
+    
     def print_data_types(self):
         for data_type in self.data_types.values():
             print(f"Line: {data_type.node.start_point[0]}")
@@ -106,7 +131,7 @@ class PropertiesDetector(DetectorInterface):
         self._scope_proprties()
 
     def _add_properties(self):
-        _, matches = query_tree(self.tree, root_properties_query)
+        _, matches = query_tree(self.tree.root_node, root_properties_query)
         for x in matches:
             match = x[1]
             root_property_node = match["param_property"]
@@ -114,7 +139,7 @@ class PropertiesDetector(DetectorInterface):
 
             self.helper_data_types[root_property_pnode.id] = HelperDataTypes(node=root_property_pnode, name=root_property_pnode.text)
         
-        _, matches = query_tree(self.tree, nested_properties_query)
+        _, matches = query_tree(self.tree.root_node, nested_properties_query)
         for x in matches:
             match = x[1]
             
@@ -197,7 +222,7 @@ class PropertiesDetector(DetectorInterface):
     
     def _add_objects(self):
 
-        _, matches = query_tree(self.tree, objects_query)
+        _, matches = query_tree(self.tree.root_node, objects_query)
         for x in matches:
             match = x[1]
     
@@ -223,7 +248,7 @@ class PropertiesDetector(DetectorInterface):
         keys_to_delete = []
         
         # link nested objects to their properties
-        _, matches = query_tree(self.tree, nested_objects_query)
+        _, matches = query_tree(self.tree.root_node, nested_objects_query)
         for x in matches:
             match: dict[str, Node] = x[1]
             
@@ -394,7 +419,10 @@ class PropertiesDetector(DetectorInterface):
                     
 
 
-
+def detect_objects(js_code: str):
+    detector = PropertiesDetector(js_code)
+    detector.detect()
+    return detector.prettify_results()
 
 
 if __name__ == "__main__":
@@ -418,7 +446,5 @@ if __name__ == "__main__":
         },
     };
     """
-    detector = PropertiesDetector(js_code)
-    detector.detect()
-    results = detector.get_results()
-    detector.print_data_types()
+    res = detect_objects(js_code)
+    print(json.dumps(res, indent=4))
