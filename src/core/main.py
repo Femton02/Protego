@@ -73,8 +73,8 @@ def scan_file(
         processed_rule (Rule): The rule to use for scanning.
     """
     print(f"Scanning file: {target_file} with rule: {processed_rule.id}")
-    rule = process_rule("test/express/external_file_upload.yml")
-    src_code = read_file("testcode/express/external_file_upload.js")
+    rule = processed_rule
+    src_code = read_file(target_file)
     # pre run all the helper patterns
     parsed_src_code = parse_js_code(src_code)
     # create our own tree to be able to make the symbol table and trace the variables
