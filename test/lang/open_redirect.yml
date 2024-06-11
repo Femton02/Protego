@@ -49,4 +49,3 @@ metadata:
   cwe_id:
     - 601
   id: "javascript_lang_open_redirect"
-  documentation_url: https://docs.bearer.com/reference/rules/javascript_lang_open_redirect

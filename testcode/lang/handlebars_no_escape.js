@@ -4,7 +4,7 @@ const handlebars = Handlebars.create();
 
 export function bad(templateStr) {
   try {
-    // bearer:expected javascript_lang_handlebars_no_escape
+    // expected vulnerability
     const template = handlebars.compile(templateStr, { noEscape: true });
 
     compiledTemplate = template(vars);

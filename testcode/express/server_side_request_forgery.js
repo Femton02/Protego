@@ -12,7 +12,7 @@ app.get("/inject", async (req, res) => {
 })
 
 app.get("/inject", async (req, res) => {
-// bearer:expected javascript_express_server_side_request_forgery
+// expected vulnerability
   response = await fetch("https://" + req.query.path)
   res.json(response.data)
 })
@@ -20,7 +20,7 @@ app.get("/inject", async (req, res) => {
 app.get("/safety", async (_req, res) => {
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
-    await page.goto("https://mish.bearer.com")
+    await page.goto("https://any.link.com")
   
     res.send("success")
   })

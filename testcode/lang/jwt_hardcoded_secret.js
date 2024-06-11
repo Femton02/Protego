@@ -1,7 +1,7 @@
 import * as jose from 'jose'
 var jwt = require("jsonwebtoken");
 
-// bearer:expected javascript_lang_jwt_hardcoded_secret
+// expected vulnerability
 var token = jwt.sign({ foo: "bar" }, "someSecret");
 
 

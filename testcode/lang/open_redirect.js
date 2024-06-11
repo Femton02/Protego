@@ -1,10 +1,10 @@
 var myPath = new URLSearchParams(window.location)
 var myPath2 = new URL(location.href)
 
-// bearer:expected javascript_lang_open_redirect
+// expected vulnerability
 window.location.href = myPath
-// bearer:expected javascript_lang_open_redirect
+// expected vulnerability
 location.href = myPath2
 
-window.location.href = "https://mish.bearer.com/?" + params["userId"]
+window.location.href = "https://any.link.com/?" + params["userId"]
 window.location.href = myPath ? ok : ok
