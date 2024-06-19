@@ -1,25 +1,3 @@
-// expected to be detected
-{
-    cookie : { httpOnly: false }
-}
-
-// expected not to be detected
-
-{ 
-    cookie: { httpOnly: true}
-}
-
-// expected not to be detected
-{ 
-    cookie: { httpsOnly: true}
-}
-
-// expected not to be detected
-
-{ 
-    cookies: { httpsOnly: true}
-}
-
 import { cookieSession } from "cookie-session"
 
 const session = require("express-session")
@@ -31,7 +9,7 @@ app.use(helmet())
 app.use(helmet.hidePoweredBy())
 
 app.use(
-  // bearer:expected javascript_express_cookie_missing_http_only
+  // expected vulnerability
   session({
     cookie: {
       domain: "example.com",
@@ -45,7 +23,7 @@ app.use(
 )
 
 app.use(
-  // bearer:expected javascript_express_cookie_missing_http_only
+  // expected vulnerability
   cookieSession({
     domain: "example.com",
     httpOnly: false,
@@ -56,3 +34,14 @@ app.use(
   })
 )
 
+app.use(
+  // ok
+  cookieSession({
+    domain: "example.com",
+    httpOnly: true,
+    secure: false,
+    name: "my-custom-cookie-name",
+    maxAge: 24 * 60 * 60 * 1000,
+    path: "/some-path",
+  })
+)

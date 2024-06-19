@@ -75,7 +75,7 @@ class TSQueryTree:
     This class is used to represent the query for a tree-sitter as a tree.
     """
     
-    def __init__(self, root: Node, catch: dict = {}):
+    def __init__(self, root: Node, catch: dict = {}, trace: list = []):
         self.TS_root = root
         self.root: QTNode = QTNode("", root.text.decode())
         self.query_str = ""
@@ -83,6 +83,7 @@ class TSQueryTree:
         self.catch = catch
         self.variables = {}
         self.content = {}
+        self.trace = trace
 
     
     
@@ -186,11 +187,21 @@ class TSQueryTree:
                         parent.add_child(QTNode("@param" + str(self.counter)))
                         parent.value = "(_"
                         self.variables[self.counter] = node.text.decode()[39:]
+                        curr_node.value = "(_"
                         self.counter += 1
                     else:
                         parent.add_child(QTNode("@param" + str(self.counter)))
                         self.content[self.counter] = node.text.decode()
-                        self.counter += 1 
+                        self.counter += 1
+                if node.text.decode()[39:] == "_":
+                    curr_node.value = "(_"
+                if(node.text.decode()[39:] == "FOCUS" and node.text.decode()[1:39] == self.trace[0][1]):
+                        if self.trace[0][2] == "LITERAL":
+                            self.content[-1] = self.trace[0][0]
+                        else:
+                            if self.trace[0][0] != "_":
+                                self.variables[-1] = self.trace[0][0]
+                        parent.add_child(QTNode("@focus"))
             else:
                 parent.add_child(QTNode("@param" + str(self.counter)))
                 self.content[self.counter] = node.text.decode()

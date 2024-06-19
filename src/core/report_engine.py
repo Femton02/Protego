@@ -10,34 +10,51 @@ from common_includes import *
 #____________________________________________________________________________________#
 
 from core.matcher_engine import get_matches
+from core.protego_node import ProtegoNode
+import json
 
-def generate_report(rule: Rule, match_results: list[dict], target_file_path: str):
-#     {'root': <Node type=object, start_point=(0, 0), end_point=(2, 1)>, 'param1': <Node type=property_identifier, start_point=(1, 0), end_point=(1, 6)>, 'param2': <Node type=object, start_point=(1, 8), end_point=(1, 27)>} for pattern Pattern: javascript_express_cookie_missing_http_only0, {
-#   cookie: $<INSECURE_COOKIE>
-# }
+def generate_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str, output_format: str = "json") -> None:
+
     print(f"\nFile: {target_file_path}")
     if len(match_results) == 0:
         print("No vulnerabilities found.")
+        return generate_json_report(rule, match_results, target_file_path)
     else:
         print("Vulnerabilities found:")
-        for index, match in enumerate(match_results):
-            print(f"#{index + 1}:")
-            print(f"Rule: {rule.id}")
-            print(f"Description: {rule.description}")
-            lines = [match["root"].start_point[0] + 1 for match in match_results] 
-            print(f"Lines: {lines}")
-            print("Match:")
-            for key, value in match.items():
-                if key == "root":
-                    continue
-                print(f"{key}: {value.text.decode()}")
-            print("\n")
-            # print("Recommendation:")
-            # print(rule.message)
-            # print("\n")
-            print("--------------------------------------------")
+        print("----------------------------------------------------")
+        if output_format == "json":
+            json_report = generate_json_report(rule, match_results, target_file_path)
+            return json_report
+        elif output_format == "html":
+            generate_html_report(rule, match_results, target_file_path)
+        else:
+            generate_text_report(rule, match_results, target_file_path)
 
+def generate_json_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str) -> None:
+    json_report = {
+        "rule_id": rule.id,
+        "severity": rule.severity,
+        "description": rule.description,
+        "file_path": target_file_path,
+        "detections": []
+    }
+    for match in match_results:
+        detection = {
+            "start_line_row": match.start_point[0] + 1,
+            "start_line_column": match.start_point[1] + 1,
+            "end_line_row": match.end_point[0] + 1,
+            "end_line_column": match.end_point[1] + 1,
+            "match_content": match.text.decode(),
+            "recommendation": rule.message
+        }
+        json_report["detections"].append(detection)
+    return json_report
 
+def generate_html_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str) -> None:
+    pass
+
+def generate_text_report(rule: Rule, match_results: list[ProtegoNode], target_file_path: str) -> None:
+    pass
 
 def read_file(file_path):
     with open(file_path, "r") as file:

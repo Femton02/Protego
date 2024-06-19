@@ -15,12 +15,12 @@ helper_patterns:
   - id: javascript_express_cookie_missing_http_only_config
     patterns:
       - pattern: |
-          { httpOnly: false }
+          {$<...>:$<...>, httpOnly: false, $<...>}
 languages:
   - javascript
 metadata:
   description: Missing HTTP Only option in cookie configuration
-  message: |-
+  remediation_message: |-
     ## Description
 
     Your cookies are at risk if the HTTP Only option is not configured. This setting prevents client-side JavaScript, such as the code that reads "document.cookie" values, from accessing the cookie's value. Enabling this option is crucial for websites prone to Cross-Site Scripting (XSS) attacks, because it prevents malicious scripts from obtaining the cookie's data.
@@ -39,4 +39,4 @@ metadata:
     - 1004
   id: javascript_express_cookie_missing_http_only
   cloud_code_suggestions: true
-  severity: medium
+severity: medium
